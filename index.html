@@ -6,7 +6,7 @@
   <title>Level Up Civics Foundation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,7 +23,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--ink); }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); }
 
     /* ── NAV ─────────────────────────────────────────────────── */
     nav {
@@ -34,12 +34,10 @@
       border-bottom: 1px solid var(--soft);
     }
     .nav-logo {
-      font-family: 'Big Shoulders Display', sans-serif;
-      font-weight: 900; font-size: 20px; color: var(--ink);
-      text-decoration: none; margin-right: auto; line-height: 1;
-      letter-spacing: -0.01em;
+      margin-right: auto; text-decoration: none;
+      display: flex; align-items: center;
     }
-    .nav-logo em { font-style: normal; color: var(--red); }
+    .nav-logo-img { height: 36px; width: auto; display: block; }
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nav-links a {
       font-size: 13px; font-weight: 500; color: var(--gray);
@@ -50,13 +48,13 @@
     .btn-nav-ghost {
       background: transparent; color: var(--gray);
       border: 1px solid var(--soft);
-      padding: 8px 16px; font: 500 13px/1 'Instrument Sans', sans-serif;
+      padding: 8px 16px; font: 500 13px/1 'Inter', sans-serif;
       text-decoration: none; letter-spacing: 0.02em; transition: border-color 0.15s, color 0.15s;
     }
     .btn-nav-ghost:hover { color: var(--ink); border-color: var(--ink); }
     .btn-nav-red {
       background: var(--red); color: #fff; border: none;
-      padding: 8px 18px; font: 600 13px/1 'Instrument Sans', sans-serif;
+      padding: 8px 18px; font: 600 13px/1 'Inter', sans-serif;
       text-decoration: none; letter-spacing: 0.02em; transition: opacity 0.15s; cursor: pointer;
     }
     .btn-nav-red:hover { opacity: 0.88; }
@@ -65,12 +63,13 @@
     .hero {
       display: grid;
       grid-template-columns: 55% 45%;
-      min-height: 100vh;
+      height: 90vh;
+      min-height: 560px;
       padding-top: 64px;
     }
     .hero-content {
       display: flex; flex-direction: column; justify-content: center;
-      padding: 80px 72px 80px 80px;
+      padding: 60px 72px 60px 80px;
       background: var(--cream);
     }
     .hero-visual {
@@ -85,41 +84,37 @@
     /* Hero text elements */
     .hero-h1 {
       font-family: 'Big Shoulders Display', sans-serif;
-      font-weight: 900; font-size: clamp(48px, 5.2vw, 82px);
-      line-height: 0.91; color: var(--ink); letter-spacing: -0.01em;
-      margin-bottom: 32px;
+      font-weight: 900; font-size: clamp(40px, 4.4vw, 72px);
+      line-height: 0.95; color: var(--ink); letter-spacing: -0.01em;
+      margin-bottom: 24px;
     }
-    .hero-slogan {
-      font-size: 18px; font-weight: 400; line-height: 1.5; color: var(--ink);
-      margin-bottom: 6px;
+    .hero-tagline {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 15px; line-height: 1.75; color: var(--ink);
+      letter-spacing: 0.04em; margin-bottom: 28px;
     }
-    .hero-slogan strong { color: var(--red); font-weight: 600; }
-    .hero-slogan-line2 {
-      font-size: 18px; line-height: 1.5; color: var(--gray);
-      margin-bottom: 32px;
-    }
-    .hero-divider { width: 40px; height: 2px; background: var(--soft); margin-bottom: 32px; }
+    .hero-divider { width: 40px; height: 2px; background: var(--soft); margin-bottom: 24px; }
     .hero-sub {
-      font-size: 16px; line-height: 1.75; color: var(--gray);
-      max-width: 460px; margin-bottom: 40px;
+      font-size: 15px; line-height: 1.75; color: var(--gray);
+      max-width: 460px; margin-bottom: 32px;
     }
-    .hero-cta-row { display: flex; gap: 10px; margin-bottom: 36px; }
+    .hero-cta-row { display: flex; gap: 10px; margin-bottom: 28px; }
     .btn-primary {
       background: var(--navy); color: var(--cream); padding: 14px 28px;
-      font: 600 14px/1 'Instrument Sans', sans-serif; text-decoration: none;
+      font: 600 14px/1 'Inter', sans-serif; text-decoration: none;
       letter-spacing: 0.02em; transition: background 0.15s; display: inline-block;
     }
     .btn-primary:hover { background: var(--mnav); }
     .btn-outline {
       background: transparent; color: var(--ink);
       border: 1.5px solid var(--soft); padding: 13px 26px;
-      font: 500 14px/1 'Instrument Sans', sans-serif; text-decoration: none;
+      font: 500 14px/1 'Inter', sans-serif; text-decoration: none;
       letter-spacing: 0.02em; transition: border-color 0.15s; display: inline-block;
     }
     .btn-outline:hover { border-color: var(--ink); }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; }
     .pill {
-      font: 500 12px/1 'Instrument Sans', sans-serif; color: var(--gray);
+      font: 500 12px/1 'Inter', sans-serif; color: var(--gray);
       padding: 7px 14px; border: 1px solid var(--soft); text-decoration: none;
       letter-spacing: 0.01em; transition: color 0.15s, border-color 0.15s;
     }
@@ -127,16 +122,23 @@
 
     /* ── DATE TICKER ─────────────────────────────────────────── */
     .ticker {
-      background: var(--red); padding: 18px 48px;
-      display: flex; align-items: center; gap: 48px;
+      background: var(--red); padding: 22px 48px;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
     }
     .ticker-lbl {
       font-family: 'Pixelify Sans', sans-serif; font-size: 11px;
-      letter-spacing: 0.16em; color: rgba(255,255,255,0.55);
-      text-transform: uppercase; white-space: nowrap;
+      letter-spacing: 0.2em; color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 20px; width: 100%;
     }
-    .ticker-items { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-    .ticker-event { display: flex; align-items: center; gap: 12px; }
+    .ticker-lbl::before, .ticker-lbl::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.18);
+    }
+    .ticker-items {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%;
+    }
+    .ticker-event { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
     .ticker-date {
       font-family: 'Big Shoulders Display', sans-serif;
       font-weight: 700; font-size: 18px; color: #fff; letter-spacing: 0.02em;
@@ -157,7 +159,6 @@
     .sec-h2-light { color: var(--cream); }
 
     /* ── SHARED CARD ─────────────────────────────────────────── */
-    /* One format for all cards across the site */
     .card {
       border: 1.5px solid var(--soft);
       padding: 40px 36px;
@@ -179,7 +180,6 @@
     .card-body { font-size: 16px; line-height: 1.75; color: var(--gray); }
     .card-body-light { color: var(--civic); }
 
-    /* Date badge within a card */
     .card-badge {
       display: inline-block; background: var(--navy); color: var(--cream);
       font-family: 'Big Shoulders Display', sans-serif; font-weight: 700; font-size: 14px;
@@ -187,7 +187,6 @@
     }
     .card-badge-red { background: var(--red); }
 
-    /* Card hover accent bar */
     .card-link {
       text-decoration: none; display: block; position: relative;
       transition: border-color 0.15s;
@@ -199,11 +198,10 @@
     .card-link:hover { border-color: rgba(26,31,46,0.35); }
     .card-link:hover::before { background: var(--red); }
     .card-link-text {
-      font: 600 14px/1 'Instrument Sans', sans-serif;
+      font: 600 14px/1 'Inter', sans-serif;
       color: var(--ink); letter-spacing: 0.01em; margin-top: 24px;
     }
 
-    /* Championship card variant */
     .card-champ {
       background: var(--navy);
       border-color: var(--red);
@@ -219,24 +217,21 @@
       font-size: 18px; line-height: 1.75; color: var(--gray); margin-bottom: 20px;
     }
 
-    /* Map visual — navy container, SVG floats on top */
     .prog-map {
       background: var(--navy);
-      padding: 48px 40px 32px;
+      aspect-ratio: 1 / 1;
+      padding: 36px 28px;
       display: flex; flex-direction: column;
-      gap: 0; position: relative; overflow: hidden;
+      justify-content: center;
+      position: relative; overflow: hidden;
     }
     .prog-map-label {
-      font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
-      color: rgba(139,163,194,0.55); letter-spacing: 0.14em;
-      text-transform: uppercase; margin-bottom: 16px;
+      font-family: 'Pixelify Sans', sans-serif; font-size: 20px;
+      color: rgba(139,163,194,0.7); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 20px;
+      text-align: center;
     }
-    .prog-map-title {
-      font-family: 'Big Shoulders Display', sans-serif;
-      font-weight: 900; font-size: 13px; color: rgba(139,163,194,0.35);
-      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px;
-    }
-    .prog-map svg, .prog-map img {
+    .prog-map img {
       width: 100%; height: auto; display: block;
       margin: 0 auto;
     }
@@ -249,6 +244,7 @@
     }
     .pillar {
       border: 1.5px solid rgba(22,43,77,0.8);
+      border-left: 4px solid var(--red);
       padding: 48px 40px; display: flex; flex-direction: column;
     }
     .pillar-num {
@@ -256,7 +252,6 @@
       font-weight: 900; font-size: 72px; color: var(--mnav); line-height: 1;
       margin-bottom: 20px;
     }
-    .pillar-bar { width: 24px; height: 3px; background: var(--red); margin-bottom: 20px; }
     .pillar-title {
       font-family: 'Big Shoulders Display', sans-serif;
       font-weight: 700; font-size: 26px; color: var(--cream);
@@ -274,7 +269,7 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
     }
 
-    /* ── PROOF SECTION — horizontal cards, stacked ───────────── */
+    /* ── PROOF SECTION ───────────────────────────────────────── */
     .proof-h2 { font-size: clamp(44px, 5vw, 72px); margin-bottom: 48px; }
     .proof-list { display: flex; flex-direction: column; gap: 16px; }
     .proof-card {
@@ -298,23 +293,31 @@
     /* ── PARTNERS BAR ────────────────────────────────────────── */
     .partners-bar {
       background: var(--navy); background-image: var(--grid-navy);
-      padding: 36px 80px; display: flex; align-items: center;
-      gap: 36px; flex-wrap: wrap;
+      padding: 36px 80px;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
       border-top: 1px solid var(--mnav);
     }
     .partners-lbl {
       font-family: 'Pixelify Sans', sans-serif; font-size: 11px;
-      letter-spacing: 0.14em; color: rgba(139,163,194,0.4); white-space: nowrap;
+      letter-spacing: 0.14em; color: rgba(139,163,194,0.4);
       text-transform: uppercase;
+      display: flex; align-items: center; gap: 20px; width: 100%;
+    }
+    .partners-lbl::before, .partners-lbl::after {
+      content: ''; flex: 1; height: 1px; background: rgba(139,163,194,0.15);
+    }
+    .partners-names {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%;
     }
     .partner {
       font-family: 'Big Shoulders Display', sans-serif;
-      font-weight: 700; font-size: 18px; color: var(--civic); letter-spacing: 0.01em;
+      font-weight: 700; font-size: 15px; color: var(--civic); letter-spacing: 0.01em;
+      white-space: nowrap;
     }
-    .partner.featured { color: var(--cream); }
     .partner-sep { color: var(--mnav); font-size: 18px; }
 
-    /* ── GET INVOLVED — 2×2 wider cards ─────────────────────── */
+    /* ── GET INVOLVED ────────────────────────────────────────── */
     .inv-h2 { font-size: clamp(44px, 5vw, 72px); margin-bottom: 48px; }
     .inv-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
@@ -341,7 +344,7 @@
       line-height: 1.05; margin-bottom: 16px; letter-spacing: -0.01em;
     }
     .inv-desc { font-size: 16px; line-height: 1.75; color: var(--gray); margin-bottom: 28px; }
-    .inv-link { font: 600 14px/1 'Instrument Sans', sans-serif; color: var(--ink); letter-spacing: 0.01em; }
+    .inv-link { font: 600 14px/1 'Inter', sans-serif; color: var(--ink); letter-spacing: 0.01em; }
 
     /* ── FOOTER ──────────────────────────────────────────────── */
     footer {
@@ -353,12 +356,9 @@
       gap: 80px; padding-bottom: 56px;
       border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 36px;
     }
-    .footer-logo {
-      font-family: 'Big Shoulders Display', sans-serif;
-      font-weight: 900; font-size: 40px; color: var(--cream);
-      line-height: 0.9; margin-bottom: 16px; letter-spacing: -0.01em;
+    .footer-logo-img {
+      height: 60px; width: auto; display: block; margin-bottom: 20px;
     }
-    .footer-logo em { font-style: normal; color: var(--red); display: block; }
     .footer-tagline { font-size: 14px; line-height: 1.75; color: rgba(139,163,194,0.6); max-width: 260px; }
     .footer-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
     .footer-col h4 {
@@ -379,7 +379,9 @@
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">Level Up <em>Civics</em></a>
+  <a href="/" class="nav-logo">
+    <img src="assets/lockup-full-color.svg" alt="Level Up Civics" class="nav-logo-img">
+  </a>
   <ul class="nav-links">
     <li><a href="#program">The Program</a></li>
     <li><a href="#competition">Battle of the Counties</a></li>
@@ -396,10 +398,9 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1 class="hero-h1">Game-Based<br>Civic Education<br>for California<br>K–12</h1>
+    <h1 class="hero-h1">Game&#8209;Based Civic Education for California&nbsp;K–12</h1>
     <div class="hero-divider"></div>
-    <p class="hero-slogan"><strong>When students know their ideas matter,</strong></p>
-    <p class="hero-slogan-line2">they stop playing. They start advocating.</p>
+    <p class="hero-tagline">When students know their ideas matter, they stop playing.<br>They start advocating.</p>
     <p class="hero-sub">
       A statewide civics and esports initiative where K–12 students redesign their communities inside Minecraft Education — then pitch their solutions to the real leaders making decisions in their counties.
     </p>
@@ -421,15 +422,12 @@
 
 <!-- DATE TICKER -->
 <div class="ticker">
-  <span class="ticker-lbl">Key Dates</span>
+  <div class="ticker-lbl">Key Dates</div>
   <div class="ticker-items">
     <div class="ticker-event"><span class="ticker-date">SEPT 22</span><span class="ticker-name">World goes live</span></div>
-    <span class="ticker-dot">·</span>
     <div class="ticker-event"><span class="ticker-date">NOV 15</span><span class="ticker-name">Submissions close</span></div>
-    <span class="ticker-dot">·</span>
     <div class="ticker-event"><span class="ticker-date">DEC 4–5</span><span class="ticker-name">County Finals</span></div>
-    <span class="ticker-dot">·</span>
-    <div class="ticker-event"><span class="ticker-date">JAN 9, 2027</span><span class="ticker-name">Statewide Championship — Nixon Library</span></div>
+    <div class="ticker-event"><span class="ticker-date">JAN 9, 2027</span><span class="ticker-name">Statewide Championship</span></div>
   </div>
 </div>
 
@@ -460,20 +458,17 @@
   <div class="pillars-grid">
     <div class="pillar">
       <div class="pillar-num">01</div>
-      <div class="pillar-bar"></div>
-      <h3 class="pillar-title">STEM &<br>Digital Literacy</h3>
+      <h3 class="pillar-title">STEM & Digital Literacy</h3>
       <p class="pillar-body">Spatial reasoning, coding logic, and engineering design in a native digital environment. Students think like engineers while building real solutions.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">02</div>
-      <div class="pillar-bar"></div>
-      <h3 class="pillar-title">Civic<br>Engagement</h3>
+      <h3 class="pillar-title">Civic Engagement</h3>
       <p class="pillar-body">Systems thinking, community problem-solving, and public policy exploration through authentic local challenges and real decision-makers.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">03</div>
-      <div class="pillar-bar"></div>
-      <h3 class="pillar-title">Academic<br>Esports</h3>
+      <h3 class="pillar-title">Academic Esports</h3>
       <p class="pillar-body">Real-time collaboration, consensus-building, and high-stakes presentation skills — in a competitive format that students actually want to win.</p>
     </div>
   </div>
@@ -486,26 +481,26 @@
   <div class="rounds">
     <div class="card">
       <div class="card-eyebrow card-eyebrow-dark">Round 01</div>
-      <h3 class="card-title">Virtual<br>Qualifiers</h3>
+      <h3 class="card-title">Virtual Qualifiers</h3>
       <div class="card-badge">Opens Sept 22</div>
       <p class="card-body">Teams build a solution to a real community challenge and submit a video walkthrough. One team of four per school. Judges select top teams from each county to advance.</p>
     </div>
     <div class="card">
       <div class="card-eyebrow card-eyebrow-dark">Round 02</div>
-      <h3 class="card-title">County<br>Finals</h3>
+      <h3 class="card-title">County Finals</h3>
       <div class="card-badge">Dec 4–5</div>
       <p class="card-body">Top teams compete live at their county office of education. Timed build events, presentations to judges and local civic leaders. Winners are crowned County Champions.</p>
     </div>
     <div class="card card-champ">
       <div class="card-eyebrow card-eyebrow-light">Round 03</div>
-      <h3 class="card-title card-title-light">Statewide<br>Championship</h3>
+      <h3 class="card-title card-title-light">Statewide Championship</h3>
       <div class="card-badge card-badge-red">Jan 9, 2027</div>
       <p class="card-body card-body-light">County Champions face off at the Richard Nixon Presidential Library in Yorba Linda. Projects are presented to state educators, community leaders, and real decision-makers.</p>
     </div>
   </div>
 </section>
 
-<!-- PROOF POINTS — horizontal cards stacked -->
+<!-- PROOF POINTS -->
 <section class="sec sec-cream" style="padding-top: 0;">
   <h2 class="sec-h2 sec-h2-dark proof-h2">This Model Works</h2>
   <div class="proof-list">
@@ -535,45 +530,42 @@
 
 <!-- PARTNERS BAR -->
 <div class="partners-bar">
-  <span class="partners-lbl">In Partnership With</span>
-  <span class="partner featured">Orange County Dept. of Education</span>
-  <span class="partner-sep">·</span>
-  <span class="partner">San Bernardino COE</span>
-  <span class="partner-sep">·</span>
-  <span class="partner">Riverside COE</span>
-  <span class="partner-sep">·</span>
-  <span class="partner">Yolo COE</span>
-  <span class="partner-sep">·</span>
-  <span class="partner featured">Minecraft Education</span>
-  <span class="partner-sep">·</span>
-  <span class="partner">Lifeboat Studios</span>
+  <div class="partners-lbl">In Partnership With</div>
+  <div class="partners-names">
+    <span class="partner">Orange County Dept. of Education</span>
+    <span class="partner">San Bernardino COE</span>
+    <span class="partner">Riverside COE</span>
+    <span class="partner">Yolo COE</span>
+    <span class="partner">Minecraft Education</span>
+    <span class="partner">Lifeboat Studios</span>
+  </div>
 </div>
 
-<!-- GET INVOLVED — 2×2 grid -->
+<!-- GET INVOLVED -->
 <section class="sec sec-cream">
   <h2 class="sec-h2 sec-h2-dark inv-h2">There's a Role<br>for Everyone</h2>
   <div class="inv-grid">
     <a href="#" class="inv-card">
       <div class="inv-role">Students</div>
-      <h3 class="inv-title">Compete &<br>Advocate</h3>
+      <h3 class="inv-title">Compete & Advocate</h3>
       <p class="inv-desc">Build a solution to a real challenge in your county. Form a team of four and represent your school in the Battle of the Counties.</p>
       <span class="inv-link">Enter the competition →</span>
     </a>
     <a href="#" class="inv-card">
       <div class="inv-role">Educators</div>
-      <h3 class="inv-title">Pilot<br>a Class</h3>
+      <h3 class="inv-title">Pilot a Class</h3>
       <p class="inv-desc">No game experience required. The worlds come built, training is provided. You facilitate — your students do the advocating.</p>
       <span class="inv-link">Get your school involved →</span>
     </a>
     <a href="#" class="inv-card">
       <div class="inv-role">Sponsors</div>
-      <h3 class="inv-title">Back<br>the Program</h3>
+      <h3 class="inv-title">Back the Program</h3>
       <p class="inv-desc">Sponsor a county, a region, or the championship. Visible civic investment with measurable outcomes in the communities you operate in.</p>
       <span class="inv-link">Explore sponsorship →</span>
     </a>
     <a href="#" class="inv-card">
       <div class="inv-role">Counties &amp; Districts</div>
-      <h3 class="inv-title">Join<br>the Initiative</h3>
+      <h3 class="inv-title">Join the Initiative</h3>
       <p class="inv-desc">Bring Schools Reinventing Counties to your students. We handle the world build. Your schools bring the ideas.</p>
       <span class="inv-link">Talk to us →</span>
     </a>
@@ -584,7 +576,7 @@
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-logo">Level Up<em>Civics</em></div>
+      <img src="assets/lockup-white.svg" alt="Level Up Civics" class="footer-logo-img">
       <p class="footer-tagline">A California nonprofit reimagining civic education for the next generation through game-based community design.</p>
     </div>
     <div class="footer-nav-grid">

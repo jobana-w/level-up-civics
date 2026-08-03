@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System — Level Up Civics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── DESIGN TOKENS ─────────────────────────────────────────── */
+    :root {
+      /* Primary — Navy */
+      --primary:                #0C1A33;
+      --primary-variant:        #162B4D;
+      --primary-dim:            #1E3A6E;
+      --primary-container:      #E8ECF4;
+      --on-primary:             #F5F0E6;
+      --on-primary-container:   #0C1A33;
+
+      /* Accent — Red */
+      --accent:                 #C0292B;
+      --accent-dim:             #A32225;
+      --accent-container:       #FAEAEA;
+      --on-accent:              #FFFFFF;
+      --on-accent-container:    #7A1A1B;
+
+      /* Secondary — Civic Blue */
+      --secondary:              #8BA3C2;
+      --secondary-dim:          #6080A8;
+      --secondary-container:    #D4E0EE;
+      --on-secondary:           #0C1A33;
+      --on-secondary-container: #1A3556;
+
+      /* Surface */
+      --surface-bright:         #FFFFFF;
+      --surface:                #F5F0E6;
+      --surface-dim:            #EDE7D9;
+      --surface-container:      #E5DDD0;
+      --surface-highest:        #DDD5C2;
+
+      /* Neutral */
+      --on-surface:             #1A1F2E;
+      --on-surface-variant:     #9B9188;
+      --outline:                #DDD5C2;
+      --outline-medium:         #BFB6A8;
+      --outline-strong:         #9B9188;
+
+      /* Semantic */
+      --success:                #276744;
+      --success-container:      #D0EDD9;
+      --on-success:             #FFFFFF;
+      --warning:                #9C5000;
+      --warning-container:      #FFE5C4;
+      --on-warning:             #FFFFFF;
+      --error:                  #C0292B;
+      --error-container:        #FAEAEA;
+      --on-error:               #FFFFFF;
+
+      /* Elevation */
+      --elev-0: none;
+      --elev-1: 0 1px 3px rgba(12,26,51,.07), 0 1px 2px rgba(12,26,51,.05);
+      --elev-2: 0 3px 8px rgba(12,26,51,.10), 0 1px 3px rgba(12,26,51,.06);
+      --elev-3: 0 6px 16px rgba(12,26,51,.13), 0 2px 6px rgba(12,26,51,.08);
+      --elev-4: 0 12px 32px rgba(12,26,51,.18), 0 4px 12px rgba(12,26,51,.10);
+
+      /* Spacing (4px base) */
+      --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+      --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+      --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-25: 100px;
+
+      /* Type */
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
+      --font-flavor:  'Pixelify Sans', monospace;
+
+      /* Page chrome */
+      --sidebar-bg: var(--primary);
+      --sidebar-fg: var(--on-primary);
+      --page-bg:    var(--surface);
+    }
+
+    /* Dark theme */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary:                #8BA3C2;
+        --primary-variant:        #4A6A8A;
+        --primary-dim:            #3A5272;
+        --primary-container:      #162B4D;
+        --on-primary:             #0C1A33;
+        --on-primary-container:   #C5D3E4;
+
+        --accent:                 #E05456;
+        --accent-dim:             #C0292B;
+        --accent-container:       #4A1415;
+        --on-accent:              #FFFFFF;
+        --on-accent-container:    #FBBCBC;
+
+        --secondary:              #C5D3E4;
+        --secondary-dim:          #8BA3C2;
+        --secondary-container:    #1A3556;
+        --on-secondary:           #0C1A33;
+        --on-secondary-container: #C5D3E4;
+
+        --surface-bright:         #1E2840;
+        --surface:                #131D30;
+        --surface-dim:            #0E1624;
+        --surface-container:      #1A2845;
+        --surface-highest:        #243460;
+
+        --on-surface:             #DDD5C2;
+        --on-surface-variant:     #8BA3C2;
+        --outline:                #243460;
+        --outline-medium:         #3A4D70;
+        --outline-strong:         #6080A8;
+
+        --success:                #4CAF80;
+        --success-container:      #0D3A22;
+        --warning:                #F0A040;
+        --warning-container:      #3A2000;
+        --error:                  #E05456;
+        --error-container:        #4A1415;
+
+        --elev-1: 0 1px 3px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.18);
+        --elev-2: 0 3px 8px rgba(0,0,0,.30), 0 1px 3px rgba(0,0,0,.20);
+        --elev-3: 0 6px 16px rgba(0,0,0,.38), 0 2px 6px rgba(0,0,0,.24);
+        --elev-4: 0 12px 32px rgba(0,0,0,.48), 0 4px 12px rgba(0,0,0,.28);
+
+        --sidebar-bg: #0A1628;
+        --sidebar-fg: #DDD5C2;
+        --page-bg:    var(--surface);
+      }
+    }
+
+    :root[data-theme="light"] {
+      --primary: #0C1A33; --primary-variant: #162B4D; --primary-dim: #1E3A6E;
+      --primary-container: #E8ECF4; --on-primary: #F5F0E6; --on-primary-container: #0C1A33;
+      --accent: #C0292B; --accent-dim: #A32225; --accent-container: #FAEAEA;
+      --on-accent: #FFFFFF; --on-accent-container: #7A1A1B;
+      --secondary: #8BA3C2; --secondary-dim: #6080A8; --secondary-container: #D4E0EE;
+      --on-secondary: #0C1A33; --on-secondary-container: #1A3556;
+      --surface-bright: #FFFFFF; --surface: #F5F0E6; --surface-dim: #EDE7D9;
+      --surface-container: #E5DDD0; --surface-highest: #DDD5C2;
+      --on-surface: #1A1F2E; --on-surface-variant: #9B9188;
+      --outline: #DDD5C2; --outline-medium: #BFB6A8; --outline-strong: #9B9188;
+      --success: #276744; --success-container: #D0EDD9; --on-success: #FFFFFF;
+      --warning: #9C5000; --warning-container: #FFE5C4; --on-warning: #FFFFFF;
+      --error: #C0292B; --error-container: #FAEAEA; --on-error: #FFFFFF;
+      --elev-1: 0 1px 3px rgba(12,26,51,.07), 0 1px 2px rgba(12,26,51,.05);
+      --elev-2: 0 3px 8px rgba(12,26,51,.10), 0 1px 3px rgba(12,26,51,.06);
+      --elev-3: 0 6px 16px rgba(12,26,51,.13), 0 2px 6px rgba(12,26,51,.08);
+      --elev-4: 0 12px 32px rgba(12,26,51,.18), 0 4px 12px rgba(12,26,51,.10);
+      --sidebar-bg: #0C1A33; --sidebar-fg: #F5F0E6; --page-bg: #F5F0E6;
+    }
+
+    :root[data-theme="dark"] {
+      --primary: #8BA3C2; --primary-variant: #4A6A8A; --primary-dim: #3A5272;
+      --primary-container: #162B4D; --on-primary: #0C1A33; --on-primary-container: #C5D3E4;
+      --accent: #E05456; --accent-dim: #C0292B; --accent-container: #4A1415;
+      --on-accent: #FFFFFF; --on-accent-container: #FBBCBC;
+      --secondary: #C5D3E4; --secondary-dim: #8BA3C2; --secondary-container: #1A3556;
+      --on-secondary: #0C1A33; --on-secondary-container: #C5D3E4;
+      --surface-bright: #1E2840; --surface: #131D30; --surface-dim: #0E1624;
+      --surface-container: #1A2845; --surface-highest: #243460;
+      --on-surface: #DDD5C2; --on-surface-variant: #8BA3C2;
+      --outline: #243460; --outline-medium: #3A4D70; --outline-strong: #6080A8;
+      --success: #4CAF80; --success-container: #0D3A22; --on-success: #FFFFFF;
+      --warning: #F0A040; --warning-container: #3A2000; --on-warning: #FFFFFF;
+      --error: #E05456; --error-container: #4A1415; --on-error: #FFFFFF;
+      --elev-1: 0 1px 3px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.18);
+      --elev-2: 0 3px 8px rgba(0,0,0,.30), 0 1px 3px rgba(0,0,0,.20);
+      --elev-3: 0 6px 16px rgba(0,0,0,.38), 0 2px 6px rgba(0,0,0,.24);
+      --elev-4: 0 12px 32px rgba(0,0,0,.48), 0 4px 12px rgba(0,0,0,.28);
+      --sidebar-bg: #0A1628; --sidebar-fg: #DDD5C2; --page-bg: #131D30;
+    }
+
+    /* ─── PAGE LAYOUT ────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--page-bg);
+      color: var(--on-surface);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ─── SIDEBAR ────────────────────────────────────────────────── */
+    .sidebar {
+      width: 240px;
+      min-width: 240px;
+      background: var(--sidebar-bg);
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      z-index: 10;
+    }
+    .sidebar-header {
+      padding: 28px 24px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .sidebar-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--sidebar-fg);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .sidebar-brand em { font-style: normal; color: var(--accent); }
+    .sidebar-version {
+      font-family: var(--font-flavor);
+      font-size: 10px;
+      color: rgba(139,163,194,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .sidebar-nav { padding: 16px 0; flex: 1; }
+    .nav-group { margin-bottom: 4px; }
+    .nav-group-label {
+      font-family: var(--font-flavor);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(139,163,194,0.35);
+      padding: 12px 24px 6px;
+      display: block;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 8px 24px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(221,213,194,0.6);
+      text-decoration: none;
+      transition: color 0.15s, background 0.15s;
+      position: relative;
+    }
+    .nav-link:hover { color: var(--sidebar-fg); background: rgba(255,255,255,0.04); }
+    .nav-link.active {
+      color: var(--sidebar-fg);
+      background: rgba(255,255,255,0.07);
+    }
+    .nav-link.active::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 4px; bottom: 4px;
+      width: 2px;
+      background: var(--accent);
+    }
+    .sidebar-footer {
+      padding: 16px 24px 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(221,213,194,0.7);
+      padding: 8px 14px;
+      font: 500 12px/1 var(--font-body);
+      cursor: pointer;
+      width: 100%;
+      letter-spacing: 0.01em;
+      transition: background 0.15s;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+    .theme-icon { font-size: 14px; }
+
+    /* ─── MAIN CONTENT ───────────────────────────────────────────── */
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      padding: 0;
+    }
+    .page-header {
+      padding: 56px 64px 48px;
+      border-bottom: 1px solid var(--outline);
+    }
+    .page-eyebrow {
+      font-family: var(--font-flavor);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .page-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 48px;
+      color: var(--on-surface);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .page-desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--on-surface-variant);
+      max-width: 540px;
+    }
+
+    /* Section layout */
+    .ds-section {
+      padding: 56px 64px;
+      border-bottom: 1px solid var(--outline);
+    }
+    .ds-section:last-child { border-bottom: none; }
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 32px;
+      color: var(--on-surface);
+      letter-spacing: -0.025em;
+    }
+    .section-anchor {
+      font-family: var(--font-flavor);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      opacity: 0.5;
+    }
+    .section-desc {
+      font-size: 14px;
+      color: var(--on-surface-variant);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .subsection-title {
+      font-family: var(--font-flavor);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--outline);
+    }
+    .subsection { margin-bottom: 40px; }
+
+    /* ─── COLOR SWATCHES ─────────────────────────────────────────── */
+    .swatch-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      width: 130px;
+      overflow: hidden;
+      border: 1px solid var(--outline);
+    }
+    .swatch-chip {
+      height: 72px;
+      background: var(--chip-bg);
+      display: flex;
+      align-items: flex-end;
+      padding: 8px 10px;
+    }
+    .swatch-on-sample {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--chip-fg);
+      font-family: var(--font-body);
+      opacity: 0.7;
+    }
+    .swatch-meta {
+      background: var(--surface-dim);
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .swatch-token {
+      font-family: var(--font-flavor);
+      font-size: 9px;
+      color: var(--on-surface-variant);
+      letter-spacing: 0.04em;
+    }
+    .swatch-hex {
+      font-family: var(--font-flavor);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--on-surface);
+    }
+    .swatch-name {
+      font-size: 10px;
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    /* Color role table */
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .role-card {
+      padding: 20px;
+      background: var(--surface-container);
+      border: 1px solid var(--outline);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .role-card-header { display: flex; gap: 8px; align-items: center; }
+    .role-dot { width: 20px; height: 20px; flex-shrink: 0; }
+    .role-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--on-surface);
+    }
+    .role-desc { font-size: 12px; color: var(--on-surface-variant); line-height: 1.5; }
+    .role-tokens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .token-chip {
+      font-family: var(--font-flavor);
+      font-size: 9px;
+      letter-spacing: 0.04em;
+      color: var(--on-surface-variant);
+      background: var(--surface-dim);
+      border: 1px solid var(--outline);
+      padding: 3px 7px;
+    }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
+    .type-scale { display: flex; flex-direction: column; gap: 0; }
+    .type-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--outline);
+    }
+    .type-row:last-child { border-bottom: none; }
+    .type-meta { display: flex; flex-direction: column; gap: 4px; }
+    .type-role {
+      font-family: var(--font-flavor);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+    .type-specs {
+      font-size: 11px;
+      color: var(--on-surface-variant);
+      line-height: 1.6;
+    }
+    .type-specimen { color: var(--on-surface); }
+
+    .specimen-display { font-size: 64px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; }
+    .specimen-h1 { font-size: 48px; font-weight: 800; line-height: 1.05; letter-spacing: -0.025em; }
+    .specimen-h2 { font-size: 36px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+    .specimen-h3 { font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+    .specimen-h4 { font-size: 20px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+    .specimen-h5 { font-size: 16px; font-weight: 600; line-height: 1.3; }
+    .specimen-body-lg { font-size: 18px; font-weight: 400; line-height: 1.75; }
+    .specimen-body { font-size: 16px; font-weight: 400; line-height: 1.75; }
+    .specimen-body-sm { font-size: 14px; font-weight: 400; line-height: 1.7; }
+    .specimen-label { font-size: 13px; font-weight: 600; line-height: 1.4; letter-spacing: 0.01em; }
+    .specimen-caption { font-size: 12px; font-weight: 400; line-height: 1.5; color: var(--on-surface-variant); }
+    .specimen-overline {
+      font-family: var(--font-flavor);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .specimen-flavor {
+      font-family: var(--font-flavor);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      color: var(--on-surface-variant);
+    }
+
+    /* ─── SPACING ────────────────────────────────────────────────── */
+    .spacing-list { display: flex; flex-direction: column; gap: 12px; }
+    .spacing-row {
+      display: grid;
+      grid-template-columns: 56px 80px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .spacing-token {
+      font-family: var(--font-flavor);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--on-surface-variant);
+    }
+    .spacing-val {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--on-surface);
+      font-variant-numeric: tabular-nums;
+    }
+    .spacing-bar-track { height: 8px; background: var(--outline); flex: 1; }
+    .spacing-bar { height: 100%; background: var(--primary); }
+
+    /* ─── ELEVATION ──────────────────────────────────────────────── */
+    .elevation-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-end;
+    }
+    .elev-card {
+      background: var(--surface-bright);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 160px;
+    }
+    .elev-level {
+      font-family: var(--font-flavor);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+    .elev-name { font-size: 14px; font-weight: 600; color: var(--on-surface); }
+    .elev-token { font-family: var(--font-flavor); font-size: 9px; color: var(--on-surface-variant); letter-spacing: 0.04em; }
+
+    /* ─── BUTTONS ────────────────────────────────────────────────── */
+    .btn-grid { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+    .btn-label-row {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+      margin-bottom: 32px;
+    }
+
+    /* Base button reset */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s, background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .btn:disabled { opacity: 0.38; cursor: not-allowed; }
+
+    /* Sizes */
+    .btn-sm { font-size: 12px; padding: 7px 14px; }
+    .btn-md { font-size: 13px; padding: 10px 20px; }
+    .btn-lg { font-size: 14px; padding: 13px 26px; }
+
+    /* Variants */
+    .btn-filled-primary { background: var(--primary); color: var(--on-primary); }
+    .btn-filled-primary:hover:not(:disabled) { background: var(--primary-variant); }
+
+    .btn-filled-accent { background: var(--accent); color: var(--on-accent); }
+    .btn-filled-accent:hover:not(:disabled) { background: var(--accent-dim); }
+
+    .btn-filled-secondary { background: var(--secondary-container); color: var(--on-secondary-container); }
+    .btn-filled-secondary:hover:not(:disabled) { opacity: 0.85; }
+
+    .btn-outlined { background: transparent; color: var(--on-surface); border: 1.5px solid var(--outline-strong); }
+    .btn-outlined:hover:not(:disabled) { border-color: var(--on-surface); }
+
+    .btn-ghost { background: transparent; color: var(--on-surface); border: none; }
+    .btn-ghost:hover:not(:disabled) { background: var(--surface-container); }
+
+    .btn-danger { background: var(--error-container); color: var(--on-accent-container); border: 1.5px solid rgba(192,41,43,0.3); }
+    .btn-danger:hover:not(:disabled) { background: var(--accent-container); border-color: var(--accent); }
+
+    /* ─── CARDS ──────────────────────────────────────────────────── */
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    /* Base card */
+    .ds-card {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+    }
+    .ds-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--outline);
+      transition: background 0.2s;
+    }
+    .ds-card:hover::before { background: var(--accent); }
+
+    .card-outlined {
+      border: 1.5px solid var(--outline);
+      background: var(--surface-bright);
+    }
+    .card-elevated {
+      border: none;
+      background: var(--surface-bright);
+      box-shadow: var(--elev-2);
+    }
+    .card-filled-primary {
+      border: 1.5px solid rgba(255,255,255,0.08);
+      background: var(--primary);
+    }
+    .card-filled-accent {
+      border: 1.5px solid var(--accent);
+      background: var(--primary);
+    }
+    .card-filled-container {
+      border: 1.5px solid var(--outline);
+      background: var(--surface-container);
+    }
+
+    .card-eyebrow-el {
+      font-family: var(--font-flavor);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .card-eyebrow-dark { color: var(--on-surface-variant); }
+    .card-eyebrow-light { color: rgba(139,163,194,0.6); }
+    .card-title-el {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+    .card-title-dark { color: var(--on-surface); }
+    .card-title-light { color: var(--on-primary); }
+    .card-body-el { font-size: 14px; line-height: 1.7; }
+    .card-body-dark { color: var(--on-surface-variant); }
+    .card-body-light { color: var(--secondary); }
+
+    .card-badge-el {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 10px;
+      letter-spacing: 0.02em;
+      align-self: flex-start;
+    }
+    .card-badge-dark { background: var(--primary); color: var(--on-primary); }
+    .card-badge-light { background: var(--accent); color: var(--on-accent); }
+
+    /* ─── LABELS & TAGS ──────────────────────────────────────────── */
+    .label-grid { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+
+    .lbl { display: inline-flex; align-items: center; gap: 5px; }
+
+    /* Eyebrow */
+    .lbl-eyebrow {
+      font-family: var(--font-flavor);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+    .lbl-eyebrow-accent { color: var(--accent); }
+
+    /* Badge — filled */
+    .lbl-badge {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+      padding: 4px 10px;
+    }
+    .lbl-badge-primary { background: var(--primary); color: var(--on-primary); }
+    .lbl-badge-accent  { background: var(--accent);  color: var(--on-accent); }
+    .lbl-badge-secondary { background: var(--secondary-container); color: var(--on-secondary-container); }
+
+    /* Tag — outlined */
+    .lbl-tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border: 1px solid var(--outline);
+      color: var(--on-surface);
+      letter-spacing: 0.01em;
+    }
+    .lbl-tag:hover { border-color: var(--on-surface); cursor: pointer; }
+
+    /* Status chips */
+    .lbl-status {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      letter-spacing: 0.01em;
+    }
+    .lbl-success { background: var(--success-container); color: var(--success); }
+    .lbl-warning { background: var(--warning-container); color: var(--warning); }
+    .lbl-error   { background: var(--error-container);   color: var(--error); }
+    .lbl-neutral { background: var(--surface-container); color: var(--on-surface-variant); border: 1px solid var(--outline); }
+
+    /* ─── INPUTS ─────────────────────────────────────────────────── */
+    .input-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .input-group { display: flex; flex-direction: column; gap: 6px; }
+    .input-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--on-surface);
+      letter-spacing: 0.01em;
+    }
+    .ds-input {
+      background: var(--surface-bright);
+      border: 1.5px solid var(--outline);
+      color: var(--on-surface);
+      font: 400 14px/1 var(--font-body);
+      padding: 11px 14px;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.15s;
+      appearance: none;
+    }
+    .ds-input::placeholder { color: var(--on-surface-variant); }
+    .ds-input:focus { border-color: var(--primary); }
+    .ds-input.input-error { border-color: var(--error); }
+    .ds-input.input-success { border-color: var(--success); }
+    .ds-input.input-disabled { opacity: 0.38; cursor: not-allowed; }
+    .input-hint { font-size: 12px; color: var(--on-surface-variant); }
+    .input-hint.hint-error { color: var(--error); }
+    .input-hint.hint-success { color: var(--success); }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-brand">Level Up <em>Civics</em></div>
+    <span class="sidebar-version">Design System v1.0</span>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-group">
+      <span class="nav-group-label">Foundation</span>
+      <a href="#color" class="nav-link">Color</a>
+      <a href="#typography" class="nav-link">Typography</a>
+      <a href="#spacing" class="nav-link">Spacing</a>
+      <a href="#elevation" class="nav-link">Elevation</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Components</span>
+      <a href="#buttons" class="nav-link">Buttons</a>
+      <a href="#cards" class="nav-link">Cards</a>
+      <a href="#labels" class="nav-link">Labels & Tags</a>
+      <a href="#inputs" class="nav-link">Inputs</a>
+    </div>
+  </div>
+  <div class="sidebar-footer">
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span class="theme-icon">◐</span>
+      <span class="theme-label">Toggle Theme</span>
+    </button>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+  <header class="page-header">
+    <div class="page-eyebrow">Level Up Civics Foundation</div>
+    <h1 class="page-title">Design System</h1>
+    <p class="page-desc">The complete visual language for Level Up Civics. All tokens, components, and usage guidance in one place. Changes here propagate across the site.</p>
+  </header>
+
+  <!-- ── COLOR ─────────────────────────────────────────────────── -->
+  <section id="color" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Color</h2>
+      <span class="section-anchor">#color</span>
+    </div>
+    <p class="section-desc">Four semantic families plus semantic states. Every color in the UI maps to a token — never a raw hex.</p>
+
+    <!-- Primary -->
+    <div class="subsection">
+      <div class="subsection-title">Primary — Navy</div>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#E8ECF4;--chip-fg:#0C1A33"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--primary-container</span><span class="swatch-hex">#E8ECF4</span><span class="swatch-name">Container</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#1E3A6E;--chip-fg:#F5F0E6"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--primary-dim</span><span class="swatch-hex">#1E3A6E</span><span class="swatch-name">Dim</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#162B4D;--chip-fg:#F5F0E6"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--primary-variant</span><span class="swatch-hex">#162B4D</span><span class="swatch-name">Variant</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#0C1A33;--chip-fg:#F5F0E6"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--primary</span><span class="swatch-hex">#0C1A33</span><span class="swatch-name">Primary</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#F5F0E6;--chip-fg:#0C1A33"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--on-primary</span><span class="swatch-hex">#F5F0E6</span><span class="swatch-name">On Primary</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accent -->
+    <div class="subsection">
+      <div class="subsection-title">Accent — Red</div>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#FAEAEA;--chip-fg:#7A1A1B"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--accent-container</span><span class="swatch-hex">#FAEAEA</span><span class="swatch-name">Container</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#A32225;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--accent-dim</span><span class="swatch-hex">#A32225</span><span class="swatch-name">Dim</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#C0292B;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--accent</span><span class="swatch-hex">#C0292B</span><span class="swatch-name">Accent</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#FFFFFF;--chip-fg:#C0292B"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--on-accent</span><span class="swatch-hex">#FFFFFF</span><span class="swatch-name">On Accent</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary -->
+    <div class="subsection">
+      <div class="subsection-title">Secondary — Civic Blue</div>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#D4E0EE;--chip-fg:#1A3556"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--secondary-container</span><span class="swatch-hex">#D4E0EE</span><span class="swatch-name">Container</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#6080A8;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--secondary-dim</span><span class="swatch-hex">#6080A8</span><span class="swatch-name">Dim</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#8BA3C2;--chip-fg:#0C1A33"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--secondary</span><span class="swatch-hex">#8BA3C2</span><span class="swatch-name">Secondary</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Surface -->
+    <div class="subsection">
+      <div class="subsection-title">Surface</div>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#FFFFFF;--chip-fg:#1A1F2E; border-bottom:1px solid #DDD5C2"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--surface-bright</span><span class="swatch-hex">#FFFFFF</span><span class="swatch-name">Bright</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#F5F0E6;--chip-fg:#1A1F2E"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--surface</span><span class="swatch-hex">#F5F0E6</span><span class="swatch-name">Surface</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#EDE7D9;--chip-fg:#1A1F2E"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--surface-dim</span><span class="swatch-hex">#EDE7D9</span><span class="swatch-name">Dim</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#E5DDD0;--chip-fg:#1A1F2E"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--surface-container</span><span class="swatch-hex">#E5DDD0</span><span class="swatch-name">Container</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#DDD5C2;--chip-fg:#1A1F2E"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--surface-highest</span><span class="swatch-hex">#DDD5C2</span><span class="swatch-name">Highest</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neutral + Semantic -->
+    <div class="subsection">
+      <div class="subsection-title">Neutral & Outline</div>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#1A1F2E;--chip-fg:#F5F0E6"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--on-surface</span><span class="swatch-hex">#1A1F2E</span><span class="swatch-name">On Surface</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#9B9188;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--on-surface-variant</span><span class="swatch-hex">#9B9188</span><span class="swatch-name">Variant</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#DDD5C2;--chip-fg:#1A1F2E"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--outline</span><span class="swatch-hex">#DDD5C2</span><span class="swatch-name">Outline</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#BFB6A8;--chip-fg:#1A1F2E"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--outline-medium</span><span class="swatch-hex">#BFB6A8</span><span class="swatch-name">Medium</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Semantic States</div>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#D0EDD9;--chip-fg:#276744"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--success-container</span><span class="swatch-hex">#D0EDD9</span><span class="swatch-name">Success</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#276744;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--success</span><span class="swatch-hex">#276744</span><span class="swatch-name">Success</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#FFE5C4;--chip-fg:#9C5000"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--warning-container</span><span class="swatch-hex">#FFE5C4</span><span class="swatch-name">Warning</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#9C5000;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--warning</span><span class="swatch-hex">#9C5000</span><span class="swatch-name">Warning</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#FAEAEA;--chip-fg:#7A1A1B"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--error-container</span><span class="swatch-hex">#FAEAEA</span><span class="swatch-name">Error</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="--chip-bg:#C0292B;--chip-fg:#FFFFFF"><span class="swatch-on-sample">Aa</span></div>
+          <div class="swatch-meta"><span class="swatch-token">--error</span><span class="swatch-hex">#C0292B</span><span class="swatch-name">Error</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TYPOGRAPHY ─────────────────────────────────────────────── -->
+  <section id="typography" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Typography</h2>
+      <span class="section-anchor">#typography</span>
+    </div>
+    <p class="section-desc">Plus Jakarta Sans for all display and body text. Pixelify Sans reserved for eyebrows, overlines, data labels, and flavor text only.</p>
+
+    <div class="subsection">
+      <div class="subsection-title">Type Scale — Plus Jakarta Sans</div>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Display</span>
+            <span class="type-specs">64px / 800<br>−0.03em tracking</span>
+          </div>
+          <span class="type-specimen specimen-display">County<br>Championship</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Heading 1</span>
+            <span class="type-specs">48px / 800<br>−0.025em tracking</span>
+          </div>
+          <span class="type-specimen specimen-h1">Schools Reinventing Counties</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Heading 2</span>
+            <span class="type-specs">36px / 700<br>−0.02em tracking</span>
+          </div>
+          <span class="type-specimen specimen-h2">Battle of the Counties</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Heading 3</span>
+            <span class="type-specs">26px / 700<br>−0.015em tracking</span>
+          </div>
+          <span class="type-specimen specimen-h3">Virtual Qualifiers</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Heading 4</span>
+            <span class="type-specs">20px / 600<br>−0.01em tracking</span>
+          </div>
+          <span class="type-specimen specimen-h4">Statewide Championship</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Heading 5</span>
+            <span class="type-specs">16px / 600<br>0em tracking</span>
+          </div>
+          <span class="type-specimen specimen-h5">Nixon Presidential Library, Yorba Linda</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Body Large</span>
+            <span class="type-specs">18px / 400<br>1.75 leading</span>
+          </div>
+          <span class="type-specimen specimen-body-lg">Students redesign real community challenges inside Minecraft Education — then pitch their solutions to the leaders making decisions in their counties.</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Body</span>
+            <span class="type-specs">16px / 400<br>1.75 leading</span>
+          </div>
+          <span class="type-specimen specimen-body">Top teams compete live at their county office of education. Timed build events, presentations to judges and local civic leaders. Winners are crowned County Champions.</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Body Small</span>
+            <span class="type-specs">14px / 400<br>1.7 leading</span>
+          </div>
+          <span class="type-specimen specimen-body-sm">County Champions face off at the Richard Nixon Presidential Library. Projects are presented to state educators and real decision-makers.</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Label</span>
+            <span class="type-specs">13px / 600<br>+0.01em tracking</span>
+          </div>
+          <span class="type-specimen specimen-label">Enter the competition → &nbsp;&nbsp; Explore sponsorship → &nbsp;&nbsp; Talk to us →</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Caption</span>
+            <span class="type-specs">12px / 400<br>1.5 leading</span>
+          </div>
+          <span class="type-specimen specimen-caption">© 2026 Level Up Civics Foundation · 501(c)(3) determination pending</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Flavor Text — Pixelify Sans</div>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Overline</span>
+            <span class="type-specs">12px / 400<br>+0.14em · uppercase</span>
+          </div>
+          <span class="type-specimen specimen-overline">Round 01 &nbsp;·&nbsp; County Finals &nbsp;·&nbsp; Active Counties</span>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <span class="type-role">Flavor</span>
+            <span class="type-specs">14px / 400<br>+0.08em tracking</span>
+          </div>
+          <span class="type-specimen specimen-flavor">SEPT 22 &nbsp;&nbsp; NOV 15 &nbsp;&nbsp; DEC 4–5 &nbsp;&nbsp; JAN 9, 2027</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPACING ────────────────────────────────────────────────── -->
+  <section id="spacing" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Spacing</h2>
+      <span class="section-anchor">#spacing</span>
+    </div>
+    <p class="section-desc">4px base unit. All spacing uses multiples of 4. Named tokens map to a numeric scale (sp-1 = 4px, sp-2 = 8px…).</p>
+
+    <div class="spacing-list">
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-1</span>
+        <span class="spacing-val">4px&ensp;/&ensp;0.25rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:4px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-2</span>
+        <span class="spacing-val">8px&ensp;/&ensp;0.5rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:8px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-3</span>
+        <span class="spacing-val">12px&ensp;/&ensp;0.75rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:12px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-4</span>
+        <span class="spacing-val">16px&ensp;/&ensp;1rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:16px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-6</span>
+        <span class="spacing-val">24px&ensp;/&ensp;1.5rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:24px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-8</span>
+        <span class="spacing-val">32px&ensp;/&ensp;2rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:32px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-10</span>
+        <span class="spacing-val">40px&ensp;/&ensp;2.5rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:40px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-12</span>
+        <span class="spacing-val">48px&ensp;/&ensp;3rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:48px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-16</span>
+        <span class="spacing-val">64px&ensp;/&ensp;4rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:64px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-20</span>
+        <span class="spacing-val">80px&ensp;/&ensp;5rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:80px"></div></div>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--sp-25</span>
+        <span class="spacing-val">100px&ensp;/&ensp;6.25rem</span>
+        <div class="spacing-bar-track"><div class="spacing-bar" style="width:100px"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ELEVATION ──────────────────────────────────────────────── -->
+  <section id="elevation" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Elevation</h2>
+      <span class="section-anchor">#elevation</span>
+    </div>
+    <p class="section-desc">Five levels of depth. Flat (0) is the default for all bordered cards. Elevation is additive — use sparingly for focus, not decoration.</p>
+
+    <div class="elevation-row">
+      <div class="elev-card" style="box-shadow:var(--elev-0); border:1.5px solid var(--outline)">
+        <span class="elev-level">Level 0</span>
+        <span class="elev-name">Flat</span>
+        <span class="elev-token">--elev-0</span>
+      </div>
+      <div class="elev-card" style="box-shadow:var(--elev-1)">
+        <span class="elev-level">Level 1</span>
+        <span class="elev-name">Resting</span>
+        <span class="elev-token">--elev-1</span>
+      </div>
+      <div class="elev-card" style="box-shadow:var(--elev-2)">
+        <span class="elev-level">Level 2</span>
+        <span class="elev-name">Raised</span>
+        <span class="elev-token">--elev-2</span>
+      </div>
+      <div class="elev-card" style="box-shadow:var(--elev-3)">
+        <span class="elev-level">Level 3</span>
+        <span class="elev-name">Floating</span>
+        <span class="elev-token">--elev-3</span>
+      </div>
+      <div class="elev-card" style="box-shadow:var(--elev-4)">
+        <span class="elev-level">Level 4</span>
+        <span class="elev-name">Overlay</span>
+        <span class="elev-token">--elev-4</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUTTONS ────────────────────────────────────────────────── */
+  <section id="buttons" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Buttons</h2>
+      <span class="section-anchor">#buttons</span>
+    </div>
+    <p class="section-desc">Six variants across three sizes. Filled Primary is the primary CTA. Accent (red) for high-urgency actions. Outlined and Ghost for secondary actions.</p>
+
+    <div class="subsection">
+      <div class="subsection-title">Large — 14px / 13px 26px padding</div>
+      <div class="btn-grid">
+        <button class="btn btn-filled-primary btn-lg">Explore the Competition</button>
+        <button class="btn btn-filled-accent btn-lg">Submit Project</button>
+        <button class="btn btn-filled-secondary btn-lg">For Educators</button>
+        <button class="btn btn-outlined btn-lg">How It Works</button>
+        <button class="btn btn-ghost btn-lg">Learn more</button>
+        <button class="btn btn-danger btn-lg">Remove Entry</button>
+      </div>
+      <div class="btn-grid" style="margin-top:8px">
+        <button class="btn btn-filled-primary btn-lg" disabled>Disabled</button>
+        <button class="btn btn-outlined btn-lg" disabled>Disabled</button>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Medium — 13px / 10px 20px padding</div>
+      <div class="btn-grid">
+        <button class="btn btn-filled-primary btn-md">Explore the Competition</button>
+        <button class="btn btn-filled-accent btn-md">Submit Project</button>
+        <button class="btn btn-outlined btn-md">How It Works</button>
+        <button class="btn btn-ghost btn-md">Learn more</button>
+        <button class="btn btn-danger btn-md">Remove Entry</button>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Small — 12px / 7px 14px padding</div>
+      <div class="btn-grid">
+        <button class="btn btn-filled-primary btn-sm">Donate</button>
+        <button class="btn btn-filled-accent btn-sm">Submit</button>
+        <button class="btn btn-outlined btn-sm">View more</button>
+        <button class="btn btn-ghost btn-sm">Cancel</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CARDS ──────────────────────────────────────────────────── -->
+  <section id="cards" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Cards</h2>
+      <span class="section-anchor">#cards</span>
+    </div>
+    <p class="section-desc">Sharp edges throughout. All cards share the red hover accent bar via ::before. Five surface variants for different contexts.</p>
+
+    <div class="subsection">
+      <div class="subsection-title">Outlined — default for all standard content cards</div>
+      <div class="card-grid">
+        <div class="ds-card card-outlined">
+          <span class="card-eyebrow-el card-eyebrow-dark">Round 01</span>
+          <h3 class="card-title-el card-title-dark">Virtual Qualifiers</h3>
+          <span class="card-badge-el card-badge-dark">Opens Sept 22</span>
+          <p class="card-body-el card-body-dark">Teams build a solution and submit a video walkthrough. One team of four per school.</p>
+        </div>
+        <div class="ds-card card-outlined">
+          <span class="card-eyebrow-el card-eyebrow-dark">Round 02</span>
+          <h3 class="card-title-el card-title-dark">County Finals</h3>
+          <span class="card-badge-el card-badge-dark">Dec 4–5</span>
+          <p class="card-body-el card-body-dark">Top teams compete live at their county office. Winners are crowned County Champions.</p>
+        </div>
+        <div class="ds-card card-outlined">
+          <span class="card-eyebrow-el card-eyebrow-dark">Educators</span>
+          <h3 class="card-title-el card-title-dark">Pilot a Class</h3>
+          <p class="card-body-el card-body-dark">No game experience required. The worlds come built, training is provided. You facilitate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Filled — Primary navy for emphasis; Accent for championship / featured</div>
+      <div class="card-grid card-grid-2">
+        <div class="ds-card card-filled-primary">
+          <span class="card-eyebrow-el card-eyebrow-light">Round 03</span>
+          <h3 class="card-title-el card-title-light">Statewide Championship</h3>
+          <span class="card-badge-el card-badge-dark" style="background:var(--accent)">Jan 9, 2027</span>
+          <p class="card-body-el card-body-light">County Champions face off at the Nixon Library. Projects presented to state leaders.</p>
+        </div>
+        <div class="ds-card card-filled-container">
+          <span class="card-eyebrow-el card-eyebrow-dark">Jacksonville, FL</span>
+          <h3 class="card-title-el card-title-dark">Riverfront Redesign</h3>
+          <p class="card-body-el card-body-dark">Students redesigned a riverfront park during an actual city redesign. Their builds influenced real design conversations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Elevated — for tooltips, modals, floating panels</div>
+      <div class="card-grid">
+        <div class="ds-card card-elevated">
+          <span class="card-eyebrow-el card-eyebrow-dark">Sponsors</span>
+          <h3 class="card-title-el card-title-dark">Back the Program</h3>
+          <p class="card-body-el card-body-dark">Sponsor a county, a region, or the championship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LABELS & TAGS ──────────────────────────────────────────── -->
+  <section id="labels" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Labels & Tags</h2>
+      <span class="section-anchor">#labels</span>
+    </div>
+    <p class="section-desc">Eyebrows always in Pixelify Sans. Badges for dates and round identifiers. Tags for interactive filters. Status chips for feedback states.</p>
+
+    <div class="subsection">
+      <div class="subsection-title">Eyebrows — Pixelify Sans, uppercase, for card/section context labels</div>
+      <div class="label-grid">
+        <span class="lbl-eyebrow">Round 01</span>
+        <span class="lbl-eyebrow">Educators</span>
+        <span class="lbl-eyebrow">Jacksonville, FL</span>
+        <span class="lbl-eyebrow-accent">4 Active Counties</span>
+        <span class="lbl-eyebrow-accent">In Partnership With</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Badges — filled, for dates and identifiers</div>
+      <div class="label-grid">
+        <span class="lbl lbl-badge lbl-badge-primary">Opens Sept 22</span>
+        <span class="lbl lbl-badge lbl-badge-primary">Dec 4–5</span>
+        <span class="lbl lbl-badge lbl-badge-accent">Jan 9, 2027</span>
+        <span class="lbl lbl-badge lbl-badge-secondary">K–12</span>
+        <span class="lbl lbl-badge lbl-badge-secondary">California</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Tags — outlined, for filters and navigation pills</div>
+      <div class="label-grid">
+        <span class="lbl lbl-tag">For Students →</span>
+        <span class="lbl lbl-tag">For Educators →</span>
+        <span class="lbl lbl-tag">For Counties →</span>
+        <span class="lbl lbl-tag">For Sponsors →</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Status Chips — semantic states for feedback and system status</div>
+      <div class="label-grid">
+        <span class="lbl lbl-status lbl-success">Registration Open</span>
+        <span class="lbl lbl-status lbl-warning">Submissions Closing</span>
+        <span class="lbl lbl-status lbl-error">Deadline Passed</span>
+        <span class="lbl lbl-status lbl-neutral">Coming Soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INPUTS ─────────────────────────────────────────────────── -->
+  <section id="inputs" class="ds-section">
+    <div class="section-heading">
+      <h2 class="section-title">Inputs</h2>
+      <span class="section-anchor">#inputs</span>
+    </div>
+    <p class="section-desc">Sharp borders, no rounded corners. Border transitions to Primary navy on focus. Validation states use semantic color tokens.</p>
+
+    <div class="input-grid">
+      <div class="input-group">
+        <label class="input-label">Default</label>
+        <input class="ds-input" type="text" placeholder="School name">
+        <span class="input-hint">Enter your school's full name</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Focused <span style="opacity:.5;font-weight:400">(click to see)</span></label>
+        <input class="ds-input" type="text" placeholder="County name" value="Orange County">
+        <span class="input-hint">Select your participating county</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Success</label>
+        <input class="ds-input input-success" type="text" value="LUC-2026-OC-042">
+        <span class="input-hint hint-success">Project ID confirmed</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Error</label>
+        <input class="ds-input input-error" type="text" value="team@">
+        <span class="input-hint hint-error">Enter a valid email address</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Select</label>
+        <select class="ds-input">
+          <option>Orange County</option>
+          <option>Riverside County</option>
+          <option>San Bernardino County</option>
+          <option>Yolo County</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Disabled</label>
+        <input class="ds-input input-disabled" type="text" placeholder="Not available" disabled>
+        <span class="input-hint">This field is not editable</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function toggleTheme() {
+    const root = document.documentElement;
+    const current = root.getAttribute('data-theme');
+    if (current === 'dark') {
+      root.setAttribute('data-theme', 'light');
+      document.querySelector('.theme-label').textContent = 'Light Mode';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-label').textContent = 'Dark Mode';
+    }
+  }
+
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('.ds-section, .page-header');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('[id]').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

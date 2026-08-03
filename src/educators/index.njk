@@ -1,0 +1,261 @@
+---
+title: For Educators
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  /* ── PAGE HERO ─────────────────────────────────────────────── */
+  .edu-hero {
+    background: var(--navy); background-image: var(--grid-navy);
+    padding: 140px 80px 100px;
+  }
+  .edu-eyebrow {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 11px;
+    letter-spacing: 0.2em; color: rgba(139,163,194,0.5);
+    text-transform: uppercase; margin-bottom: 24px;
+  }
+  .edu-hero-h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: clamp(44px, 5vw, 72px);
+    line-height: 0.91; color: var(--cream); letter-spacing: -0.01em;
+    max-width: 600px; margin-bottom: 28px;
+  }
+  .edu-hero-sub {
+    font-size: 18px; line-height: 1.75; color: var(--civic);
+    max-width: 560px; margin-bottom: 40px;
+  }
+  .edu-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+
+  /* ── ROLE CARDS ─────────────────────────────────────────────── */
+  .role-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+
+  /* ── CLASSROOM FLOW ─────────────────────────────────────────── */
+  .flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .flow-step {
+    border: 1.5px solid rgba(22,43,77,0.8);
+    border-left: 4px solid var(--red); padding: 40px 32px;
+  }
+  .flow-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: 56px; color: var(--mnav);
+    line-height: 1; margin-bottom: 16px;
+  }
+  .flow-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 24px; color: var(--cream);
+    margin-bottom: 12px; letter-spacing: -0.01em;
+  }
+  .flow-body { font-size: 15px; line-height: 1.7; color: var(--civic); }
+
+  /* ── WHAT STUDENTS DEVELOP ──────────────────────────────────── */
+  .develop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; }
+  .develop-lbl {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 20px;
+  }
+  .photo-placeholder {
+    aspect-ratio: 4 / 3;
+    background: var(--soft); border: 1.5px solid rgba(0,0,0,0.06);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .photo-placeholder-lbl {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 12px;
+    letter-spacing: 0.12em; color: var(--gray); text-align: center;
+    text-transform: uppercase; line-height: 1.8;
+  }
+  .pills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* ── FAQ ────────────────────────────────────────────────────── */
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-top: 1px solid var(--soft); padding: 28px 0; }
+  .faq-item:last-child { border-bottom: 1px solid var(--soft); }
+  .faq-q {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 24px; color: var(--ink);
+    margin-bottom: 12px; line-height: 1.1;
+  }
+  .faq-a { font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 680px; }
+  .placeholder-note {
+    font-size: 14px; line-height: 1.65; color: var(--gray);
+    border-left: 3px solid var(--soft); padding-left: 14px; font-style: italic;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="edu-hero">
+  <div class="edu-eyebrow">For Educators</div>
+  <h1 class="edu-hero-h1">Give your students a real problem to solve.</h1>
+  <p class="edu-hero-sub">
+    When kids know their idea can actually reach the people in charge, they stop playing and start advocating.
+  </p>
+  <div class="edu-hero-cta">
+    <a href="#get-started" class="btn-cream">Get Your School Involved</a>
+    <a href="#" class="btn-ghost-civic">Download the Field Guide →</a>
+  </div>
+</div>
+
+<!-- YOU FACILITATE / WE HANDLE THE REST -->
+<section class="sec sec-cream">
+  <h2 class="sec-h2 sec-h2-dark page-h2" style="margin-bottom: 16px;">You facilitate.<br>We handle the rest.</h2>
+  <p style="font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 560px;">
+    No game experience required. The worlds come built, the rounds come structured. Your job is to guide — the rest is taken care of.
+  </p>
+  <div class="role-cards">
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">We handle</div>
+      <h3 class="card-title">The world. The structure. The support.</h3>
+      <ul class="card-list">
+        <li>A Minecraft Education world built for your county — your staff builds nothing</li>
+        <li>Structured rounds with clear timelines and submission requirements</li>
+        <li>Educator training before the program launches</li>
+        <li>Licensing coordinated through your county office of education</li>
+        <li>Judging, event logistics, and championship coordination</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-dark">You handle</div>
+      <h3 class="card-title">The facilitation. The team. The class time.</h3>
+      <ul class="card-list">
+        <li>Register your school and recruit a team of four students</li>
+        <li>Facilitate class time for students to explore, investigate, and build</li>
+        <li>Guide the design process — ask questions, don't give answers</li>
+        <li>Support your team at the county finals</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT RUNS IN YOUR CLASS -->
+<section class="sec sec-navy">
+  <h2 class="sec-h2 sec-h2-light page-h2" style="margin-bottom: 56px;">How It Runs<br>in Your Class</h2>
+  <div class="flow-grid">
+    <div class="flow-step">
+      <div class="flow-num">01</div>
+      <h3 class="flow-title">Explore</h3>
+      <p class="flow-body">Students enter a Minecraft world modeled on their county. They observe the community, visit landmarks, and begin noticing what makes the place unique — before attempting to improve it.</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">02</div>
+      <h3 class="flow-title">Investigate</h3>
+      <p class="flow-body">Students meet community members, gather evidence, and investigate a real local challenge. They listen to multiple perspectives before settling on a direction — understanding comes before designing.</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">03</div>
+      <h3 class="flow-title">Design & Build</h3>
+      <p class="flow-body">Teams design a solution and build it in Minecraft. Every decision should respond to what they learned. The build is the visual representation of their thinking, not just a creative exercise.</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">04</div>
+      <h3 class="flow-title">Pitch</h3>
+      <p class="flow-body">Teams record a 3-minute video walkthrough and submit. Top teams advance to the county finals to present live to judges and local leaders — the real audience that makes the stakes real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT STUDENTS DEVELOP -->
+<section class="sec sec-cream">
+  <h2 class="sec-h2 sec-h2-dark page-h2" style="margin-bottom: 16px;">What Your Students<br>Will Develop</h2>
+  <p style="font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 640px;">
+    Schools Reinventing Counties connects classroom learning to authentic community experiences. Students practice skills that extend well beyond the game — and well beyond a single subject.
+  </p>
+  <div class="develop-grid">
+    <div>
+      <div class="develop-lbl">Skills & dispositions</div>
+      <ul class="skills-list">
+        <li>Critical thinking and creative problem-solving</li>
+        <li>Collaboration and consensus-building</li>
+        <li>Research, inquiry, and evidence-based reasoning</li>
+        <li>Communication and high-stakes presentation</li>
+        <li>Civic engagement and systems thinking</li>
+        <li>Design thinking and spatial reasoning</li>
+        <li>Coding logic and digital citizenship</li>
+        <li>Empathy and perspective-taking</li>
+      </ul>
+    </div>
+    <div>
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-lbl">Photo placeholder<br>Students at work</div>
+      </div>
+      <div class="develop-lbl">Subject area connections</div>
+      <div class="pills-wrap">
+        <span class="pill">History–Social Science</span>
+        <span class="pill">English Language Arts</span>
+        <span class="pill">Science</span>
+        <span class="pill">Technology</span>
+        <span class="pill">Engineering</span>
+        <span class="pill">Computer Science</span>
+        <span class="pill">Career Technical Education</span>
+        <span class="pill">Visual & Performing Arts</span>
+        <span class="pill">Social-Emotional Learning</span>
+      </div>
+      <p class="placeholder-note" style="margin-top: 16px;">California standards alignment — needs Jason to confirm which standards map to the program before publishing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section class="sec sec-cream" style="padding-top: 0;">
+  <h2 class="sec-h2 sec-h2-dark page-h2" style="margin-bottom: 48px;">Common<br>Questions</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q">Do I need to know Minecraft?</div>
+      <p class="faq-a">No. Your students who play Minecraft already know it better than most adults do — and that's the point, not a problem. Your role is to facilitate the design process and guide their thinking. The technical side belongs to them.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do my students need prior Minecraft experience?</div>
+      <p class="faq-a">No. Schools Reinventing Counties is designed for learners at every level. Whether students have never played or build every day, the focus is on community understanding and creative problem-solving — not build speed or technical skill.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How much class time does it take?</div>
+      <p class="faq-a placeholder-note">Placeholder — needs from Jason: approximate number of class sessions, flexibility around scheduling, whether it can be broken across weeks or requires consecutive blocks.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What about licensing and device access?</div>
+      <p class="faq-a">Licensing is coordinated through your county office of education. <span class="placeholder-note">Placeholder — needs from Jason: whether there's a cost to the school, what devices are supported, and how schools without sufficient devices can participate.</span></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I adapt the experience for my students?</div>
+      <p class="faq-a">Yes. The experience is designed to be flexible. You can integrate local discussions, additional research activities, community partnerships, and extension projects that connect with your students' specific interests and the particular challenges in your community.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How many students or teams can enter from one school?</div>
+      <p class="faq-a">Teams are four students. <span class="placeholder-note">Placeholder — needs from Jason: whether there's a limit of one team per school, how many teams per school can enter qualifiers, and any grade-level eligibility requirements.</span></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What support is there once we're in?</div>
+      <p class="faq-a placeholder-note">Placeholder — needs from Jason: training format (virtual/in-person, how many sessions), ongoing support channels, whether there's an educator community or cohort structure, and any point-of-contact for questions during the program.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div id="get-started" class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h2">Pilot it with<br>one class.</h2>
+    <p class="cta-band-body">
+      No game experience required. The worlds come built, the rounds come structured, and training runs through your county. You facilitate — your students do the advocating.
+    </p>
+    <div class="cta-band-btns">
+      <a href="/submit/" class="btn-white">Get Your School Involved</a>
+      <a href="mailto:info@levelupcivicsfoundation.org" class="btn-ghost-white">Email us directly →</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
