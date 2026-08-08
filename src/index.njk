@@ -24,12 +24,9 @@ title: Home
   }
   .hero-h1 {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 900; font-size: clamp(40px, 4.4vw, 88px);
+    font-weight: 900; font-size: clamp(56px, 6.5vw, 88px);
     line-height: 0.95; color: var(--ink); letter-spacing: -0.01em;
     margin-bottom: 24px;
-  }
-  @media (min-width: 1280px) {
-    .hero-h1 { font-size: 88px; }
   }
   .hero-sub {
     font-size: 15px; line-height: 1.75; color: var(--gray);
@@ -43,12 +40,10 @@ title: Home
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center;
   }
-  .prog-h2 { font-size: clamp(44px, 5vw, 72px); margin-bottom: 28px; }
-  .prog-body { font-size: 16px; line-height: 1.75; color: var(--gray); margin-bottom: 20px; }
   .prog-map {
     background: var(--navy);
     aspect-ratio: 1 / 1;
-    padding: 36px 28px;
+    padding: 36px 32px;
     display: flex; flex-direction: column;
     justify-content: center;
     position: relative; overflow: hidden;
@@ -61,28 +56,7 @@ title: Home
   }
   .prog-map img { width: 100%; height: auto; display: block; margin: 0 auto; }
 
-  /* ── PILLARS ─────────────────────────────────────────────────── */
-  .pillars-h2 { font-size: clamp(44px, 5vw, 72px); margin-bottom: 56px; }
-  .pillars-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  /* ── COMPETITION ─────────────────────────────────────────────── */
-  .comp-header {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 64px; align-items: start;
-    margin-bottom: 48px;
-  }
-  .comp-h2 { font-size: clamp(44px, 5vw, 72px); }
-  .comp-intro {
-    font-size: 16px; line-height: 1.75; color: var(--gray);
-    padding-top: 8px;
-  }
-  .rounds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
   /* ── PROOF SECTION ───────────────────────────────────────────── */
-  .proof-h2 { font-size: clamp(44px, 5vw, 72px); margin-bottom: 48px; }
   .proof-list { display: flex; flex-direction: column; gap: 16px; }
   .proof-card {
     border: 1.5px solid var(--soft);
@@ -102,32 +76,27 @@ title: Home
   }
   .proof-body { font-size: 16px; line-height: 1.75; color: var(--gray); }
 
-  /* ── GET INVOLVED ────────────────────────────────────────────── */
-  .inv-h2 { font-size: clamp(44px, 5vw, 72px); margin-bottom: 48px; }
-  .inv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .inv-card {
-    border: 1.5px solid var(--soft); padding: 40px 36px;
-    text-decoration: none; display: block; position: relative;
-    transition: border-color 0.15s;
+  /* ── RESPONSIVE ──────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; height: auto; min-height: unset; }
+    .hero-content { padding: 52px 48px 56px; }
+    .hero-visual { height: 400px; }
+    .prog-grid { grid-template-columns: 1fr; gap: 48px; }
+    .prog-map { aspect-ratio: auto; padding: 32px; }
   }
-  .inv-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0;
-    height: 3px; background: var(--soft); transition: background 0.2s;
+
+  @media (max-width: 768px) {
+    .hero-content { padding: 44px 20px 48px; }
+    .hero-visual { height: 280px; }
+    .hero-cta-row { flex-wrap: wrap; }
+    .proof-card { grid-template-columns: 1fr; gap: 12px; padding: 28px 20px; }
   }
-  .inv-card:hover { border-color: rgba(26,31,46,0.35); }
-  .inv-card:hover::before { background: var(--red); }
-  .inv-role {
-    font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
-    letter-spacing: 0.1em; color: var(--gray); margin-bottom: 12px;
-    text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    .hero-visual { height: 240px; }
+    .hero-cta-row { flex-direction: column; }
+    .btn-primary, .btn-outline { text-align: center; width: 100%; }
   }
-  .inv-title {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700; font-size: 30px; color: var(--ink);
-    line-height: 1.05; margin-bottom: 16px; letter-spacing: -0.01em;
-  }
-  .inv-desc { font-size: 16px; line-height: 1.75; color: var(--gray); margin-bottom: 28px; }
-  .inv-link { font: 600 14px/1 'Inter', sans-serif; color: var(--ink); letter-spacing: 0.01em; }
 </style>
 {% endblock %}
 
@@ -145,10 +114,10 @@ title: Home
       <a href="#program" class="btn-outline">How It Works</a>
     </div>
     <div class="hero-pills">
-      <a href="#" class="pill">For Students →</a>
-      <a href="#" class="pill">For Educators →</a>
-      <a href="#" class="pill">For Counties →</a>
-      <a href="#" class="pill">For Sponsors →</a>
+      <a href="/battle/" class="pill">For Students →</a>
+      <a href="/educators/" class="pill">For Educators →</a>
+      <a href="/partners/" class="pill">For Counties →</a>
+      <a href="/partners/" class="pill">For Sponsors →</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -171,14 +140,14 @@ title: Home
 <section id="program" class="sec sec-cream">
   <div class="prog-grid">
     <div>
-      <h2 class="sec-h2 sec-h2-dark prog-h2">Schools<br>Reinventing<br>Counties</h2>
-      <p class="prog-body">
+      <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">Schools<br>Reinventing<br>Counties</h2>
+      <p class="sec-body">
         A live Minecraft Education world covering the state of California. Students explore a digital map of their county, investigate a real local challenge — housing, transportation, sustainability — and design a solution.
       </p>
-      <p class="prog-body">
+      <p class="sec-body">
         Teams of four work with their teacher to build and document their solution, then enter the Battle of the Counties. No prior game experience required. The worlds come built. The thinking is up to your students.
       </p>
-      <a href="#" class="btn-primary" style="margin-top: 12px;">Explore the Program →</a>
+      <a href="/program/" class="btn-primary" style="margin-top: 12px;">Explore the Program →</a>
     </div>
     <div class="prog-map">
       <div class="prog-map-label">4 Active Counties</div>
@@ -189,8 +158,8 @@ title: Home
 
 <!-- THREE PILLARS -->
 <section class="sec sec-navy">
-  <h2 class="sec-h2 sec-h2-light pillars-h2">Three Pillars,<br>One Program</h2>
-  <div class="pillars-grid">
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Three Pillars,<br>One Program</h2>
+  <div class="grid-3">
     <div class="pillar">
       <div class="pillar-num">01</div>
       <h3 class="pillar-title">STEM & Digital Literacy</h3>
@@ -211,11 +180,11 @@ title: Home
 
 <!-- BATTLE OF THE COUNTIES -->
 <section id="competition" class="sec sec-cream">
-  <div class="comp-header">
-    <h2 class="sec-h2 sec-h2-dark comp-h2">Battle of<br>the Counties</h2>
-    <p class="comp-intro">A three-round statewide civics and esports competition. The best teams from each county advance toward a live championship — and the chance to pitch their ideas to the leaders who can act on them.</p>
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Battle of<br>the Counties</h2>
+    <p class="sec-header-intro">A three-round statewide civics and esports competition. The best teams from each county advance toward a live championship — and the chance to pitch their ideas to the leaders who can act on them.</p>
   </div>
-  <div class="rounds">
+  <div class="grid-3">
     <div class="card">
       <div class="card-eyebrow card-eyebrow-dark">Round 01</div>
       <h3 class="card-title">Virtual Qualifiers</h3>
@@ -239,7 +208,7 @@ title: Home
 
 <!-- PROOF POINTS -->
 <section class="sec sec-cream" style="padding-top: 0;">
-  <h2 class="sec-h2 sec-h2-dark proof-h2">This Model Works</h2>
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-block">This Model Works</h2>
   <div class="proof-list">
     <div class="proof-card">
       <div class="proof-card-left">
@@ -280,31 +249,31 @@ title: Home
 
 <!-- GET INVOLVED -->
 <section class="sec sec-cream">
-  <h2 class="sec-h2 sec-h2-dark inv-h2">There's a Role<br>for Everyone</h2>
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-block">There's a Role<br>for Everyone</h2>
   <div class="inv-grid">
-    <a href="#" class="inv-card">
-      <div class="inv-role">Students</div>
-      <h3 class="inv-title">Compete & Advocate</h3>
-      <p class="inv-desc">Build a solution to a real challenge in your county. Form a team of four and represent your school in the Battle of the Counties.</p>
-      <span class="inv-link">Enter the competition →</span>
+    <a href="/battle/" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">Students</div>
+      <h3 class="card-title">Compete & Advocate</h3>
+      <p class="card-body">Build a solution to a real challenge in your county. Form a team of four and represent your school in the Battle of the Counties.</p>
+      <span class="card-link-text">Enter the competition →</span>
     </a>
-    <a href="#" class="inv-card">
-      <div class="inv-role">Educators</div>
-      <h3 class="inv-title">Pilot a Class</h3>
-      <p class="inv-desc">No game experience required. The worlds come built, training is provided. You facilitate — your students do the advocating.</p>
-      <span class="inv-link">Get your school involved →</span>
+    <a href="/educators/" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">Educators</div>
+      <h3 class="card-title">Pilot a Class</h3>
+      <p class="card-body">No game experience required. The worlds come built, training is provided. You facilitate; your students do the advocating.</p>
+      <span class="card-link-text">Get your school involved →</span>
     </a>
-    <a href="#" class="inv-card">
-      <div class="inv-role">Sponsors</div>
-      <h3 class="inv-title">Back the Program</h3>
-      <p class="inv-desc">Sponsor a county, a region, or the championship. Visible civic investment with measurable outcomes in the communities you operate in.</p>
-      <span class="inv-link">Explore sponsorship →</span>
+    <a href="/partners/" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">Sponsors</div>
+      <h3 class="card-title">Back the Program</h3>
+      <p class="card-body">Sponsor a county, a region, or the championship. Visible civic investment with measurable outcomes in the communities you operate in.</p>
+      <span class="card-link-text">Explore sponsorship →</span>
     </a>
-    <a href="#" class="inv-card">
-      <div class="inv-role">Counties &amp; Districts</div>
-      <h3 class="inv-title">Join the Initiative</h3>
-      <p class="inv-desc">Bring Schools Reinventing Counties to your students. We handle the world build. Your schools bring the ideas.</p>
-      <span class="inv-link">Talk to us →</span>
+    <a href="/partners/" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">Counties &amp; Districts</div>
+      <h3 class="card-title">Join the Initiative</h3>
+      <p class="card-body">Bring Schools Reinventing Counties to your students. We handle the world build. Your schools bring the ideas.</p>
+      <span class="card-link-text">Talk to us →</span>
     </a>
   </div>
 </section>

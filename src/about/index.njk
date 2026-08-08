@@ -1,0 +1,218 @@
+---
+title: About
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  /* ── TWO-COL MISSION GRID ────────────────────────────────────── */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start; margin-top: 48px;
+  }
+  .about-cards-col { display: flex; flex-direction: column; gap: 12px; }
+
+  /* ── QUOTE BAND (local — mirrors program page) ───────────────── */
+  .quote-band { border-top: 4px solid var(--red); background: var(--cream); padding: 80px; }
+  .quote-inner { display: grid; grid-template-columns: 28% 1fr; gap: 56px; align-items: center; }
+  .quote-mark-wrap { display: flex; align-items: flex-start; justify-content: flex-end; }
+  .quote-mark-wrap img { width: 100%; height: auto; display: block; opacity: 0.12; }
+  .quote-text {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: clamp(24px, 2.8vw, 40px);
+    color: var(--ink); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px;
+  }
+  .quote-attr { font-size: 14px; color: var(--gray); line-height: 1.6; }
+  .quote-attr strong { color: var(--ink); font-weight: 600; }
+
+  /* ── PARTNER LOGO PLACEHOLDER ────────────────────────────────── */
+  .partner-logo-wrap {
+    height: 56px; background: var(--soft);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .partner-logo-wrap span {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray);
+  }
+
+  /* ── TEAM GRID ───────────────────────────────────────────────── */
+  .team-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 32px; margin-top: 48px;
+  }
+  .team-card { display: flex; flex-direction: column; }
+  .team-photo {
+    width: 100%; aspect-ratio: 1 / 1;
+    object-fit: cover; object-position: top center;
+    display: block; margin-bottom: 16px;
+  }
+  .team-name {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 22px;
+    color: var(--ink); line-height: 1.1; letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .team-role {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray);
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  }
+  @media (max-width: 768px) {
+    .quote-band { padding: 64px 20px; }
+    .quote-inner { grid-template-columns: 1fr; gap: 24px; }
+    .quote-mark-wrap img { max-width: 72px; opacity: 0.08; }
+  }
+  @media (max-width: 480px) {
+    .team-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">About</div>
+    <h1 class="page-hero-h1">Student ideas should<br>reach the people<br>in charge.</h1>
+    <p class="page-hero-sub">
+      Level Up Civics Foundation is a California nonprofit that connects students to real community challenges through game-based civic design, bringing together educators, county offices of education, local government, and technology partners so that student ideas reach the people who make local decisions.
+    </p>
+    <div class="page-hero-cta">
+      <a href="/program/" class="btn-cream">See the Program</a>
+      <a href="mailto:info@levelupcivicsfoundation.org" class="btn-ghost-civic">Get in Touch →</a>
+    </div>
+  </div>
+  <div class="page-hero-visual">
+    <img src="/assets/kids-collage.png" alt="Students working on a civic design project">
+  </div>
+</div>
+
+<!-- WHAT WE BELIEVE -->
+<section class="sec sec-cream">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What we<br>believe.</h2>
+  <div class="about-grid">
+    <div>
+      <p class="sec-body">Level Up Civics gives students a real community problem, a game-based world to build their solution in, and a real decision-maker to pitch it to. When students know their ideas can reach the people in charge, an assignment becomes advocacy.</p>
+      <p class="sec-body">The principle the program is built on: a real location, a specific problem, and a real audience produce deeper student work than an open-ended prompt. The result is civic agency and workforce-ready skills — students who have investigated, designed, built, and argued for something that matters in the real world.</p>
+    </div>
+    <div class="about-cards-col">
+      <div class="info-card">
+        <div class="info-card-lbl">The problem</div>
+        <p class="info-card-text">A real community challenge in their county — not a fictional scenario</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-lbl">The world</div>
+        <p class="info-card-text">A Minecraft Education environment built around their actual county</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-lbl">The audience</div>
+        <p class="info-card-text">Local leaders who are present to listen, not just to evaluate</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-lbl">The result</div>
+        <p class="info-card-text">Civic agency and workforce-ready skills that extend well beyond a single class</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-band">
+  <div class="quote-inner">
+    <div class="quote-mark-wrap">
+      <img src="/assets/quote-mark.svg" alt="">
+    </div>
+    <div>
+      <p class="quote-text">"This is not about playing a game. It is about student voice, civic engagement, and showing our students that their ideas can lead real change."</p>
+      <div class="quote-attr"><strong>Dr. Stefan Bean</strong>, Orange County Superintendent of Schools</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE BRING TOGETHER -->
+<section class="sec sec-navy">
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Who we bring<br>together.</h2>
+  <div class="grid-3">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3 class="pillar-title">County Offices of Education</h3>
+      <p class="pillar-body">County education offices anchor the program. When a county commits, the world gets built and every school in that region gets access — with the county providing the institutional credibility, licensing coordination, and event hosting that makes it real.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3 class="pillar-title">Sponsors and Grant Funders</h3>
+      <p class="pillar-body">Mission-aligned organizations fund the county world builds and program operations. Each world is a one-time investment that serves cohort after cohort of students — durable civic learning infrastructure rather than recurring program spend.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3 class="pillar-title">City and County Government</h3>
+      <p class="pillar-body">Local government partners bring a genuine community challenge and a commitment to show up and hear what students propose. Their presence is what makes the stakes real — students pitch to the people who can actually act on their ideas.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <h3 class="pillar-title">Educators</h3>
+      <p class="pillar-body">Teachers facilitate the design process. The worlds come built and the rounds come structured — educators guide students through investigation, design, and advocacy without needing to build anything themselves.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <h3 class="pillar-title">Platform and Build Partners</h3>
+      <p class="pillar-body">Minecraft Education provides the game-based platform. Lifeboat Studios builds every county world, grounded in real local geography, landmarks, and community life — with no work required from school staff.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">06</div>
+      <h3 class="pillar-title">Students</h3>
+      <p class="pillar-body">K-12 students across California who investigate real challenges, build solutions, and pitch their ideas to the leaders making decisions in their communities. The whole program is built around what happens when they know their work matters.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TEAM -->
+<section class="sec sec-cream">
+  <h2 class="sec-h2 sec-h2-dark page-h2">The team.</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="/assets/jason-collar.jpg" alt="Jason Collar" class="team-photo">
+      <div class="team-name">Jason Collar</div>
+      <div class="team-role">CEO</div>
+    </div>
+    <div class="team-card">
+      <img src="/assets/chris-lowe.jpg" alt="Chris Lowe" class="team-photo">
+      <div class="team-name">Chris Lowe</div>
+      <div class="team-role">COO</div>
+    </div>
+    <div class="team-card">
+      <img src="/assets/michael-matsuda.jpg" alt="Michael Matsuda" class="team-photo">
+      <div class="team-name">Michael Matsuda</div>
+      <div class="team-role">Education Advisor</div>
+    </div>
+    <div class="team-card">
+      <img src="/assets/peter-polygalov.jpg" alt="Peter Polygalov" class="team-photo">
+      <div class="team-name">Peter Polygalov</div>
+      <div class="team-role">Marketing Advisor</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h2">Get in touch.</h2>
+    <p class="cta-band-body">
+      For partnership inquiries, program questions, or press, reach us at info@levelupcivicsfoundation.org. Level Up Civics Foundation is a California nonprofit. 501(c)(3) status pending.
+    </p>
+    <div class="cta-band-btns">
+      <a href="mailto:info@levelupcivicsfoundation.org" class="btn-white">Email Us</a>
+      <a href="/partners/" class="btn-ghost-white">Partner with us →</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

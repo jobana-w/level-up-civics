@@ -10,44 +10,9 @@ title: For Educators
     background: var(--navy); background-image: var(--grid-navy);
     padding: 140px 80px 100px;
   }
-  .edu-eyebrow {
-    font-family: 'Pixelify Sans', sans-serif; font-size: 11px;
-    letter-spacing: 0.2em; color: rgba(139,163,194,0.5);
-    text-transform: uppercase; margin-bottom: 24px;
-  }
-  .edu-hero-h1 {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 900; font-size: clamp(44px, 5vw, 72px);
-    line-height: 0.91; color: var(--cream); letter-spacing: -0.01em;
-    max-width: 600px; margin-bottom: 28px;
-  }
-  .edu-hero-sub {
-    font-size: 18px; line-height: 1.75; color: var(--civic);
-    max-width: 560px; margin-bottom: 40px;
-  }
-  .edu-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-
 
   /* ── ROLE CARDS ─────────────────────────────────────────────── */
   .role-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
-
-  /* ── CLASSROOM FLOW ─────────────────────────────────────────── */
-  .flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .flow-step {
-    border: 1.5px solid rgba(22,43,77,0.8);
-    border-left: 4px solid var(--red); padding: 40px 32px;
-  }
-  .flow-num {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 900; font-size: 56px; color: var(--mnav);
-    line-height: 1; margin-bottom: 16px;
-  }
-  .flow-title {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700; font-size: 24px; color: var(--cream);
-    margin-bottom: 12px; letter-spacing: -0.01em;
-  }
-  .flow-body { font-size: 15px; line-height: 1.7; color: var(--civic); }
 
   /* ── WHAT STUDENTS DEVELOP ──────────────────────────────────── */
   .develop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; }
@@ -84,6 +49,15 @@ title: For Educators
     border-left: 3px solid var(--soft); padding-left: 14px; font-style: italic;
   }
 
+  /* ── RESPONSIVE ──────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .develop-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  @media (max-width: 768px) {
+    .edu-hero { padding: 100px 32px 64px; }
+    .role-cards { grid-template-columns: 1fr; }
+  }
 </style>
 {% endblock %}
 
@@ -91,12 +65,12 @@ title: For Educators
 
 <!-- HERO -->
 <div class="edu-hero">
-  <div class="edu-eyebrow">For Educators</div>
-  <h1 class="edu-hero-h1">Give your students a real problem to solve.</h1>
-  <p class="edu-hero-sub">
+  <div class="page-hero-eyebrow">For Educators</div>
+  <h1 class="page-hero-h1">Give your students a real problem to solve.</h1>
+  <p class="page-hero-sub">
     When kids know their idea can actually reach the people in charge, they stop playing and start advocating.
   </p>
-  <div class="edu-hero-cta">
+  <div class="page-hero-cta">
     <a href="#get-started" class="btn-cream">Get Your School Involved</a>
     <a href="#" class="btn-ghost-civic">Download the Field Guide →</a>
   </div>
@@ -104,8 +78,8 @@ title: For Educators
 
 <!-- YOU FACILITATE / WE HANDLE THE REST -->
 <section class="sec sec-cream">
-  <h2 class="sec-h2 sec-h2-dark page-h2" style="margin-bottom: 16px;">You facilitate.<br>We handle the rest.</h2>
-  <p style="font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 560px;">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">You facilitate.<br>We handle the rest.</h2>
+  <p class="sec-intro">
     No game experience required. The worlds come built, the rounds come structured. Your job is to guide — the rest is taken care of.
   </p>
   <div class="role-cards">
@@ -135,35 +109,35 @@ title: For Educators
 
 <!-- HOW IT RUNS IN YOUR CLASS -->
 <section class="sec sec-navy">
-  <h2 class="sec-h2 sec-h2-light page-h2" style="margin-bottom: 56px;">How It Runs<br>in Your Class</h2>
-  <div class="flow-grid">
-    <div class="flow-step">
-      <div class="flow-num">01</div>
-      <h3 class="flow-title">Explore</h3>
-      <p class="flow-body">Students enter a Minecraft world modeled on their county. They observe the community, visit landmarks, and begin noticing what makes the place unique — before attempting to improve it.</p>
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">How It Runs<br>in Your Class</h2>
+  <div class="grid-4">
+    <div class="pillar pillar-sm">
+      <div class="pillar-num">01</div>
+      <h3 class="pillar-title">Explore</h3>
+      <p class="pillar-body">Students enter a Minecraft world modeled on their county. They observe the community, visit landmarks, and begin noticing what makes the place unique — before attempting to improve it.</p>
     </div>
-    <div class="flow-step">
-      <div class="flow-num">02</div>
-      <h3 class="flow-title">Investigate</h3>
-      <p class="flow-body">Students meet community members, gather evidence, and investigate a real local challenge. They listen to multiple perspectives before settling on a direction — understanding comes before designing.</p>
+    <div class="pillar pillar-sm">
+      <div class="pillar-num">02</div>
+      <h3 class="pillar-title">Investigate</h3>
+      <p class="pillar-body">Students meet community members, gather evidence, and investigate a real local challenge. They listen to multiple perspectives before settling on a direction — understanding comes before designing.</p>
     </div>
-    <div class="flow-step">
-      <div class="flow-num">03</div>
-      <h3 class="flow-title">Design & Build</h3>
-      <p class="flow-body">Teams design a solution and build it in Minecraft. Every decision should respond to what they learned. The build is the visual representation of their thinking, not just a creative exercise.</p>
+    <div class="pillar pillar-sm">
+      <div class="pillar-num">03</div>
+      <h3 class="pillar-title">Design & Build</h3>
+      <p class="pillar-body">Teams design a solution and build it in Minecraft. Every decision should respond to what they learned. The build is the visual representation of their thinking, not just a creative exercise.</p>
     </div>
-    <div class="flow-step">
-      <div class="flow-num">04</div>
-      <h3 class="flow-title">Pitch</h3>
-      <p class="flow-body">Teams record a 3-minute video walkthrough and submit. Top teams advance to the county finals to present live to judges and local leaders — the real audience that makes the stakes real.</p>
+    <div class="pillar pillar-sm">
+      <div class="pillar-num">04</div>
+      <h3 class="pillar-title">Pitch</h3>
+      <p class="pillar-body">Teams record a 3-minute video walkthrough and submit. Top teams advance to the county finals to present live to judges and local leaders — the real audience that makes the stakes real.</p>
     </div>
   </div>
 </section>
 
 <!-- WHAT STUDENTS DEVELOP -->
 <section class="sec sec-cream">
-  <h2 class="sec-h2 sec-h2-dark page-h2" style="margin-bottom: 16px;">What Your Students<br>Will Develop</h2>
-  <p style="font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 640px;">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What Your Students<br>Will Develop</h2>
+  <p class="sec-intro sec-intro-wide">
     Schools Reinventing Counties connects classroom learning to authentic community experiences. Students practice skills that extend well beyond the game — and well beyond a single subject.
   </p>
   <div class="develop-grid">
@@ -203,7 +177,7 @@ title: For Educators
 
 <!-- FREQUENTLY ASKED QUESTIONS -->
 <section class="sec sec-cream" style="padding-top: 0;">
-  <h2 class="sec-h2 sec-h2-dark page-h2" style="margin-bottom: 48px;">Common<br>Questions</h2>
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-block">Common<br>Questions</h2>
   <div class="faq-list">
 
     <div class="faq-item">

@@ -1,0 +1,241 @@
+---
+title: Partners & Sponsors
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  /* ── HERO STATS PANEL ───────────────────────────────────────── */
+  .partner-panel {
+    background: rgba(10,20,48,0.6);
+    border-left: 1px solid var(--mnav);
+    padding: 60px 48px;
+    display: flex; flex-direction: column; justify-content: center;
+    align-self: stretch;
+  }
+  .partner-stat {
+    border-top: 1px solid rgba(139,163,194,0.15);
+    padding: 28px 0;
+  }
+  .partner-stat:last-child { border-bottom: 1px solid rgba(139,163,194,0.15); }
+  .partner-stat-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: clamp(44px, 5vw, 72px);
+    line-height: 0.95; color: var(--cream); letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .partner-stat-lbl {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 12px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(139,163,194,0.6); line-height: 1.6;
+  }
+
+  /* ── PARTNER LOGO PLACEHOLDER ───────────────────────────────── */
+  .partner-logo-wrap {
+    height: 56px; background: var(--soft);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .partner-logo-wrap span {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray);
+  }
+
+  /* ── PARTNERSHIP TYPE CARDS (navy background) ───────────────── */
+  .pship-card {
+    border: 1.5px solid var(--mnav);
+    background: rgba(22,43,77,0.5);
+    padding: 36px 32px;
+  }
+  .pship-eyebrow {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 16px;
+  }
+  .pship-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 28px; color: var(--cream);
+    line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 12px;
+  }
+  .pship-body {
+    font-size: 15px; line-height: 1.65; color: var(--civic); margin-bottom: 20px;
+  }
+  .pship-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .pship-list li {
+    font-size: 14px; line-height: 1.55; color: rgba(139,163,194,0.8);
+    padding-left: 16px; position: relative;
+  }
+  .pship-list li::before {
+    content: ''; position: absolute; left: 0; top: 8px;
+    width: 5px; height: 5px; background: var(--red);
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .pship-card { padding: 28px 24px; }
+  }
+  @media (max-width: 1024px) {
+    .partner-panel { display: none; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Partners & Sponsors</div>
+    <h1 class="page-hero-h1">Visible civic investment.<br>Measurable civic outcomes.</h1>
+    <p class="page-hero-sub">
+      Schools Reinventing Counties works because county education offices, sponsors, and civic leaders commit to making it real. The worlds come built. The stakes are genuine. The results are real.
+    </p>
+    <div class="page-hero-cta">
+      <a href="mailto:info@levelupcivicsfoundation.org" class="btn-cream">Get in Touch</a>
+      <a href="#how-to-partner" class="btn-ghost-civic">Ways to Partner →</a>
+    </div>
+  </div>
+  <div class="partner-panel">
+    <div class="partner-stat">
+      <div class="partner-stat-num">4</div>
+      <div class="partner-stat-lbl">California counties in<br>the 2026–27 program year</div>
+    </div>
+    <div class="partner-stat">
+      <div class="partner-stat-num">450K+</div>
+      <div class="partner-stat-lbl">Students served by the<br>lead county partner alone</div>
+    </div>
+    <div class="partner-stat">
+      <div class="partner-stat-num">Jan 9</div>
+      <div class="partner-stat-lbl">Statewide championship<br>at the Nixon Library, 2027</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO'S IN THE PROGRAM -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Who's in<br>the program.</h2>
+    <p class="sec-header-intro">
+      Orange County is the founding county partner, the first county in California to run a program like this. San Bernardino, Riverside, and Yolo counties joined for 2026–27, with additional counties expected as the program grows. Minecraft Education provides the platform. Lifeboat Studios builds every county world.
+    </p>
+  </div>
+  <div class="grid-3">
+    <div class="info-card">
+      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="info-card-lbl">Lead County Partner</div>
+      <p class="info-card-text">Orange County Dept. of Education</p>
+    </div>
+    <div class="info-card">
+      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="info-card-lbl">County Partner</div>
+      <p class="info-card-text">San Bernardino County Office of Education</p>
+    </div>
+    <div class="info-card">
+      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="info-card-lbl">County Partner</div>
+      <p class="info-card-text">Riverside County Office of Education</p>
+    </div>
+    <div class="info-card">
+      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="info-card-lbl">County Partner</div>
+      <p class="info-card-text">Yolo County Office of Education</p>
+    </div>
+    <div class="info-card">
+      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="info-card-lbl">Platform</div>
+      <p class="info-card-text">Minecraft Education</p>
+    </div>
+    <div class="info-card">
+      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="info-card-lbl">World Builder</div>
+      <p class="info-card-text">Lifeboat Studios</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAYS TO GET INVOLVED -->
+<section id="how-to-partner" class="sec sec-navy">
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Four ways<br>to get involved.</h2>
+  <div class="inv-grid">
+    <div class="pship-card">
+      <div class="pship-eyebrow">County / Education Office</div>
+      <h3 class="pship-title">Lead your county.</h3>
+      <p class="pship-body">County offices of education are the cornerstone partners. When a county commits, the world gets built, and every school in that region gets access to a civics and esports program built around their actual county: its geography, community, and local challenges.</p>
+      <ul class="pship-list">
+        <li>Endorse the program and introduce it to district leaders and school administrators</li>
+        <li>Coordinate Minecraft Education licensing for participating schools</li>
+        <li>Host or co-host the county championship finals</li>
+      </ul>
+    </div>
+    <div class="pship-card">
+      <div class="pship-eyebrow">Corporate Sponsor</div>
+      <h3 class="pship-title">Back the program.</h3>
+      <p class="pship-body">Defined sponsorship tiers, with recognition that scales with your contribution level. Connect your organization to real student outcomes and community impact in the counties where you operate.</p>
+      <ul class="pship-list">
+        <li>County, regional, or championship-level sponsorship tiers available</li>
+        <li>Brand recognition across program materials, events, and media</li>
+        <li>Invitation to county finals and the statewide championship</li>
+      </ul>
+    </div>
+    <div class="pship-card">
+      <div class="pship-eyebrow">Grant Foundation</div>
+      <h3 class="pship-title">Fund the infrastructure.</h3>
+      <p class="pship-body">Each county world is a one-time build, used by students and teachers for years. Grant funding underwrites the world builds that make place-based learning possible at county scale.</p>
+      <ul class="pship-list">
+        <li>Fund one county world build or underwrite program operations</li>
+        <li>Built on a clear premise: a real location, a real problem, and a real audience produce better student work than any open-ended prompt</li>
+        <li>Reaches students who rarely participate in traditional civic programs</li>
+      </ul>
+    </div>
+    <div class="pship-card">
+      <div class="pship-eyebrow">Civic Host</div>
+      <h3 class="pship-title">Contribute a real challenge.</h3>
+      <p class="pship-body">City and county government partners bring a genuine community problem and a commitment to show up and hear what students propose. Students research, design, and pitch their solutions to the leaders who can actually act on them.</p>
+      <ul class="pship-list">
+        <li>Name one real community challenge for students to investigate</li>
+        <li>Designate a staff contact to engage with the student design process</li>
+        <li>Attend the county finals to hear student pitches in person</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- THE RETURN ON PARTNERSHIP -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">The return on<br>civic partnership.</h2>
+    <p class="sec-header-intro">
+      Partnering with Schools Reinventing Counties is not a one-time transaction. Each organization contributes what the others can't, and the results reflect that.
+    </p>
+  </div>
+  <div class="grid-3">
+    <div class="info-card">
+      <h3 class="card-title">Visibility</h3>
+      <p class="info-card-text">Recognition across program materials, events, and media coverage, tied to student outcomes that communities and decision-makers care about.</p>
+    </div>
+    <div class="info-card">
+      <h3 class="card-title">Evidence</h3>
+      <p class="info-card-text">Documented student outcomes across civic reasoning, design thinking, collaboration, and presentation skills. Data you can use in grant reports, board reviews, and annual impact statements.</p>
+    </div>
+    <div class="info-card">
+      <h3 class="card-title">Access</h3>
+      <p class="info-card-text">Direct connection to county education leadership, superintendents, school administrators, and the civic networks running the communities you serve or operate in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h2">Interested in<br>partnering?</h2>
+    <p class="cta-band-body">
+      Partnership conversations start with one question: what do you want to see improve in your county? If Schools Reinventing Counties can help make that happen, we want to hear from you.
+    </p>
+    <div class="cta-band-btns">
+      <a href="mailto:info@levelupcivicsfoundation.org" class="btn-white">Email Us Directly</a>
+      <a href="/program/" class="btn-ghost-white">Learn About the Program →</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
