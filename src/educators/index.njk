@@ -36,14 +36,16 @@ title: For Educators
 
   /* ── FAQ ────────────────────────────────────────────────────── */
   .faq-list { display: flex; flex-direction: column; }
-  .faq-item { border-top: 1px solid var(--soft); padding: 28px 0; }
+  .faq-item {
+    border-top: 1px solid var(--soft); padding: 32px 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
   .faq-item:last-child { border-bottom: 1px solid var(--soft); }
   .faq-q {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700; font-size: 24px; color: var(--ink);
-    margin-bottom: 12px; line-height: 1.1;
+    font-weight: 700; font-size: 24px; color: var(--ink); line-height: 1.1;
   }
-  .faq-a { font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 680px; }
+  .faq-a { font-size: 16px; line-height: 1.75; color: var(--gray); }
   .placeholder-note {
     font-size: 14px; line-height: 1.65; color: var(--gray);
     border-left: 3px solid var(--soft); padding-left: 14px; font-style: italic;
@@ -57,6 +59,7 @@ title: For Educators
   @media (max-width: 768px) {
     .edu-hero { padding: 100px 32px 64px; }
     .role-cards { grid-template-columns: 1fr; }
+    .faq-item { grid-template-columns: 1fr; gap: 12px; }
   }
 </style>
 {% endblock %}
@@ -155,9 +158,6 @@ title: For Educators
       </ul>
     </div>
     <div>
-      <div class="photo-placeholder">
-        <div class="photo-placeholder-lbl">Photo placeholder<br>Students at work</div>
-      </div>
       <div class="develop-lbl">Subject area connections</div>
       <div class="pills-wrap">
         <span class="pill">History–Social Science</span>

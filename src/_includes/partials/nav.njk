@@ -3,9 +3,17 @@
     <img src="/assets/lockup-full-color.svg" alt="Level Up Civics" class="nav-logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="/program/">The Program</a></li>
-    <li><a href="/battle/">Battle of the Counties</a></li>
-    <li><a href="/educators/">For Educators</a></li>
+    <li class="nav-item-drop">
+      <button class="nav-drop-btn" id="nav-program-btn" aria-expanded="false" aria-haspopup="true">
+        Program <span class="nav-drop-caret">▾</span>
+      </button>
+      <ul class="nav-dropdown" role="menu">
+        <li><a href="/program/" role="menuitem">Schools Reinventing Counties</a></li>
+        <li><a href="/battle/" role="menuitem">Battle of the Counties</a></li>
+        <li><a href="/educators/" role="menuitem">For Educators</a></li>
+        <li><a href="/submit/" role="menuitem">Submit a Project</a></li>
+      </ul>
+    </li>
     <li><a href="/partners/">Partners</a></li>
     <li><a href="/about/">About</a></li>
   </ul>
@@ -18,9 +26,17 @@
 </nav>
 <div class="nav-mobile" id="nav-mobile">
   <ul class="nav-mobile-links">
-    <li><a href="/program/">The Program</a></li>
-    <li><a href="/battle/">Battle of the Counties</a></li>
-    <li><a href="/educators/">For Educators</a></li>
+    <li class="nav-mobile-item-drop">
+      <button class="nav-mobile-drop-btn" id="nav-mobile-program-btn">
+        Program <span class="nav-drop-caret">▾</span>
+      </button>
+      <ul class="nav-mobile-dropdown">
+        <li><a href="/program/">Schools Reinventing Counties</a></li>
+        <li><a href="/battle/">Battle of the Counties</a></li>
+        <li><a href="/educators/">For Educators</a></li>
+        <li><a href="/submit/">Submit a Project</a></li>
+      </ul>
+    </li>
     <li><a href="/partners/">Partners</a></li>
     <li><a href="/about/">About</a></li>
   </ul>
