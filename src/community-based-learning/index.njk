@@ -1,0 +1,243 @@
+---
+title: Community-Based Learning
+description: >-
+  What community-based learning is, the eight elements practitioners use to describe it, and how Schools Reinventing Counties activates them inside a community schools strategy.
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  .cbl-hero {
+    background: var(--navy); background-image: var(--grid-navy);
+    padding: 140px 80px 100px;
+  }
+  .cbl-lead {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: clamp(26px, 2.6vw, 34px);
+    line-height: 1.15; color: var(--ink); max-width: 780px; margin-bottom: 22px;
+  }
+  .cbl-body { font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 780px; margin-bottom: 18px; }
+
+  .el-list { display: flex; flex-direction: column; margin-top: 48px; }
+  .el-item {
+    display: grid; grid-template-columns: 64px 1fr 1fr; gap: 40px;
+    border-top: 1px solid var(--soft); padding: 32px 0; align-items: start;
+  }
+  .el-item:last-child { border-bottom: 1px solid var(--soft); }
+  .el-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: 34px; line-height: 1; color: var(--red);
+  }
+  .el-name {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 24px; line-height: 1.1;
+    color: var(--ink); margin-bottom: 8px;
+  }
+  .el-what { font-size: 15px; line-height: 1.7; color: var(--gray); }
+  .el-how { font-size: 15px; line-height: 1.7; color: var(--gray); }
+  .el-how-lbl {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 8px;
+  }
+  .res-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+
+  @media (max-width: 1024px) {
+    .el-item { grid-template-columns: 48px 1fr; }
+    .el-how { grid-column: 2; }
+  }
+  @media (max-width: 768px) {
+    .cbl-hero { padding: 100px 32px 64px; }
+    .el-item { grid-template-columns: 1fr; gap: 10px; }
+    .el-how { grid-column: 1; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="cbl-hero">
+  <div class="page-hero-eyebrow">The Approach</div>
+  <h1 class="page-hero-h1">Community-based learning, and where we fit in it.</h1>
+  <p class="page-hero-sub">
+    Schools Reinventing Counties is often introduced as a Minecraft program or an esports competition. Underneath both of those, it is a community-based learning experience. This page is for the people who need to know exactly what that means before they can sign off on it.
+  </p>
+</div>
+
+<!-- WHAT IT IS -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">What it is</h2>
+    <p class="sec-header-intro">California's framework describes community-based learning as contextual, culturally responsive learning that connects classrooms and communities while developing young people as active participants in a democracy.</p>
+  </div>
+  <p class="cbl-lead">The short version: students learn from the place they live in, and from the people who live there with them.</p>
+  <p class="cbl-body">
+    That sounds obvious until you look at how rarely school is organised that way. Most curriculum treats the community as an illustration, something a lesson refers to. Community-based learning treats it as the source material. Students study a real local issue, work with people who hold knowledge about it, and produce something that goes back to the community rather than into a grade book.
+  </p>
+  <p class="cbl-body">
+    It is not a subject. It is a method, and it can carry almost any subject on its back. That is why it shows up inside community schools strategies rather than beside them.
+  </p>
+</section>
+
+<!-- THE EIGHT ELEMENTS -->
+<section class="sec sec-cream" style="padding-top: 0;">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">The eight elements</h2>
+    <p class="sec-header-intro">Practitioner materials break community-based learning into eight elements. Schools Reinventing Counties was not reverse-engineered from this list, but it activates most of it, and it is worth being precise about where the fit is strong and where it is partial.</p>
+  </div>
+  <div class="el-list">
+
+    <div class="el-item">
+      <div class="el-num">01</div>
+      <div>
+        <div class="el-name">Place-based learning</div>
+        <p class="el-what">Learning anchored in a specific geography rather than a generic case study.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Every county world is built on that county's actual geography, landmarks and community life. Students recognise the streets.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">02</div>
+      <div>
+        <div class="el-name">Student and community agency</div>
+        <p class="el-what">Young people making real decisions that carry weight, rather than completing a task on rails.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Teams choose the challenge, choose the response, and defend it. Nobody on our side decides what the right answer is.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">03</div>
+      <div>
+        <div class="el-name">Relationships</div>
+        <p class="el-what">Sustained contact between students and the adults who hold knowledge about a place.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Students meet community voices inside the world and, at the finals, in person. This is the element most dependent on what a school builds around the program.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">04</div>
+      <div>
+        <div class="el-name">Community knowledge and assets</div>
+        <p class="el-what">Treating a community as a place with existing strengths rather than a list of deficits.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Students investigate what is already working before proposing anything. The design brief asks what to build on, not only what to fix.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">05</div>
+      <div>
+        <div class="el-name">Civic engagement</div>
+        <p class="el-what">Participation in the actual civic life of a place, not a simulation of it.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Teams present to judges, local civic leaders and county officials. The proposals go to people with standing to act on them.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">06</div>
+      <div>
+        <div class="el-name">Addressing community needs</div>
+        <p class="el-what">Work aimed at a need the community itself recognises.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Challenges come from real county conditions: housing, transportation, sustainability, public space. County partners help set them.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">07</div>
+      <div>
+        <div class="el-name">Equity</div>
+        <p class="el-what">Access to this kind of learning for students who are usually last in line for it.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Teams are four students, not a whole cohort, so a school can start small. Catalina County opens the same experience to counties without a built world.</p>
+      </div>
+    </div>
+
+    <div class="el-item">
+      <div class="el-num">08</div>
+      <div>
+        <div class="el-name">Meaningful assessment</div>
+        <p class="el-what">Judging the work by whether it holds up to an outside audience, not only by a rubric.</p>
+      </div>
+      <div class="el-how">
+        <div class="el-how-lbl">In the program</div>
+        <p>Students defend design decisions to judges who did not teach them. This is also the element schools most often want to extend with their own assessment.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMMUNITY SCHOOLS -->
+<section class="sec sec-navy">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-light page-h2">Where this sits in a community schools strategy</h2>
+    <p class="sec-header-intro">A community schools approach asks a school to work as part of its neighbourhood rather than as a building inside one. Most of that work is structural: partnerships, integrated supports, shared leadership. The part that is hardest to point at is instruction.</p>
+  </div>
+  <div class="grid-3">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3 class="pillar-title">It gives the strategy a lesson</h3>
+      <p class="pillar-body">Community schools plans often describe strong partnerships and then struggle to name what changes inside the classroom. This is a concrete answer to that question, with a deadline and an artifact at the end.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3 class="pillar-title">It runs on existing partners</h3>
+      <p class="pillar-body">The county office, local government and community organisations a community schools lead already works with are the same people who judge, host and set challenges here.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3 class="pillar-title">It produces something to show</h3>
+      <p class="pillar-body">Student voice is easy to claim and hard to evidence. A build, a recorded pitch and a room of officials who heard it is evidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Going deeper</h2>
+    <p class="sec-header-intro">We are a program, not a policy body. For the framework itself, go to the state.</p>
+  </div>
+  <div class="res-row">
+    <a href="https://www.cde.ca.gov/ci/gs/hs/ccspp.asp" target="_blank" rel="noopener" class="btn-primary">CA Community Schools Program &#8599;</a>
+    <a href="https://www.cde.ca.gov/ci/pl/hssstateseal.asp" target="_blank" rel="noopener" class="btn-outline">State Seal of Civic Engagement &#8599;</a>
+    <a href="/educators/" class="btn-outline">In a classroom</a>
+    <a href="/districts/" class="btn-outline">Across a district</a>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h2">Bring it to your students.</h2>
+    <p class="cta-band-body">
+      If community-based learning is already in your plan and you are looking for the instruction to go with it, this is a place to start. One teacher and four students is enough.
+    </p>
+    <div class="cta-band-btns">
+      <a href="mailto:info@levelupcivicsfoundation.org?subject=Community-based%20learning%20and%20Schools%20Reinventing%20Counties" class="btn-white">Email Us</a>
+      <a href="/program/" class="btn-ghost-white">See the program &#8594;</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

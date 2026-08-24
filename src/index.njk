@@ -1,5 +1,7 @@
 ---
-title: Home
+title: Game-Based Civics for California K-12
+description: >-
+  California K-12 students redesign their own counties inside Minecraft Education, then pitch their solutions to the local leaders who can act on them.
 ---
 {% extends "layouts/base.njk" %}
 
@@ -24,16 +26,21 @@ title: Home
   }
   .hero-h1 {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 900; font-size: clamp(56px, 6.5vw, 88px);
-    line-height: 0.95; color: var(--ink); letter-spacing: -0.01em;
+    font-weight: 900; font-size: clamp(42px, 4.9vw, 66px);
+    line-height: 1.02; color: var(--ink); letter-spacing: -0.01em;
     margin-bottom: 24px;
+  }
+  .sec-eyebrow {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 13px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 14px;
   }
   .hero-sub {
     font-size: 15px; line-height: 1.75; color: var(--gray);
     max-width: 460px; margin-bottom: 32px;
   }
-  .hero-cta-row { display: flex; gap: 10px; margin-bottom: 28px; }
-  .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+  .hero-cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero-cta-row > a { white-space: nowrap; }
 
   /* ── PROGRAM SECTION ────────────────────────────────────────── */
   .prog-grid {
@@ -42,8 +49,7 @@ title: Home
   }
   .prog-map {
     background: var(--navy);
-    aspect-ratio: 1 / 1;
-    padding: 36px 32px;
+    padding: 32px 28px 28px;
     display: flex; flex-direction: column;
     justify-content: center;
     position: relative; overflow: hidden;
@@ -54,7 +60,7 @@ title: Home
     text-transform: uppercase; margin-bottom: 20px;
     text-align: center;
   }
-  .prog-map img { width: 100%; height: auto; display: block; margin: 0 auto; }
+  .prog-map .ca-map { width: 100%; max-width: 430px; height: auto; display: block; margin: 0 auto; }
 
   /* ── PROOF SECTION ───────────────────────────────────────────── */
   .proof-list { display: flex; flex-direction: column; gap: 16px; }
@@ -76,11 +82,102 @@ title: Home
   }
   .proof-body { font-size: 16px; line-height: 1.75; color: var(--gray); }
 
+
+  /* ── TWO EXPERIENCES ─────────────────────────────── */
+  .two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .two-card { border: 1.5px solid var(--soft); padding: 40px 40px 36px; background: #fff; }
+  .two-eyebrow {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 13px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 10px;
+  }
+  .two-title {
+    font-family: 'Big Shoulders Display', sans-serif; font-weight: 900;
+    font-size: 38px; line-height: 1.05; color: var(--ink);
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .two-role {
+    font-size: 13px; font-weight: 600; color: var(--gray);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
+  }
+  .two-body { font-size: 16px; line-height: 1.75; color: var(--gray); }
+
+  .flow {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 10px; margin-top: 40px;
+    padding: 26px 20px; border: 1.5px solid var(--soft);
+  }
+  .flow-step {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 17px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink);
+  }
+  .flow-arrow { color: var(--red); font-size: 17px; }
+  .flow-tail {
+    width: 100%; text-align: center; margin-top: 12px;
+    font-size: 13px; color: var(--gray);
+  }
+
+  /* ── WHY MINECRAFT EDUCATION ──────────────────────── */
+  .mc-lead {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: clamp(26px, 2.6vw, 34px);
+    line-height: 1.15; color: var(--ink); max-width: 760px;
+    margin-bottom: 20px;
+  }
+  .mc-body {
+    font-size: 16px; line-height: 1.75; color: var(--gray);
+    max-width: 760px; margin-bottom: 18px;
+  }
+  .mc-links { margin-top: 44px; }
+
+  /* ── STATE SEAL ────────────────────────────────── */
+  .seal-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 36px; }
+  .seal-item { border-top: 2px solid var(--red); padding-top: 14px; }
+  .seal-verb {
+    font-family: 'Big Shoulders Display', sans-serif; font-weight: 700;
+    font-size: 24px; color: var(--ink); margin-bottom: 6px;
+  }
+  .seal-text { font-size: 14px; line-height: 1.65; color: var(--gray); }
+  .seal-note { margin-top: 32px; font-size: 13px; line-height: 1.7; color: var(--gray); max-width: 720px; }
+
+  /* ── VIDEO SLOT ────────────────────────────────── */
+  .video-slot {
+    aspect-ratio: 16 / 9; border: 2px dashed rgba(139,163,194,0.45);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; text-align: center; padding: 32px;
+  }
+  .video-play {
+    width: 62px; height: 62px; border-radius: 50%;
+    border: 2px solid var(--red); display: flex; align-items: center; justify-content: center;
+  }
+  .video-play span {
+    display: block; width: 0; height: 0; margin-left: 5px;
+    border-left: 17px solid var(--red);
+    border-top: 11px solid transparent; border-bottom: 11px solid transparent;
+  }
+  .video-badge {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 15px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--red);
+  }
+  .video-note { font-size: 14px; line-height: 1.7; color: var(--civic); max-width: 440px; }
+
+  @media (max-width: 900px) {
+    .two-grid { grid-template-columns: 1fr; }
+    .seal-list { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .seal-list { grid-template-columns: 1fr; }
+    .two-card { padding: 28px 22px; }
+  }
+
   /* ── RESPONSIVE ──────────────────────────────────────────── */
   @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; height: auto; min-height: unset; }
     .hero-content { padding: 52px 48px 56px; }
     .hero-visual { height: 400px; }
+    /* stacked, the crop is much shorter, so centre it rather than
+       showing the top of the frame */
+    .hero-visual img { object-position: center center; }
     .prog-grid { grid-template-columns: 1fr; gap: 48px; }
     .prog-map { aspect-ratio: auto; padding: 32px; }
   }
@@ -105,19 +202,13 @@ title: Home
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1 class="hero-h1">Game&#8209;Based Civic Education for California&nbsp;K–12</h1>
+    <h1 class="hero-h1">Game&#8209;Based Civics &amp; Community&#8209;Based Learning for California&nbsp;K–12</h1>
     <p class="hero-sub">
-      A statewide civics and esports initiative where K–12 students redesign their communities inside Minecraft Education — then pitch their solutions to the real leaders making decisions in their counties.
+      Students walk into a Minecraft Education version of their own county, take on a problem their community is actually arguing about, and build what they think the answer looks like. Then they present it to the people with the power to act on it. It is community-based learning, and it happens to be a competition.
     </p>
     <div class="hero-cta-row">
       <a href="#competition" class="btn-primary">Explore the Competition</a>
-      <a href="#program" class="btn-outline">How It Works</a>
-    </div>
-    <div class="hero-pills">
-      <a href="/battle/" class="pill">For Students →</a>
-      <a href="/educators/" class="pill">For Educators →</a>
-      <a href="/partners/" class="pill">For Counties →</a>
-      <a href="/partners/" class="pill">For Sponsors →</a>
+      <a href="#how-it-works" class="btn-outline">How It Works</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -136,55 +227,29 @@ title: Home
   </div>
 </div>
 
-<!-- SCHOOLS REINVENTING COUNTIES -->
-<section id="program" class="sec sec-cream">
-  <div class="prog-grid">
-    <div>
-      <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">Schools<br>Reinventing<br>Counties</h2>
-      <p class="sec-body">
-        A live Minecraft Education world covering the state of California. Students explore a digital map of their county, investigate a real local challenge — housing, transportation, sustainability — and design a solution.
-      </p>
-      <p class="sec-body">
-        Teams of four work with their teacher to build and document their solution, then enter the Battle of the Counties. No prior game experience required. The worlds come built. The thinking is up to your students.
-      </p>
-      <a href="/program/" class="btn-primary" style="margin-top: 12px;">Explore the Program →</a>
-    </div>
-    <div class="prog-map">
-      <div class="prog-map-label">4 Active Counties</div>
-      <img src="/assets/california-map.svg" alt="California county map">
-    </div>
-  </div>
-</section>
-
-<!-- THREE PILLARS -->
-<section class="sec sec-navy">
-  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Three Pillars,<br>One Program</h2>
-  <div class="grid-3">
-    <div class="pillar">
-      <div class="pillar-num">01</div>
-      <h3 class="pillar-title">STEM & Digital Literacy</h3>
-      <p class="pillar-body">Spatial reasoning, coding logic, and engineering design in a native digital environment. Students think like engineers while building real solutions.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-num">02</div>
-      <h3 class="pillar-title">Civic Engagement</h3>
-      <p class="pillar-body">Systems thinking, community problem-solving, and public policy exploration through authentic local challenges and real decision-makers.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-num">03</div>
-      <h3 class="pillar-title">Academic Esports</h3>
-      <p class="pillar-body">Real-time collaboration, consensus-building, and high-stakes presentation skills — in a competitive format that students actually want to win.</p>
-    </div>
-  </div>
-</section>
-
 <!-- BATTLE OF THE COUNTIES -->
 <section id="competition" class="sec sec-cream">
-  <div class="sec-header">
-    <h2 class="sec-h2 sec-h2-dark page-h2">Battle of<br>the Counties</h2>
-    <p class="sec-header-intro">A three-round statewide civics and esports competition. The best teams from each county advance toward a live championship — and the chance to pitch their ideas to the leaders who can act on them.</p>
+  <div class="prog-grid">
+    <div>
+      <div class="sec-eyebrow">Our Flagship Program · Now Running</div>
+      <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">Battle of the Counties</h2>
+      <p class="sec-body">
+        California students. Real communities. Real challenges. Real ideas.
+      </p>
+      <p class="sec-body">
+        A statewide civics and esports competition. Teams pick a problem in their own county, build their answer in Minecraft Education, and work their way toward a live championship. The teams that get there present to people who can act on what they propose.
+      </p>
+      <div class="hero-cta-row">
+        <a href="/battle/" class="btn-primary">Explore the Competition →</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ_Ey7Yax2ZY4iL5g_nlhYBC94LgoUUhQJX_KQA50Rpbvv8g/viewform?usp=header" target="_blank" class="btn-outline">Register a Team</a>
+      </div>
+    </div>
+    <div class="prog-map">
+      <div class="prog-map-label">4 Counties + Open Division</div>
+      {% include "partials/california-map.njk" %}
+    </div>
   </div>
-  <div class="grid-3">
+  <div class="grid-3" style="margin-top: 5rem;">
     <div class="card">
       <div class="card-eyebrow card-eyebrow-dark">Round 01</div>
       <h3 class="card-title">Virtual Qualifiers</h3>
@@ -201,8 +266,147 @@ title: Home
       <div class="card-eyebrow card-eyebrow-light">Round 03</div>
       <h3 class="card-title card-title-light">Statewide Championship</h3>
       <div class="card-badge card-badge-red">Jan 9, 2027</div>
-      <p class="card-body card-body-light">County Champions face off at the Richard Nixon Presidential Library in Yorba Linda. Projects are presented to state educators, community leaders, and real decision-makers.</p>
+      <p class="card-body card-body-light">County Champions face off at the Richard Nixon Presidential Library in Yorba Linda. Teams present their projects to state educators, community leaders, and local officials.</p>
     </div>
+  </div>
+</section>
+
+<!-- TWO EXPERIENCES -->
+<section id="how-it-works" class="sec sec-cream" style="padding-top: 0;">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">The world and the competition</h2>
+    <p class="sec-header-intro"><strong>Schools Reinventing Counties</strong> is the Minecraft Education world where students explore a real California community, identify a local problem, and build a solution. <strong>Battle of the Counties</strong> is the competition where teams submit that work and compete at the county and state level. A class can use the world all year without ever entering the competition.</p>
+  </div>
+  <div class="two-grid">
+    <div class="two-card">
+      <div class="two-eyebrow">The World</div>
+      <div class="two-title">Schools Reinventing Counties</div>
+      <div class="two-role">A Minecraft Education world</div>
+      <p class="two-body">Students step into a Minecraft version of a real California county, talk to community members, research a local issue, and design something that could actually help. Teachers set the pace.</p>
+    </div>
+    <div class="two-card">
+      <div class="two-eyebrow">The Competition</div>
+      <div class="two-title">Battle of the Counties</div>
+      <div class="two-role">An academic esports competition</div>
+      <p class="two-body">Teams of four record a three-minute video walkthrough of their build, compete in county rounds, and can advance to the Statewide Championship in January.</p>
+    </div>
+  </div>
+  <div class="flow">
+    <span class="flow-step">Explore</span><span class="flow-arrow">→</span>
+    <span class="flow-step">Learn</span><span class="flow-arrow">→</span>
+    <span class="flow-step">Design</span><span class="flow-arrow">→</span>
+    <span class="flow-step">Compete</span>
+    <div class="flow-tail">The first three steps happen in <strong>Schools Reinventing Counties</strong>. The fourth is <strong>Battle of the Counties</strong>.</div>
+  </div>
+</section>
+
+<!-- COMMUNITY-BASED LEARNING -->
+<section class="sec sec-navy">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-light page-h2">Community&#8209;Based Learning</h2>
+    <p class="sec-header-intro">Students learn from the places they live in and the people who live there with them. Community-based learning is the method the whole program runs on, from the first day in the world to the final pitch.</p>
+  </div>
+  <div class="grid-3">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3 class="pillar-title">Civic Engagement</h3>
+      <p class="pillar-body">Students dig into a real community need, weigh how different people would answer it, and put a proposal in front of an audience that includes local officials.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3 class="pillar-title">STEM &amp; Digital Literacy</h3>
+      <p class="pillar-body">Turning an idea into a working model takes spatial reasoning, iteration, and a lot of arguing about tradeoffs. Students have to build the thing, then defend the choices they made.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3 class="pillar-title">Academic Esports</h3>
+      <p class="pillar-body">Teams of four work to a deadline. They divide the labor, explain their reasoning out loud, and revise under pressure. Most of them care a great deal about winning, which turns out to be useful.</p>
+    </div>
+  </div>
+  <div class="hero-cta-row" style="margin-top: 3rem;">
+    <a href="/community-based-learning/" class="btn-cream">About community-based learning</a>
+  </div>
+</section>
+
+<!-- STATE SEAL OF CIVIC ENGAGEMENT -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Supporting the State Seal of Civic Engagement</h2>
+    <p class="sec-header-intro">The State Seal criteria describe civic knowledge, skills, dispositions and experiences. Schools Reinventing Counties and Battle of the Counties give students a real setting to build most of them, and to show they can.</p>
+  </div>
+  <div class="seal-list">
+    <div class="seal-item">
+      <div class="seal-verb">Investigate</div>
+      <p class="seal-text">Students identify and inquire into a real need in their own community.</p>
+    </div>
+    <div class="seal-item">
+      <div class="seal-verb">Consider</div>
+      <p class="seal-text">Students weigh multiple perspectives and possible responses before committing to one.</p>
+    </div>
+    <div class="seal-item">
+      <div class="seal-verb">Design &amp; Act</div>
+      <p class="seal-text">Students take action by designing and building a proposed community solution.</p>
+    </div>
+    <div class="seal-item">
+      <div class="seal-verb">Communicate</div>
+      <p class="seal-text">Students make the case for their ideas to authentic audiences and decision-makers.</p>
+    </div>
+    <div class="seal-item">
+      <div class="seal-verb">Reflect</div>
+      <p class="seal-text">Students reflect on their learning, their civic responsibility, and their potential impact.</p>
+    </div>
+  </div>
+  <p class="seal-note">
+    Each local educational agency decides how its own students meet its locally adopted State Seal requirements. Level Up Civics does not award the Seal. What we provide is the kind of informed civic engagement project the criteria ask for.
+    <a href="https://www.cde.ca.gov/ci/pl/hssstateseal.asp" target="_blank" rel="noopener">Learn about California's State Seal of Civic Engagement →</a>
+  </p>
+</section>
+
+<!-- PROMO VIDEO -->
+<section class="sec sec-navy">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-light page-h2">See It in Action</h2>
+    <p class="sec-header-intro">A short film about what happens when you give students a real problem in their own county, plus the tools to do something about it.</p>
+  </div>
+  <div class="video-slot">
+    <div class="video-play"><span></span></div>
+    <div class="video-badge">Film Coming Soon</div>
+    <p class="video-note">The film is in production and will be up before the September 22 world launch.</p>
+  </div>
+</section>
+
+<!-- WHY MINECRAFT EDUCATION -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Why Minecraft Education</h2>
+    <p class="sec-header-intro">Minecraft Education is the classroom edition of the game most of your students already play. You can build almost anything in it, which is both the appeal and the catch. An empty sandbox on its own does not teach anyone very much.</p>
+  </div>
+  <p class="mc-lead">The learning starts when you give the sandbox a brief.</p>
+  <p class="mc-body">
+    Constraints are what make it work. Students build on the geography they actually live in, for people a real solution would have to serve, against the same tradeoffs their county supervisors argue about. That is the design of Schools Reinventing Counties: a tool that can build anything, aimed at one specific local question nobody has solved yet.
+  </p>
+  <p class="mc-body">
+    Teachers do not need to be Minecraft experts. Most students already are. You run the thinking; they will run the blocks.
+  </p>
+  <div class="grid-3 mc-links">
+    <a href="https://education.minecraft.net/en-us/get-started/educators" target="_blank" rel="noopener" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">For Educators</div>
+      <h3 class="card-title">Getting started in class</h3>
+      <p class="card-body">Lesson libraries, training, and classroom setup, straight from Minecraft Education.</p>
+      <span class="card-link-text">Visit education.minecraft.net ↗</span>
+    </a>
+    <a href="https://education.minecraft.net/en-us/get-started/it-admins" target="_blank" rel="noopener" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">For IT Teams</div>
+      <h3 class="card-title">Deployment &amp; licensing</h3>
+      <p class="card-body">System requirements, device support, and how a district gets licenses set up.</p>
+      <span class="card-link-text">Visit education.minecraft.net ↗</span>
+    </a>
+    <a href="https://education.minecraft.net/en-us/get-started/parents" target="_blank" rel="noopener" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">For Families</div>
+      <h3 class="card-title">What parents should know</h3>
+      <p class="card-body">How the classroom edition differs from the game at home, and what students actually do in it.</p>
+      <span class="card-link-text">Visit education.minecraft.net ↗</span>
+    </a>
   </div>
 </section>
 
@@ -215,21 +419,21 @@ title: Home
         <div class="proof-loc">Jacksonville, FL</div>
         <h3 class="proof-title">Riverfront Redesign</h3>
       </div>
-      <p class="proof-body">Students redesigned a riverfront park during an actual city redesign. Their Minecraft builds were shared with urban planners and influenced real design conversations — going from game world to city council agenda.</p>
+      <p class="proof-body">Students redesigned a riverfront park while the city was redesigning it for real. Their builds went to the urban planners working on the project and fed into the design conversation.</p>
     </div>
     <div class="proof-card">
       <div class="proof-card-left">
         <div class="proof-loc">New York City</div>
         <h3 class="proof-title">Kingsbridge Armory</h3>
       </div>
-      <p class="proof-body">Students reimagined a dormant 25+ year-old armory. High engagement through civic imagination, with students presenting their ideas directly at City Hall to real decision-makers.</p>
+      <p class="proof-body">Students reimagined an armory that had sat empty for more than 25 years, then took their proposals to City Hall and presented them there.</p>
     </div>
     <div class="proof-card">
       <div class="proof-card-left">
         <div class="proof-loc">Calgary, Canada</div>
         <h3 class="proof-title">Accessible District</h3>
       </div>
-      <p class="proof-body">Students partnered with an accessibility advocate to redesign an entertainment district for disabled community members — going from building in Minecraft to advocating in person.</p>
+      <p class="proof-body">Students worked with an accessibility advocate to redesign an entertainment district for disabled residents, then made the case for it in person.</p>
     </div>
   </div>
 </section>
@@ -249,28 +453,34 @@ title: Home
 
 <!-- GET INVOLVED -->
 <section class="sec sec-cream">
-  <h2 class="sec-h2 sec-h2-dark page-h2 h2-block">There's a Role<br>for Everyone</h2>
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-block">There's a Role for Everyone</h2>
   <div class="inv-grid">
     <a href="/battle/" class="card card-link">
       <div class="card-eyebrow card-eyebrow-dark">Students</div>
-      <h3 class="card-title">Compete & Advocate</h3>
+      <h3 class="card-title">Compete &amp; Advocate</h3>
       <p class="card-body">Build a solution to a real challenge in your county. Form a team of four and represent your school in the Battle of the Counties.</p>
       <span class="card-link-text">Enter the competition →</span>
     </a>
     <a href="/educators/" class="card card-link">
       <div class="card-eyebrow card-eyebrow-dark">Educators</div>
       <h3 class="card-title">Pilot a Class</h3>
-      <p class="card-body">No game experience required. The worlds come built, training is provided. You facilitate; your students do the advocating.</p>
+      <p class="card-body">You do not need any game experience. We build the worlds and run the training. You facilitate; your students do the advocating.</p>
       <span class="card-link-text">Get your school involved →</span>
     </a>
     <a href="/partners/" class="card card-link">
       <div class="card-eyebrow card-eyebrow-dark">Sponsors</div>
       <h3 class="card-title">Back the Program</h3>
-      <p class="card-body">Sponsor a county, a region, or the championship. Visible civic investment with measurable outcomes in the communities you operate in.</p>
+      <p class="card-body">Sponsor a county, a region, or the championship. Your name sits on work students did in the communities where you operate, and we report back on what came of it.</p>
       <span class="card-link-text">Explore sponsorship →</span>
     </a>
+    <a href="/districts/" class="card card-link">
+      <div class="card-eyebrow card-eyebrow-dark">Districts</div>
+      <h3 class="card-title">Start With One Team</h3>
+      <p class="card-body">One teacher and four students is enough to begin. Works through a class, a club, or an esports team you already run.</p>
+      <span class="card-link-text">See how it fits →</span>
+    </a>
     <a href="/partners/" class="card card-link">
-      <div class="card-eyebrow card-eyebrow-dark">Counties &amp; Districts</div>
+      <div class="card-eyebrow card-eyebrow-dark">Counties</div>
       <h3 class="card-title">Join the Initiative</h3>
       <p class="card-body">Bring Schools Reinventing Counties to your students. We handle the world build. Your schools bring the ideas.</p>
       <span class="card-link-text">Talk to us →</span>

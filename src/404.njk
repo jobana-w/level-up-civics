@@ -1,0 +1,51 @@
+---
+title: Page Not Found
+description: >-
+  That page does not exist. Head back to Level Up Civics to find Schools Reinventing Counties, Battle of the Counties, and the rest of the program.
+permalink: /404.html
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  .nf-wrap {
+    background: var(--navy); background-image: var(--grid-navy);
+    padding: 180px 80px 160px;
+    min-height: 58vh;
+  }
+  .nf-code {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 15px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 20px;
+  }
+  .nf-h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: clamp(48px, 6vw, 84px);
+    line-height: 1.02; letter-spacing: -0.01em;
+    color: var(--cream); margin-bottom: 22px;
+  }
+  .nf-sub {
+    font-size: 16px; line-height: 1.75;
+    color: rgba(255,255,255,0.9); max-width: 520px; margin-bottom: 34px;
+  }
+  .nf-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  @media (max-width: 768px) { .nf-wrap { padding: 120px 32px 100px; } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="nf-wrap">
+  <div class="nf-code">Error 404</div>
+  <h1 class="nf-h1">This block isn't here.</h1>
+  <p class="nf-sub">
+    The page you were after has moved or never existed. Everything below still stands.
+  </p>
+  <div class="nf-links">
+    <a href="/" class="btn-cream">Back to the home page</a>
+    <a href="/battle/" class="btn-ghost-white">Battle of the Counties →</a>
+    <a href="/educators/" class="btn-ghost-white">For Educators →</a>
+  </div>
+</div>
+{% endblock %}

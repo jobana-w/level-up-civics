@@ -1,5 +1,7 @@
 ---
 title: Battle of the Counties
+description: >-
+  Battle of the Counties is a statewide civics and academic esports competition for California K-12 students, running from September qualifiers to the January 9, 2027 Statewide Championship.
 ---
 {% extends "layouts/base.njk" %}
 
@@ -17,7 +19,7 @@ title: Battle of the Counties
     color: rgba(139,163,194,0.6); letter-spacing: 0.14em;
     text-transform: uppercase; margin-bottom: 24px; text-align: center;
   }
-  .botc-map img { width: 100%; height: auto; display: block; margin: 0 auto; }
+  .botc-map .ca-map { width: 100%; max-width: 430px; height: auto; display: block; margin: 0 auto; }
   @media (max-width: 768px) { .botc-map { display: none; } }
 
   /* ── ENTRY STEPS ────────────────────────────────────────────── */
@@ -56,13 +58,13 @@ title: Battle of the Counties
       A statewide civics and esports competition. Student teams investigate a real community challenge, design a solution in Minecraft, and pitch it to the leaders who can act on it.
     </p>
     <div class="page-hero-cta">
-      <a href="/submit/" class="btn-cream">Submit a Project</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ_Ey7Yax2ZY4iL5g_nlhYBC94LgoUUhQJX_KQA50Rpbvv8g/viewform?usp=header" target="_blank" class="btn-cream">Register a Team</a>
       <a href="#enter" class="btn-ghost-civic">How to Enter →</a>
     </div>
   </div>
   <div class="botc-map">
-    <div class="botc-map-lbl">4 Active Counties</div>
-    <img src="/assets/california-map.svg" alt="California counties participating in Battle of the Counties">
+    <div class="botc-map-lbl">4 Counties + Open Division</div>
+    {% include "partials/california-map.njk" %}
   </div>
 </div>
 
@@ -80,9 +82,9 @@ title: Battle of the Counties
 <!-- THREE ROUNDS -->
 <section class="sec sec-cream">
   <div class="sec-header">
-    <h2 class="sec-h2 sec-h2-dark page-h2">Three rounds.<br>One champion.</h2>
+    <h2 class="sec-h2 sec-h2-dark page-h2">Three rounds to the championship.</h2>
     <p class="sec-header-intro">
-      Teams advance from virtual qualifiers to live county championships, then compete for the statewide title. Each round raises the stakes — and the audience.
+      Teams advance from virtual qualifiers to live county championships, then compete for the statewide title. Each round raises the stakes, and the size of the audience with them.
     </p>
   </div>
   <div class="grid-3">
@@ -109,9 +111,9 @@ title: Battle of the Counties
 
 <!-- HOW TO ENTER -->
 <section id="enter" class="sec sec-navy">
-  <h2 class="sec-h2 sec-h2-light page-h2 h2-body">How your<br>team enters.</h2>
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-body">How your team enters.</h2>
   <p class="entry-intro">
-    Every participating school fields one team of four students. No prior Minecraft experience required — the worlds come built, and your educators get training and support before the world goes live.
+    Every participating school fields one team of four students. No prior Minecraft experience is needed. The worlds come built, and your educators get training and support before the world goes live.
   </p>
   <div class="grid-4">
     <div class="pillar pillar-sm">
@@ -143,20 +145,20 @@ title: Battle of the Counties
 
 <!-- WHAT MAKES A STRONG ENTRY -->
 <section class="sec sec-cream">
-  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What makes a<br>strong entry.</h2>
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What makes a strong entry.</h2>
   <p class="criteria-intro">
-    Judges look at the full arc from investigation to solution. A strong entry doesn't just look impressive — it shows the community thinking behind every design decision.
+    Judges look at the full arc from investigation to solution. A strong entry shows the community thinking behind every design decision, which matters more than how impressive the build looks.
   </p>
   <div class="grid-4">
     <div class="card">
       <div class="card-eyebrow card-eyebrow-red">Research</div>
       <h3 class="card-title">Investigate Before You Build</h3>
-      <p class="card-body">Strong entries show real investigation — listening to community voices, understanding the challenge, and grounding decisions in evidence.</p>
+      <p class="card-body">Strong entries show real investigation: listening to community voices, understanding the challenge, and grounding decisions in evidence.</p>
     </div>
     <div class="card">
       <div class="card-eyebrow card-eyebrow-red">Solution</div>
       <h3 class="card-title">Design That Responds</h3>
-      <p class="card-body">The solution should directly address a real community need — not just a creative idea, but a thoughtful one rooted in what you learned.</p>
+      <p class="card-body">The solution should answer a real community need. Creativity helps, but the ideas that hold up are the ones rooted in what the team learned.</p>
     </div>
     <div class="card">
       <div class="card-eyebrow card-eyebrow-red">Build</div>
@@ -179,7 +181,7 @@ title: Battle of the Counties
       The world opens September 22. Get your team together, explore your county, and submit your entry before November 15.
     </p>
     <div class="cta-band-btns">
-      <a href="/submit/" class="btn-white">Submit a Project</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ_Ey7Yax2ZY4iL5g_nlhYBC94LgoUUhQJX_KQA50Rpbvv8g/viewform?usp=header" target="_blank" class="btn-white">Register a Team</a>
       <a href="/educators/" class="btn-ghost-white">For Educators →</a>
     </div>
   </div>

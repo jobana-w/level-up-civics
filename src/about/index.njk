@@ -1,5 +1,7 @@
 ---
 title: About
+description: >-
+  Level Up Civics Foundation is a California nonprofit connecting students to real community challenges through game-based civic design.
 ---
 {% extends "layouts/base.njk" %}
 
@@ -11,6 +13,9 @@ title: About
     gap: 80px; align-items: start; margin-top: 48px;
   }
   .about-cards-col { display: flex; flex-direction: column; gap: 12px; }
+
+  .about-org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .about-org-grid { grid-template-columns: 1fr; } }
 
   /* ── QUOTE BAND (local — mirrors program page) ───────────────── */
   .quote-band { border-top: 4px solid var(--red); background: var(--cream); padding: 80px; }
@@ -80,9 +85,9 @@ title: About
 <div class="page-hero">
   <div class="page-hero-content">
     <div class="page-hero-eyebrow">About</div>
-    <h1 class="page-hero-h1">Student ideas should<br>reach the people<br>in charge.</h1>
+    <h1 class="page-hero-h1">Student ideas should reach the people in charge.</h1>
     <p class="page-hero-sub">
-      Level Up Civics Foundation is a California nonprofit that connects students to real community challenges through game-based civic design, bringing together educators, county offices of education, local government, and technology partners so that student ideas reach the people who make local decisions.
+      Level Up Civics Foundation is a California nonprofit. We connect students to real community challenges through game-based civic design, and we bring together the educators, county offices of education, local government and technology partners it takes to get a student&#39;s idea in front of someone who can act on it.
     </p>
     <div class="page-hero-cta">
       <a href="/program/" class="btn-cream">See the Program</a>
@@ -96,16 +101,16 @@ title: About
 
 <!-- WHAT WE BELIEVE -->
 <section class="sec sec-cream">
-  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What we<br>believe.</h2>
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What we believe.</h2>
   <div class="about-grid">
     <div>
       <p class="sec-body">Level Up Civics gives students a real community problem, a game-based world to build their solution in, and a real decision-maker to pitch it to. When students know their ideas can reach the people in charge, an assignment becomes advocacy.</p>
-      <p class="sec-body">The principle the program is built on: a real location, a specific problem, and a real audience produce deeper student work than an open-ended prompt. The result is civic agency and workforce-ready skills — students who have investigated, designed, built, and argued for something that matters in the real world.</p>
+      <p class="sec-body">The principle behind the program: a specific place, a specific problem, and an audience who will actually turn up produce better student work than an open prompt. What comes out the other side are students who have investigated something, designed for it, built it, and argued for it in public.</p>
     </div>
     <div class="about-cards-col">
       <div class="info-card">
         <div class="info-card-lbl">The problem</div>
-        <p class="info-card-text">A real community challenge in their county — not a fictional scenario</p>
+        <p class="info-card-text">A real community challenge in their own county rather than a fictional scenario</p>
       </div>
       <div class="info-card">
         <div class="info-card-lbl">The world</div>
@@ -113,12 +118,33 @@ title: About
       </div>
       <div class="info-card">
         <div class="info-card-lbl">The audience</div>
-        <p class="info-card-text">Local leaders who are present to listen, not just to evaluate</p>
+        <p class="info-card-text">Local leaders who are in the room to listen as much as to judge</p>
       </div>
       <div class="info-card">
         <div class="info-card-lbl">The result</div>
-        <p class="info-card-text">Civic agency and workforce-ready skills that extend well beyond a single class</p>
+        <p class="info-card-text">Civic confidence and work habits that outlast the class they were learned in</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE ORGANISATION AND THE PROGRAM -->
+<section class="sec sec-cream" style="padding-top: 0;">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">The nonprofit and the program</h2>
+    <p class="sec-header-intro">These two names get used interchangeably, so it is worth separating them. One is the organisation. The other is what it currently runs.</p>
+  </div>
+  <div class="about-org-grid">
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-dark">The organisation</div>
+      <h3 class="card-title">Level Up Civics Foundation</h3>
+      <p class="card-body">A California nonprofit, 501(c)(3) status pending. Our work is getting students into real civic problems and getting their proposals in front of the people who decide. Battle of the Counties is how we do that today. It is not the whole of what the foundation is for.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">The flagship program</div>
+      <h3 class="card-title">Schools Reinventing Counties &amp; Battle of the Counties</h3>
+      <p class="card-body">Our current flagship experience. Schools Reinventing Counties is the Minecraft Education world and the learning inside it. Battle of the Counties is the academic esports competition built around it, running through the Statewide Championship on January 9, 2027.</p>
+      <a href="/program/" class="card-link-text" style="display:inline-block; text-decoration:none;">See how the two fit together &#8594;</a>
     </div>
   </div>
 </section>
@@ -138,32 +164,32 @@ title: About
 
 <!-- WHO WE BRING TOGETHER -->
 <section class="sec sec-navy">
-  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Who we bring<br>together.</h2>
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Who we bring together.</h2>
   <div class="grid-3">
     <div class="pillar">
       <div class="pillar-num">01</div>
       <h3 class="pillar-title">County Offices of Education</h3>
-      <p class="pillar-body">County education offices anchor the program. When a county commits, the world gets built and every school in that region gets access — with the county providing the institutional credibility, licensing coordination, and event hosting that makes it real.</p>
+      <p class="pillar-body">County education offices anchor the program. When a county commits, the world gets built and every school in that region gets access. The county brings the institutional credibility, the licensing coordination, and somewhere to hold the event.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">02</div>
       <h3 class="pillar-title">Sponsors and Grant Funders</h3>
-      <p class="pillar-body">Mission-aligned organizations fund the county world builds and program operations. Each world is a one-time investment that serves cohort after cohort of students — durable civic learning infrastructure rather than recurring program spend.</p>
+      <p class="pillar-body">Mission-aligned organizations fund the county world builds and program operations. Each world is a one-time build that then serves cohort after cohort. It behaves more like infrastructure than like a program you have to fund again every year.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">03</div>
       <h3 class="pillar-title">City and County Government</h3>
-      <p class="pillar-body">Local government partners bring a genuine community challenge and a commitment to show up and hear what students propose. Their presence is what makes the stakes real — students pitch to the people who can actually act on their ideas.</p>
+      <p class="pillar-body">Local government partners bring a genuine community challenge and a commitment to show up and hear what students propose. Their presence is what raises the stakes. Students pitch to people who can act on what they hear.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">04</div>
       <h3 class="pillar-title">Educators</h3>
-      <p class="pillar-body">Teachers facilitate the design process. The worlds come built and the rounds come structured — educators guide students through investigation, design, and advocacy without needing to build anything themselves.</p>
+      <p class="pillar-body">Teachers facilitate the design process. The worlds come built and the rounds come structured, so educators can take students through investigation, design and advocacy without building anything themselves.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">05</div>
       <h3 class="pillar-title">Platform and Build Partners</h3>
-      <p class="pillar-body">Minecraft Education provides the game-based platform. Lifeboat Studios builds every county world, grounded in real local geography, landmarks, and community life — with no work required from school staff.</p>
+      <p class="pillar-body">Minecraft Education provides the game-based platform. Lifeboat Studios builds every county world on real local geography, landmarks and community life, with no work required from school staff.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">06</div>
