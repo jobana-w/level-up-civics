@@ -1,0 +1,178 @@
+---
+title: Submit a Project
+description: >-
+  How to submit your team's Battle of the Counties entry, what to prepare before you open the form, and what judges want to see in your video walkthrough.
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  /* ── SUBMISSION CHECKLIST ────────────────────────────────────── */
+  .submit-checklist {
+    display: flex; flex-direction: column;
+    max-width: 720px; margin-top: 48px;
+  }
+  .submit-item {
+    display: grid; grid-template-columns: 48px 1fr;
+    gap: 24px; align-items: start;
+    padding: 28px 0;
+    border-top: 1px solid var(--soft);
+  }
+  .submit-item:last-child { border-bottom: 1px solid var(--soft); }
+  .submit-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: 32px;
+    color: var(--red); line-height: 1; padding-top: 4px;
+  }
+  .submit-item-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 22px;
+    color: var(--ink); line-height: 1.1; margin-bottom: 8px;
+  }
+  .submit-item-body { font-size: 15px; line-height: 1.65; color: var(--gray); }
+
+  /* ── FORM SECTION ────────────────────────────────────────────── */
+  .submit-form-wrap { max-width: 600px; margin: 48px auto 0; text-align: center; }
+  .submit-deadline {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 13px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray); margin-top: 24px;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .submit-item { grid-template-columns: 36px 1fr; gap: 16px; }
+    .submit-num { font-size: 24px; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Submit a Project</div>
+    <h1 class="page-hero-h1">Submit your team's entry.</h1>
+    <p class="page-hero-sub">
+      Teachers submit one entry per school on behalf of their team. Have your video and team information ready before you open the form. Submissions close November 15.
+    </p>
+    <div class="page-hero-cta">
+      <a href="#submit-form" class="btn-cream">Go to the Form</a>
+      <a href="#what-to-prepare" class="btn-ghost-civic">What to Prepare →</a>
+    </div>
+  </div>
+  <div class="page-hero-visual">
+    <img src="/assets/kids-collage.png" alt="Students competing in Battle of the Counties">
+  </div>
+</div>
+
+<!-- DATE TICKER -->
+<div class="ticker">
+  <div class="ticker-lbl">Key Dates</div>
+  <div class="ticker-items">
+    <div class="ticker-event"><span class="ticker-date">SEPT 22</span><span class="ticker-name">World goes live</span></div>
+    <div class="ticker-event"><span class="ticker-date">NOV 15</span><span class="ticker-name">Submissions close</span></div>
+    <div class="ticker-event"><span class="ticker-date">DEC 4–5</span><span class="ticker-name">County Finals</span></div>
+    <div class="ticker-event"><span class="ticker-date">JAN 9, 2027</span><span class="ticker-name">Statewide Championship</span></div>
+  </div>
+</div>
+
+<!-- WHAT TO PREPARE -->
+<section id="what-to-prepare" class="sec sec-cream">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What to have ready.</h2>
+  <p class="sec-intro">
+    Before you open the form, make sure you have the following on hand.
+  </p>
+  <div class="submit-checklist">
+    <div class="submit-item">
+      <div class="submit-num">01</div>
+      <div>
+        <div class="submit-item-title">School and county information</div>
+        <p class="submit-item-body">Your school name, your county (Orange, San Bernardino, Riverside, or Yolo), and a school district email address.</p>
+      </div>
+    </div>
+    <div class="submit-item">
+      <div class="submit-num">02</div>
+      <div>
+        <div class="submit-item-title">Your team's names and grade level</div>
+        <p class="submit-item-body">First and last names of all four students on the team, and their grade level. County champions are recognized by grade level.</p>
+      </div>
+    </div>
+    <div class="submit-item">
+      <div class="submit-num">03</div>
+      <div>
+        <div class="submit-item-title">A brief project description</div>
+        <p class="submit-item-body">A short written summary of the community challenge your team investigated and the solution they built in Minecraft.</p>
+      </div>
+    </div>
+    <div class="submit-item">
+      <div class="submit-num">04</div>
+      <div>
+        <div class="submit-item-title">A link to your 3-minute video</div>
+        <p class="submit-item-body">Your team's video walkthrough, hosted somewhere shareable (YouTube, Google Drive, etc.). The video should be narrated by the students and run no longer than 3 minutes. See below for what judges want to hear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE VIDEO NEEDS TO COVER -->
+<section class="sec sec-navy">
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-body">What the video needs to cover.</h2>
+  <p class="sec-intro sec-intro-light sec-intro-mb">
+    Judges review every submission. A strong video covers all four of these in the students' own words.
+  </p>
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Research</div>
+      <h3 class="card-title card-title-light">What did you investigate?</h3>
+      <p class="card-body card-body-light">Explain the real community challenge your team chose to address. Show that you listened, researched, and understood the problem before you started building.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Solution</div>
+      <h3 class="card-title card-title-light">What did you design?</h3>
+      <p class="card-body card-body-light">Walk through the solution your team built. Explain how it responds to what you learned and why the team made the choices it made, rather than only describing how it looks.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Build</div>
+      <h3 class="card-title card-title-light">Show the build.</h3>
+      <p class="card-body card-body-light">Walk judges through your Minecraft build. Every design choice should have a purpose. Show the reasoning behind the construction as well as the finished result.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Communication</div>
+      <h3 class="card-title card-title-light">Make the case.</h3>
+      <p class="card-body card-body-light">Explain why your solution would improve your community and who it would benefit. This is where students get to advocate rather than simply present.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUBMIT -->
+<section id="submit-form" class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Submit your entry.</h2>
+    <p class="sec-header-intro">
+      One submission per school. The form collects your school and team information, a brief project description, and a link to your video. Submitting teachers confirm that the entry is the original work of the students listed.
+    </p>
+  </div>
+  <div class="submit-form-wrap">
+    <p class="placeholder-note">Placeholder. The submission form is being built in Google Forms. Swap this button for the live form URL once it exists, restore the label to "Open the Submission Form", and set it to open in a new tab.</p>
+    <a href="mailto:info@levelupcivicsfoundation.org?subject=Battle%20of%20the%20Counties%20submission%20question" data-pending="cognito-submission-form" class="btn-primary" style="margin-top: 24px; display: inline-block;">Questions before you submit →</a>
+    <p class="submit-deadline">Submissions close November 15, 2026</p>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h2">Questions about the competition?</h2>
+    <p class="cta-band-body">
+      Review the full competition details or reach out directly.
+    </p>
+    <div class="cta-band-btns">
+      <a href="/battle/" class="btn-white">Battle of the Counties</a>
+      <a href="mailto:info@levelupcivicsfoundation.org" class="btn-ghost-white">Email us →</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

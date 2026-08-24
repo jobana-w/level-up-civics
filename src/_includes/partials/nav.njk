@@ -3,14 +3,67 @@
     <img src="/assets/lockup-full-color.svg" alt="Level Up Civics" class="nav-logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="/program/">The Program</a></li>
-    <li><a href="/#competition">Battle of the Counties</a></li>
-    <li><a href="/educators/">For Educators</a></li>
-    <li><a href="/partners/">Partners</a></li>
+    <li><a href="/battle/">Battle of the Counties</a></li>
+    <li class="nav-item-drop">
+      <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">
+        The Program <span class="nav-drop-caret">▾</span>
+      </button>
+      <ul class="nav-dropdown" role="menu">
+        <li><a href="/program/" role="menuitem">Schools Reinventing Counties</a></li>
+        <li><a href="/community-based-learning/" role="menuitem">Community-Based Learning</a></li>
+      </ul>
+    </li>
+    <li class="nav-item-drop">
+      <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">
+        Get Involved <span class="nav-drop-caret">▾</span>
+      </button>
+      <ul class="nav-dropdown" role="menu">
+        <li><a href="/educators/" role="menuitem">For Educators</a></li>
+        <li><a href="/districts/" role="menuitem">For Districts</a></li>
+        <li><a href="/partners/" role="menuitem">For Counties &amp; Sponsors</a></li>
+      </ul>
+    </li>
     <li><a href="/about/">About</a></li>
   </ul>
   <div class="nav-ctas">
-    <a href="/donate/" class="btn-nav-ghost">Donate</a>
-    <a href="/submit/" class="btn-nav-red">Submit Project</a>
+    <!-- DONATE — hidden until Jason confirms the EIN and the donation processor URL.
+         To enable: uncomment and replace the href.
+    <a href="DONATE_URL" class="btn-nav-ghost">Donate</a>
+    -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ_Ey7Yax2ZY4iL5g_nlhYBC94LgoUUhQJX_KQA50Rpbvv8g/viewform?usp=header" target="_blank" class="btn-nav-red">Register a Team</a>
   </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <ul class="nav-mobile-links">
+    <li><a href="/battle/">Battle of the Counties</a></li>
+    <li class="nav-mobile-item-drop">
+      <button class="nav-mobile-drop-btn">
+        The Program <span class="nav-drop-caret">▾</span>
+      </button>
+      <ul class="nav-mobile-dropdown">
+        <li><a href="/program/">Schools Reinventing Counties</a></li>
+        <li><a href="/community-based-learning/">Community-Based Learning</a></li>
+      </ul>
+    </li>
+    <li class="nav-mobile-item-drop">
+      <button class="nav-mobile-drop-btn">
+        Get Involved <span class="nav-drop-caret">▾</span>
+      </button>
+      <ul class="nav-mobile-dropdown">
+        <li><a href="/educators/">For Educators</a></li>
+        <li><a href="/districts/">For Districts</a></li>
+        <li><a href="/partners/">For Counties &amp; Sponsors</a></li>
+      </ul>
+    </li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+  <div class="nav-mobile-ctas">
+    <!-- DONATE — see note in the desktop nav above.
+    <a href="DONATE_URL" class="btn-nav-ghost">Donate</a>
+    -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ_Ey7Yax2ZY4iL5g_nlhYBC94LgoUUhQJX_KQA50Rpbvv8g/viewform?usp=header" target="_blank" class="btn-nav-red">Register a Team</a>
+  </div>
+</div>
