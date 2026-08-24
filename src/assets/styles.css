@@ -24,7 +24,7 @@ body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   height: 64px; display: flex; align-items: center;
-  padding: 0 80px;
+  padding: 0 max(80px, calc(50% - 640px));
   background: var(--cream);
   border-bottom: 1px solid var(--soft);
 }
@@ -152,7 +152,7 @@ li.nav-mobile-item-drop { border-bottom: none; }
 .btn-ghost-white:hover { border-color: rgba(255,255,255,0.9); }
 
 /* ── SECTIONS SHARED ────────────────────────────────────────── */
-.sec { padding: 120px 80px; }
+.sec { padding: 120px max(80px, calc(50% - 640px)); }
 .sec-cream { background: var(--cream); }
 .sec-navy  { background: var(--navy); background-image: var(--grid-navy); }
 
@@ -247,7 +247,7 @@ li.nav-mobile-item-drop { border-bottom: none; }
 
 /* ── DATE TICKER ─────────────────────────────────────────────── */
 .ticker {
-  background: var(--red); padding: 40px 80px;
+  background: var(--red); padding: 40px max(80px, calc(50% - 640px));
   display: flex; flex-direction: column; align-items: center; gap: 28px;
 }
 .ticker-lbl {
@@ -273,7 +273,7 @@ li.nav-mobile-item-drop { border-bottom: none; }
 /* ── PARTNERS BAR ───────────────────────────────────────────── */
 .partners-bar {
   background: var(--navy); background-image: var(--grid-navy);
-  padding: 40px 80px;
+  padding: 40px max(80px, calc(50% - 640px));
   display: flex; flex-direction: column; align-items: center; gap: 28px;
   border-top: 1px solid var(--mnav);
 }
@@ -299,7 +299,7 @@ li.nav-mobile-item-drop { border-bottom: none; }
 /* ── FOOTER ─────────────────────────────────────────────────── */
 footer {
   background: var(--ink); background-image: var(--grid-navy);
-  padding: 72px 80px 40px;
+  padding: 72px max(80px, calc(50% - 640px)) 40px;
 }
 .footer-top {
   display: grid; grid-template-columns: 1fr 2fr;
@@ -339,7 +339,7 @@ footer {
 }
 
 /* ── CTA BAND ────────────────────────────────────────────────── */
-.cta-band { background: var(--red); padding: 100px 80px; }
+.cta-band { background: var(--red); padding: 100px max(80px, calc(50% - 640px)); }
 .cta-band-inner { max-width: 680px; }
 .cta-band-h2 {
   font-family: 'Big Shoulders Display', sans-serif;
@@ -377,7 +377,8 @@ footer {
 .page-hero {
   background: var(--navy); background-image: var(--grid-navy);
   display: grid; grid-template-columns: 55% 45%;
-  padding-top: 64px; align-items: end;
+  padding: 64px 0 0 max(0px, calc(50% - 720px));
+  align-items: end;
 }
 .page-hero-content {
   padding: 100px 72px 80px 80px;
