@@ -1,5 +1,7 @@
 ---
 title: Partners & Sponsors
+description: >-
+  Sponsor a county, a region, or the statewide championship. Partner with Level Up Civics to put California students in front of the leaders shaping their communities.
 ---
 {% extends "layouts/base.njk" %}
 
@@ -21,7 +23,7 @@ title: Partners & Sponsors
   .partner-stat-num {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 900; font-size: clamp(44px, 5vw, 72px);
-    line-height: 0.95; color: var(--cream); letter-spacing: -0.02em;
+    line-height: 1.02; color: var(--cream); letter-spacing: -0.02em;
     margin-bottom: 8px;
   }
   .partner-stat-lbl {
@@ -32,9 +34,13 @@ title: Partners & Sponsors
 
   /* ── PARTNER LOGO PLACEHOLDER ───────────────────────────────── */
   .partner-logo-wrap {
-    height: 56px; background: var(--soft);
-    display: flex; align-items: center; justify-content: center;
+    height: 104px;
+    display: flex; align-items: center; justify-content: flex-start;
     margin-bottom: 16px;
+  }
+  .partner-logo-wrap img {
+    max-height: 100%; max-width: 100%;
+    width: auto; height: auto; object-fit: contain; display: block;
   }
   .partner-logo-wrap span {
     font-family: 'Pixelify Sans', sans-serif; font-size: 10px;
@@ -86,7 +92,7 @@ title: Partners & Sponsors
 <div class="page-hero">
   <div class="page-hero-content">
     <div class="page-hero-eyebrow">Partners & Sponsors</div>
-    <h1 class="page-hero-h1">Visible civic investment.<br>Measurable civic outcomes.</h1>
+    <h1 class="page-hero-h1">Visible civic investment. Measurable civic outcomes.</h1>
     <p class="page-hero-sub">
       Schools Reinventing Counties works because county education offices, sponsors, and civic leaders commit to making it real. The worlds come built. The stakes are genuine. The results are real.
     </p>
@@ -114,39 +120,39 @@ title: Partners & Sponsors
 <!-- WHO'S IN THE PROGRAM -->
 <section class="sec sec-cream">
   <div class="sec-header">
-    <h2 class="sec-h2 sec-h2-dark page-h2">Who's in<br>the program.</h2>
+    <h2 class="sec-h2 sec-h2-dark page-h2">Who's in the program.</h2>
     <p class="sec-header-intro">
       Orange County is the founding county partner, the first county in California to run a program like this. San Bernardino, Riverside, and Yolo counties joined for 2026–27, with additional counties expected as the program grows. Minecraft Education provides the platform. Lifeboat Studios builds every county world.
     </p>
   </div>
   <div class="grid-3">
     <div class="info-card">
-      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="partner-logo-wrap"><img src="/assets/logos/ocde.png" alt="Orange County Department of Education logo"></div>
       <div class="info-card-lbl">Lead County Partner</div>
       <p class="info-card-text">Orange County Dept. of Education</p>
     </div>
     <div class="info-card">
-      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="partner-logo-wrap"><img src="/assets/logos/sbcoe.png" alt="San Bernardino County Office of Education logo"></div>
       <div class="info-card-lbl">County Partner</div>
       <p class="info-card-text">San Bernardino County Office of Education</p>
     </div>
     <div class="info-card">
-      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="partner-logo-wrap"><img src="/assets/logos/rcoe.png" alt="Riverside County Office of Education logo"></div>
       <div class="info-card-lbl">County Partner</div>
       <p class="info-card-text">Riverside County Office of Education</p>
     </div>
     <div class="info-card">
-      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="partner-logo-wrap"><img src="/assets/logos/ycoe.png" alt="Yolo County Office of Education logo"></div>
       <div class="info-card-lbl">County Partner</div>
       <p class="info-card-text">Yolo County Office of Education</p>
     </div>
     <div class="info-card">
-      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="partner-logo-wrap"><img src="/assets/logos/minecraft-education.png" alt="Minecraft Education logo"></div>
       <div class="info-card-lbl">Platform</div>
       <p class="info-card-text">Minecraft Education</p>
     </div>
     <div class="info-card">
-      <div class="partner-logo-wrap"><span>Logo placeholder</span></div>
+      <div class="partner-logo-wrap"><img src="/assets/logos/lifeboat.png" alt="Lifeboat Studios logo"></div>
       <div class="info-card-lbl">World Builder</div>
       <p class="info-card-text">Lifeboat Studios</p>
     </div>
@@ -155,7 +161,7 @@ title: Partners & Sponsors
 
 <!-- WAYS TO GET INVOLVED -->
 <section id="how-to-partner" class="sec sec-navy">
-  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Four ways<br>to get involved.</h2>
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-block">Four ways to get involved.</h2>
   <div class="inv-grid">
     <div class="pship-card">
       <div class="pship-eyebrow">County / Education Office</div>
@@ -203,7 +209,7 @@ title: Partners & Sponsors
 <!-- THE RETURN ON PARTNERSHIP -->
 <section class="sec sec-cream">
   <div class="sec-header">
-    <h2 class="sec-h2 sec-h2-dark page-h2">The return on<br>civic partnership.</h2>
+    <h2 class="sec-h2 sec-h2-dark page-h2">The return on civic partnership.</h2>
     <p class="sec-header-intro">
       Partnering with Schools Reinventing Counties is not a one-time transaction. Each organization contributes what the others can't, and the results reflect that.
     </p>
@@ -227,7 +233,7 @@ title: Partners & Sponsors
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="cta-band-inner">
-    <h2 class="cta-band-h2">Interested in<br>partnering?</h2>
+    <h2 class="cta-band-h2">Interested in partnering?</h2>
     <p class="cta-band-body">
       Partnership conversations start with one question: what do you want to see improve in your county? If Schools Reinventing Counties can help make that happen, we want to hear from you.
     </p>

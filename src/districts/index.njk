@@ -1,0 +1,278 @@
+---
+title: For Districts
+description: >-
+  Connect esports, civic learning, CTE, STEM and student voice through Minecraft Education. What a California district needs to know to put a team into Battle of the Counties.
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+<style>
+  /* ── PAGE HERO ─────────────────────────────────────────────── */
+  .dist-hero {
+    background: var(--navy); background-image: var(--grid-navy);
+    padding: 140px 80px 100px;
+  }
+
+  /* ── FIT CARDS ─────────────────────────────────────────────── */
+  .fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
+
+  /* ── CHECKLIST ─────────────────────────────────────────────── */
+  .dist-checklist { display: flex; flex-direction: column; margin-top: 48px; }
+  .dist-step {
+    display: grid; grid-template-columns: 72px 1fr; gap: 32px;
+    border-top: 1px solid var(--soft); padding: 34px 0; align-items: start;
+  }
+  .dist-step:last-child { border-bottom: 1px solid var(--soft); }
+  .dist-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: 40px; line-height: 1;
+    color: var(--red);
+  }
+  .dist-step-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 26px; line-height: 1.1;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .dist-step-body { font-size: 16px; line-height: 1.75; color: var(--gray); }
+  .opt-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+  /* ── RESOURCE BUTTONS ──────────────────────────────────────── */
+  .res-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+
+  /* ── FAQ ───────────────────────────────────────────────────── */
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-top: 1px solid var(--soft); padding: 32px 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--soft); }
+  .faq-q {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 24px; color: var(--ink); line-height: 1.1;
+  }
+  .faq-a { font-size: 16px; line-height: 1.75; color: var(--gray); }
+  .placeholder-note {
+    font-size: 14px; line-height: 1.65; color: var(--gray);
+    border-left: 3px solid var(--soft); padding-left: 14px; font-style: italic;
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .fit-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .dist-hero { padding: 100px 32px 64px; }
+    .dist-step { grid-template-columns: 1fr; gap: 8px; }
+    .faq-item { grid-template-columns: 1fr; gap: 12px; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="dist-hero">
+  <div class="page-hero-eyebrow">For Districts</div>
+  <h1 class="page-hero-h1">Bring academic esports beyond competition.</h1>
+  <p class="page-hero-sub">
+    Most esports programs stop at the scoreboard. This one asks students to look at their own county, find something worth fixing, and make the case for it to the people who could actually approve it.
+  </p>
+  <div class="page-hero-cta">
+    <a href="#get-started" class="btn-cream">Talk to Us</a>
+    <a href="/battle/" class="btn-ghost-civic">How the Competition Works →</a>
+  </div>
+</div>
+
+<!-- WHERE IT FITS -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">Where it fits in a district</h2>
+    <p class="sec-header-intro">Battle of the Counties tends to get adopted sideways. A district rarely takes it on as one thing. It lands wherever someone already has students, a room, and a reason to bring them together.</p>
+  </div>
+  <div class="fit-grid">
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-dark">Esports &amp; Enrichment</div>
+      <h3 class="card-title">Your club already meets</h3>
+      <p class="card-body">If you run an esports team, a gaming club, or an after-school program, you already have the students and the schedule. This gives that group something to compete in that a principal can defend on academic grounds.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-dark">CTE &amp; STEM</div>
+      <h3 class="card-title">Design work with a real client</h3>
+      <p class="card-body">Students research a site, weigh constraints, model a proposal to scale, and defend it to an outside audience. That is the shape of design and engineering pathway work, and the STEM reasoning is doing real work rather than sitting in a worksheet.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-dark">Civic Learning &amp; Student Voice</div>
+      <h3 class="card-title">Students facing outward</h3>
+      <p class="card-body">Community-based learning is the method here, not a label applied afterward. Students study their own neighborhood and end up making a case for it to local officials. If your community schools plan asks for student voice, this is what that looks like when someone is actually listening.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-dark">Training &amp; PD</div>
+      <h3 class="card-title">We train your teachers</h3>
+      <p class="card-body">Level Up Civics runs teacher training and professional development on using Minecraft Education for community-based learning. It comes with the program, and it is available on its own if you want the practice in classrooms without entering a team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FIVE QUESTIONS -->
+<section class="sec sec-cream" style="padding-top: 0;">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">Five questions, then you can start.</h2>
+  <p class="sec-intro">
+    You do not need a new budget line or a district-wide rollout to try this. You need answers to these five.
+  </p>
+  <div class="dist-checklist">
+
+    <div class="dist-step">
+      <div class="dist-num">01</div>
+      <div>
+        <div class="dist-step-title">Do your students have Minecraft Education?</div>
+        <p class="dist-step-body">Many California districts already hold licenses through their Microsoft 365 Education agreement without realizing it. Your IT team can confirm in a few minutes. If the answer is no, licensing is coordinated through your county office of education rather than bought school by school.</p>
+        <div class="res-row" style="margin-top: 18px;">
+          <a href="https://education.minecraft.net/en-us/get-started/it-admins" target="_blank" rel="noopener" class="btn-outline">IT &amp; Technical Requirements ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dist-step">
+      <div class="dist-num">02</div>
+      <div>
+        <div class="dist-step-title">Who would lead it?</div>
+        <p class="dist-step-body">This does not have to be a social studies teacher, and it does not have to be someone who plays Minecraft. The job is facilitating student thinking. Any of these people can run it:</p>
+        <div class="opt-list">
+          <span class="pill">Classroom teacher</span>
+          <span class="pill">Esports coach</span>
+          <span class="pill">CTE instructor</span>
+          <span class="pill">Community schools lead</span>
+          <span class="pill">Library or media specialist</span>
+          <span class="pill">After-school coordinator</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dist-step">
+      <div class="dist-num">03</div>
+      <div>
+        <div class="dist-step-title">How would students take part?</div>
+        <p class="dist-step-body">The program is built to survive whatever structure you already have. Pick the one that fits your calendar rather than building a calendar around the program.</p>
+        <div class="opt-list">
+          <span class="pill">During class</span>
+          <span class="pill">Club period</span>
+          <span class="pill">Esports team</span>
+          <span class="pill">After school</span>
+          <span class="pill">Interdisciplinary project</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dist-step">
+      <div class="dist-num">04</div>
+      <div>
+        <div class="dist-step-title">Which community will they work on?</div>
+        <p class="dist-step-body">If you are in Orange, Riverside, San Bernardino or Yolo county, students work in a Minecraft world built on that county's real geography. Every other district in California enters through Catalina County, an invitational open division that runs on the same calendar and feeds the same championship.</p>
+      </div>
+    </div>
+
+    <div class="dist-step">
+      <div class="dist-num">05</div>
+      <div>
+        <div class="dist-step-title">Form a team and start designing.</div>
+        <p class="dist-step-body">Teams are four students, one team per school in the qualifiers. From there the rounds are structured for you, with deadlines, judging and event logistics handled on our side.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="sec sec-navy">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-light page-h2">What to hand your team</h2>
+    <p class="sec-header-intro">The people who will actually run this need different things than you do. These are the ones to forward.</p>
+  </div>
+  <div class="res-row">
+    <a href="/educators/" class="btn-cream">For the teacher leading it</a>
+    <a href="https://education.minecraft.net/en-us/get-started/it-admins" target="_blank" rel="noopener" class="btn-ghost-white">For your IT team ↗</a>
+    <a href="https://education.minecraft.net/en-us/get-started/parents" target="_blank" rel="noopener" class="btn-ghost-white">For families ↗</a>
+    <a href="mailto:info@levelupcivicsfoundation.org?subject=Requesting%20the%20educator%20getting%20started%20guide" data-pending="educator-getting-started-guide" class="btn-ghost-white">Educator Getting Started Guide →</a>
+    <a href="mailto:info@levelupcivicsfoundation.org?subject=Requesting%20the%20Battle%20of%20the%20Counties%20rules" data-pending="battle-of-the-counties-rules" class="btn-ghost-white">Battle of the Counties Rules →</a>
+  </div>
+</section>
+
+<!-- WHAT YOUR BOARD WILL WANT TO HEAR -->
+<section class="sec sec-cream">
+  <div class="sec-header">
+    <h2 class="sec-h2 sec-h2-dark page-h2">What your board will want to hear</h2>
+    <p class="sec-header-intro">The pitch to a cabinet is rarely about the game. It is about what students can show afterward, and who was in the room when they showed it.</p>
+  </div>
+  <div class="grid-3">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3 class="pillar-title">A real audience</h3>
+      <p class="pillar-body">Students present to judges and local civic leaders, and at the championship, to state educators and county officials. The work leaves the building, which is the part students remember.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3 class="pillar-title">Evidence for the State Seal</h3>
+      <p class="pillar-body">The program produces the kind of informed civic engagement project the State Seal of Civic Engagement criteria describe. Your LEA still decides how its own students meet its adopted requirements.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3 class="pillar-title">Skills that transfer</h3>
+      <p class="pillar-body">Research, spatial reasoning, working to a deadline, and defending a design decision out loud. All of it from students who thought they had signed up to play a video game.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-cream" style="padding-top: 0;">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">District questions.</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q">Does this need board approval?</div>
+      <p class="faq-a">Usually not to try it. Most schools start with one class or one club, which sits inside a site administrator's discretion. A district-wide rollout is a different conversation, and one we are glad to have.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What does it cost a district?</div>
+      <p class="faq-a placeholder-note">Placeholder. Needs from Jason: whether there is any cost to participating schools or districts, how Minecraft Education licensing is funded in the partner counties, and whether that differs for Catalina County entrants outside those four.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Our county is not one of the four. Can we still enter?</div>
+      <p class="faq-a">Yes. Catalina County is the invitational open division built for exactly this. Students work an island harbor community with the same design challenge structure, run through the same fall qualifiers, and advance to the same statewide championship.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do our teachers need to know Minecraft?</div>
+      <p class="faq-a">No, and we would gently push back on the instinct to go find someone who does. Your students almost certainly know it better than any adult on staff. The adult's job is asking good questions about the community problem.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What about student privacy and media releases?</div>
+      <p class="faq-a placeholder-note">Placeholder. A participant and media authorization is being drafted as a separate workstream and will be reviewed by the participating county offices before it is used statewide. This answer gets replaced with the real process once that is settled.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How much class time does it take?</div>
+      <p class="faq-a placeholder-note">Placeholder. Needs from Jason: approximate number of sessions, whether it can be split across weeks, and the minimum time commitment for a club that meets once a week.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div id="get-started" class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h2">Start with one team.</h2>
+    <p class="cta-band-body">
+      You do not need a district initiative to find out whether this works. One teacher, four students, and a county worth arguing about is enough to start.
+    </p>
+    <div class="cta-band-btns">
+      <a href="mailto:info@levelupcivicsfoundation.org?subject=Bringing%20Battle%20of%20the%20Counties%20to%20our%20district" class="btn-white">Email Us</a>
+      <a href="/educators/" class="btn-ghost-white">Send this to a teacher →</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ_Ey7Yax2ZY4iL5g_nlhYBC94LgoUUhQJX_KQA50Rpbvv8g/viewform?usp=header" target="_blank" class="btn-white">Register a Team</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

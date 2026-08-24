@@ -158,7 +158,7 @@ li.nav-mobile-item-drop { border-bottom: none; }
 
 .sec-h2 {
   font-family: 'Big Shoulders Display', sans-serif;
-  font-weight: 900; line-height: 0.91; letter-spacing: -0.01em;
+  font-weight: 900; line-height: 1.02; letter-spacing: -0.01em;
 }
 .sec-h2-dark  { color: var(--ink); }
 .sec-h2-light { color: var(--cream); }
@@ -261,7 +261,7 @@ li.nav-mobile-item-drop { border-bottom: none; }
 }
 .ticker-items {
   display: flex; align-items: center; justify-content: space-between;
-  width: 100%;
+  width: 100%; flex-wrap: wrap; gap: 12px 20px;
 }
 .ticker-event { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
 .ticker-date {
@@ -325,7 +325,7 @@ footer {
 .footer-email:hover { color: var(--civic); }
 
 /* ── PAGE UTILITIES ─────────────────────────────────────────── */
-.page-h2 { font-size: clamp(44px, 5vw, 72px); }
+.page-h2 { font-size: clamp(44px, 5vw, 72px); max-width: 16ch; }
 
 /* ── SKILL / BULLET LIST (red square bullets) ───────────────── */
 .skills-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
@@ -344,7 +344,7 @@ footer {
 .cta-band-h2 {
   font-family: 'Big Shoulders Display', sans-serif;
   font-weight: 900; font-size: clamp(44px, 5vw, 72px);
-  line-height: 0.91; color: #fff; letter-spacing: -0.01em;
+  line-height: 1.02; color: #fff; letter-spacing: -0.01em;
   margin-bottom: 24px;
 }
 .cta-band-body { font-size: 16px; line-height: 1.75; color: rgba(255,255,255,0.82); margin-bottom: 36px; }
@@ -369,6 +369,9 @@ footer {
   gap: 64px; align-items: start; margin-bottom: 3.5rem;
 }
 .sec-header-intro { font-size: 16px; line-height: 1.75; color: var(--gray); padding-top: 8px; }
+.sec-navy .sec-header-intro,
+.sec-navy .sec-intro,
+.sec-navy .sec-body { color: rgba(255,255,255,0.9); }
 
 /* ── PAGE HERO (inner page grid hero: navy bg, 55/45 split) ───── */
 .page-hero {
@@ -390,7 +393,7 @@ footer {
 .page-hero-h1 {
   font-family: 'Big Shoulders Display', sans-serif;
   font-weight: 900; font-size: clamp(56px, 6.5vw, 96px);
-  line-height: 0.91; color: var(--cream); letter-spacing: -0.01em;
+  line-height: 1.02; color: var(--cream); letter-spacing: -0.01em;
   max-width: 760px; margin-bottom: 28px;
 }
 .page-hero-sub {
@@ -461,6 +464,7 @@ footer {
   .page-hero-content { padding: 80px 48px 60px; }
   .sec-header { grid-template-columns: 1fr; gap: 24px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── RESPONSIVE: MOBILE (≤768px) ────────────────────────── */
@@ -494,3 +498,36 @@ footer {
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr; }
 }
+
+/* buttons never wrap their own label — rows stack instead */
+.btn-primary, .btn-outline, .btn-cream, .btn-white,
+.btn-ghost-civic, .btn-ghost-white, .btn-nav-red, .btn-nav-ghost {
+  white-space: nowrap;
+}
+.hero-cta-row, .page-hero-cta, .cta-band-btns { flex-wrap: wrap; }
+
+@media (max-width: 560px) {
+  .btn-primary, .btn-outline, .btn-cream, .btn-white,
+  .btn-ghost-civic, .btn-ghost-white, .btn-nav-red, .btn-nav-ghost {
+    white-space: normal;
+  }
+}
+
+/* the four dated events need more room than 80px side padding leaves
+   them between the tablet and desktop breakpoints */
+@media (max-width: 1024px) {
+  .ticker { padding: 32px 40px; }
+}
+@media (max-width: 1024px) {
+  .ticker-event { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .ticker-items { gap: 16px 24px; }
+}
+/* four events cannot share one row on a phone, so give them a tidy 2x2
+   instead of letting them wrap into ragged rows */
+@media (max-width: 660px) {
+  .ticker-items { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+}
+
+/* headings wrap naturally now, so cap the measure instead of hard-coding breaks */
+.page-hero-h1, .cta-band-h2 { max-width: 18ch; }
+.sec-header .page-h2 { max-width: 14ch; }
