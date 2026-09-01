@@ -1,4 +1,8 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "_site"
+  "outputDirectory": "_site",
+  "redirects": [
+    { "source": "/battle", "destination": "/", "permanent": false },
+    { "source": "/battle/", "destination": "/", "permanent": false }
+  ]
 }
