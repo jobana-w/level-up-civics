@@ -44,6 +44,33 @@ description: >-
   /* ── CRITERIA ────────────────────────────────────────────────── */
   .criteria-intro { font-size: 16px; line-height: 1.75; color: var(--gray); max-width: 600px; margin-bottom: 3.5rem; }
 
+  /* ── REQUIRED PARTS & CHALLENGES ───────────────────────────────── */
+  .part-lead { font-size: 17px; font-weight: 600; line-height: 1.5; color: var(--ink); margin-bottom: 10px; }
+  .part-needs {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 13px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray);
+    margin: 24px 0 12px;
+  }
+  .creates-note {
+    font-size: 15px; line-height: 1.65; color: var(--gray);
+    margin-top: 32px; max-width: 720px;
+    padding-left: 20px; border-left: 4px solid var(--red);
+  }
+  .score-strip { display: flex; flex-wrap: wrap; gap: 12px 40px; margin: -1.5rem 0 3rem; }
+  .score-item { display: flex; align-items: baseline; gap: 10px; }
+  .score-num {
+    font-family: 'Big Shoulders Display', sans-serif; font-weight: 900;
+    font-size: 44px; line-height: 1; color: var(--red);
+  }
+  .score-lbl {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink);
+  }
+  .challenge-community {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 10px;
+  }
+
   /* ── ABOUT BLURB ─────────────────────────────────────────────── */
   .about-blurb {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -74,7 +101,7 @@ description: >-
       A statewide civics and esports competition for California students, grades 3–12. Student teams investigate a real community challenge, design a solution in Minecraft Education, and pitch it to the leaders who can act on it.
     </p>
     <div class="page-hero-cta">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdG6UhSLIKkSSa9hH9XgjGvdpQ1zZ7BK330ND4pb13YnrHq5w/viewform?usp=header" target="_blank" class="btn-nav-red">Register a Team</a>
+      <a href="/submit/" class="btn-nav-red">Register &amp; Submit</a>
       <a href="#enter" class="btn-ghost-civic">How to Enter →</a>
     </div>
   </div>
@@ -88,8 +115,7 @@ description: >-
   <div class="ticker-lbl">Key Dates</div>
   <div class="ticker-items">
     <div class="ticker-event"><span class="ticker-date">SEPT 22</span><span class="ticker-name">World goes live</span></div>
-    <div class="ticker-event"><span class="ticker-date">NOV 15</span><span class="ticker-name">Submissions close</span></div>
-    <div class="ticker-event"><span class="ticker-date">DEC 4–5</span><span class="ticker-name">County Finals</span></div>
+    <div class="ticker-event"><span class="ticker-date">NOV 15</span><span class="ticker-name">Submissions close (Pacific Time)</span></div>
     <div class="ticker-event"><span class="ticker-date">JAN 9, 2027</span><span class="ticker-name">Statewide Championship</span></div>
   </div>
 </div>
@@ -99,21 +125,21 @@ description: >-
   <div class="sec-header">
     <h2 class="sec-h2 sec-h2-dark page-h2">Three rounds of competition.</h2>
     <p class="sec-header-intro">
-      Teams advance from virtual qualifiers to live county championships, then compete for the statewide title. Each round raises the stakes, and the size of the audience with them.
+      Teams advance from the Virtual Qualifier to County Finals, then compete for the statewide title. Each round raises the stakes, and the size of the audience with them.
     </p>
   </div>
   <div class="grid-3">
     <div class="card">
       <div class="card-eyebrow card-eyebrow-dark">Round 01</div>
-      <h3 class="card-title">Virtual Qualifiers</h3>
+      <h3 class="card-title">Virtual Qualifier</h3>
       <div class="card-badge">Opens Sept 22</div>
-      <p class="card-body">Teams explore their county's Minecraft Education world, investigate a real local challenge, and build their solution. Submit a video walkthrough (up to 5 minutes) before November 15. Judges select the top teams from each county to advance.</p>
+      <p class="card-body">Teams explore the Minecraft Education world, investigate a real local challenge, and complete the four required parts described below. Submit a Virtual Tour (MP4, 3 minutes or less) by November 15, 2026 (Pacific Time). Judges select the top teams from each county to advance.</p>
     </div>
     <div class="card">
       <div class="card-eyebrow card-eyebrow-dark">Round 02</div>
       <h3 class="card-title">County Finals</h3>
-      <div class="card-badge">Dec 4–5</div>
-      <p class="card-body">Top teams compete live at their county office of education. Timed build events, presentations to judges and local civic leaders. County Champions are crowned by grade level.</p>
+      <div class="card-badge">Dates set by each county</div>
+      <p class="card-body">Top teams present live at their county office of education to judges and local civic leaders. County Champions are crowned by division. Later-round formats may vary by participating county.</p>
     </div>
     <div class="card card-champ">
       <div class="card-eyebrow card-eyebrow-light">Round 03</div>
@@ -128,28 +154,28 @@ description: >-
 <section id="enter" class="sec sec-navy">
   <h2 class="sec-h2 sec-h2-light page-h2 h2-body">How to enter.</h2>
   <p class="entry-intro">
-    Every participating school fields one team of four students. No prior Minecraft experience is needed. The worlds come built, and your educators get training and support before the world goes live.
+    Each school may submit one official team of four students. Schools may involve many students or teams locally and choose their official team however they like. There is no competition entry fee for the 2026–27 pilot, and no prior Minecraft experience is needed.
   </p>
   <div class="grid-4">
     <div class="pillar pillar-sm">
       <div class="pillar-num">01</div>
       <h3 class="pillar-title">Form a Team</h3>
-      <p class="pillar-body">Recruit four students from your school. One team per school enters the qualifier.</p>
+      <p class="pillar-body">Choose four students in the same division: grades 3–5, 6–8, or 9–12. Mixed grades are allowed within a division.</p>
     </div>
     <div class="pillar pillar-sm">
       <div class="pillar-num">02</div>
       <h3 class="pillar-title">Explore the World</h3>
-      <p class="pillar-body">Starting September 22, your team enters your county's Minecraft Education world and investigates a real local challenge.</p>
+      <p class="pillar-body">Starting September 22, your team begins at the California State Capitol, chooses a county pathway, and investigates a real local challenge.</p>
     </div>
     <div class="pillar pillar-sm">
       <div class="pillar-num">03</div>
       <h3 class="pillar-title">Design &amp; Build</h3>
-      <p class="pillar-body">Design a solution to the challenge and build it in Minecraft Education. Every block should serve a purpose.</p>
+      <p class="pillar-body">Complete the <a href="#parts" style="color: var(--cream);">four required parts</a>: Build, Board, NPC, and Virtual Tour. Your challenge's Battle Prompt, its instructions and rubric, lists exactly what your division needs.</p>
     </div>
     <div class="pillar pillar-sm">
       <div class="pillar-num">04</div>
       <h3 class="pillar-title">Submit by Nov 15</h3>
-      <p class="pillar-body">Record a walkthrough of your build (up to 5 minutes). Submit your entry before the November 15 deadline.</p>
+      <p class="pillar-body">Record a Virtual Tour of your build, Board, and NPC (MP4, 3 minutes or less) with every team member's voice. Submit by November 15 (Pacific Time). <a href="/submit/" style="color: var(--cream);">What to prepare &rarr;</a></p>
     </div>
   </div>
   <div class="entry-note">
@@ -158,34 +184,138 @@ description: >-
   </div>
 </section>
 
+<!-- FOUR REQUIRED PARTS -->
+<section id="parts" class="sec sec-cream">
+  <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">The four parts of every entry.</h2>
+  <p class="criteria-intro">
+    Each team creates a proposal: an idea for strengthening a real community, built inside Minecraft Education. Every proposal has the same four parts. Teams build the first three inside the game, then record a short video that walks judges through them. Your challenge's Battle Prompt &amp; Rubric spells out exactly what your team's division needs.
+  </p>
+  <div class="inv-grid">
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Part 01</div>
+      <h3 class="card-title">The Build</h3>
+      <p class="part-lead">Your team's solution, built in Minecraft.</p>
+      <p class="card-body">The build doesn't need to be big or impressive. What counts is that each feature has a clear purpose and the features work together to respond to the challenge.</p>
+      <div class="part-needs">What it needs</div>
+      <ul class="card-list">
+        <li>Grades 3–5: at least 2 purposeful features</li>
+        <li>Grades 6–8: at least 3 purposeful features</li>
+        <li>Grades 9–12: at least 4 purposeful features</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Part 02</div>
+      <h3 class="card-title">The Board</h3>
+      <p class="part-lead">A sign in the game that explains the idea.</p>
+      <p class="card-body">A Board is placed next to the build so anyone who walks up can read what the project is and why it matters.</p>
+      <div class="part-needs">What it needs</div>
+      <ul class="card-list">
+        <li>At least one Board near the build</li>
+        <li>The fields your Battle Prompt lists, such as Project Name and Why It Matters</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Part 03</div>
+      <h3 class="card-title">The NPC</h3>
+      <p class="part-lead">A character who talks visitors through the idea.</p>
+      <p class="card-body">NPC stands for non-player character: a character in the game that visitors can click on to hear from. Your team creates at least one and decides what it says.</p>
+      <div class="part-needs">What it needs</div>
+      <ul class="card-list">
+        <li>A name</li>
+        <li>A job tied to the build</li>
+        <li>Dialogue that explains the idea</li>
+        <li>At least one link to an outside source that supports the idea</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow card-eyebrow-red">Part 04</div>
+      <h3 class="card-title">The Virtual Tour</h3>
+      <p class="part-lead">A short video that shows judges the whole proposal.</p>
+      <p class="card-body">Teams don't send in their Minecraft world. Instead, they screen-record a walkthrough of the build, Board, and NPC and explain their thinking. Each Battle Prompt links to free screen-recording directions.</p>
+      <div class="part-needs">What it needs</div>
+      <ul class="card-list">
+        <li>3 minutes or less</li>
+        <li>Saved as an MP4 video file</li>
+        <li>Every team member's voice is heard. With teacher approval, a student can use captions or on-screen text instead of speaking.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="creates-note">What your team learned in the community should shape every part. Grades 9–12 also use a credible outside source to justify key choices. Minecraft building skill isn't the goal. Minecraft is how students make their civic thinking visible.</p>
+</section>
+
+<!-- SEVEN CHALLENGES -->
+<section id="challenges" class="sec sec-navy">
+  <h2 class="sec-h2 sec-h2-light page-h2 h2-body">The seven challenges.</h2>
+  <p class="entry-intro">
+    Each team chooses one challenge. Every challenge has its own Battle Prompt &amp; Rubric for each division.
+  </p>
+  <div class="grid-4">
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">Huntington Beach</div>
+      <h3 class="pillar-title">Rigs to Reefs</h3>
+    </div>
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">Anaheim</div>
+      <h3 class="pillar-title">Reimagining the Community School</h3>
+    </div>
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">Fullerton</div>
+      <h3 class="pillar-title">Designing a City for the Future</h3>
+    </div>
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">Santa Ana</div>
+      <h3 class="pillar-title">Civic Leadership &amp; Local Government</h3>
+    </div>
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">Irvine</div>
+      <h3 class="pillar-title">Community &amp; Mental Wellness</h3>
+    </div>
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">San Juan Capistrano</div>
+      <h3 class="pillar-title">History, Culture &amp; Community Identity</h3>
+    </div>
+    <div class="pillar pillar-sm">
+      <div class="challenge-community">Catalina Island &middot; Open Pathway</div>
+      <h3 class="pillar-title">Island in Balance</h3>
+      <p class="pillar-body">An island community and the open pathway for students whose county isn't in the experience yet.</p>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT MAKES A STRONG ENTRY -->
 <section class="sec sec-cream">
   <h2 class="sec-h2 sec-h2-dark page-h2 h2-body">What judges look for.</h2>
   <p class="criteria-intro">
-    Judges look at the full arc from investigation to solution. A strong entry shows the community thinking behind every design decision, which matters more than how impressive the build looks.
+    Each challenge and division has its own Battle Prompt &amp; Rubric. Every rubric uses the same four criteria, each scored 1–4, for a total of 16 points. Level 3 (Progressing) means the team met every requirement in its prompt. Level 4 (Excelling) means it went beyond.
   </p>
+  <div class="score-strip" aria-label="4 criteria, scored 1 to 4 each, 16 points total">
+    <div class="score-item"><span class="score-num">4</span><span class="score-lbl">Criteria</span></div>
+    <div class="score-item"><span class="score-num">1–4</span><span class="score-lbl">Points each</span></div>
+    <div class="score-item"><span class="score-num">16</span><span class="score-lbl">Points total</span></div>
+  </div>
   <div class="grid-4">
     <div class="card">
-      <div class="card-eyebrow card-eyebrow-red">Research</div>
-      <h3 class="card-title">Investigate Before You Build</h3>
-      <p class="card-body">Strong entries show real investigation: listening to community voices, understanding the challenge, and grounding decisions in evidence.</p>
+      <div class="card-eyebrow card-eyebrow-red">Challenge</div>
+      <h3 class="card-title">Respond to a Real Need</h3>
+      <p class="card-body">Does the proposal respond to a meaningful need, strength, or opportunity in the community and show who it serves and its intended impact?</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow card-eyebrow-red">Solution</div>
-      <h3 class="card-title">Design That Responds</h3>
-      <p class="card-body">The solution should answer a real community need. Creativity helps, but the ideas that hold up are the ones rooted in what the team learned.</p>
+      <div class="card-eyebrow card-eyebrow-red">Learning &amp; Evidence</div>
+      <h3 class="card-title">Show What You Learned</h3>
+      <p class="card-body">Is the design grounded in specific learning from the community and, in grades 9–12, a credible external source?</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow card-eyebrow-red">Build</div>
-      <h3 class="card-title">Every Block Has a Purpose</h3>
-      <p class="card-body">The Minecraft Education build is how judges see your thinking. Every block should show purpose, not just polish.</p>
+      <div class="card-eyebrow card-eyebrow-red">Design &amp; Creativity</div>
+      <h3 class="card-title">Purposeful Features, Working Together</h3>
+      <p class="card-body">Does the build include the required number of purposeful features, working together as a clear, creative solution?</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow card-eyebrow-red">Communication</div>
-      <h3 class="card-title">Make the Case</h3>
-      <p class="card-body">Your walkthrough (up to 5 minutes) should explain what you investigated, what you designed, and why it would improve the community.</p>
+      <div class="card-eyebrow card-eyebrow-red">Communication &amp; Team Voice</div>
+      <h3 class="card-title">Make the Case Together</h3>
+      <p class="card-body">Do the Board, NPC, and Virtual Tour explain the proposal, with a relevant source and every team member's voice?</p>
     </div>
   </div>
+  <p class="creates-note">Each rubric names its criteria for the community (for example, &ldquo;Fullerton Challenge&rdquo;). Technical building skill and video production quality are not scored on their own.</p>
 </section>
 
 <!-- REGISTER CTA BAND -->
@@ -193,22 +323,22 @@ description: >-
   <div class="cta-band-inner">
     <h2 class="cta-band-h2">Ready to compete?</h2>
     <p class="cta-band-body">
-      The world opens September 22. Get your team together, explore your county, and submit your entry before November 15.
+      The world opens September 22. Get your team together, explore your county, and submit your entry by November 15 (Pacific Time).
     </p>
     <div class="cta-band-btns">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdG6UhSLIKkSSa9hH9XgjGvdpQ1zZ7BK330ND4pb13YnrHq5w/viewform?usp=header" target="_blank" class="btn-white">Register a Team</a>
+      <a href="/submit/" class="btn-white">Register &amp; Submit</a>
       <a href="/educators/" class="btn-ghost-white">For Educators →</a>
     </div>
   </div>
 </div>
 
-<!-- ABOUT LEVELUP CIVICS -->
+<!-- ABOUT LEVEL UP CIVICS -->
 <section class="sec sec-cream">
   <div class="about-blurb">
-    <h2 class="sec-h2 sec-h2-dark page-h2">About LevelUp Civics</h2>
+    <h2 class="sec-h2 sec-h2-dark page-h2">About The Level Up Civics Foundation</h2>
     <div>
       <p class="about-blurb-body">
-        Level Up Civics Foundation is a California nonprofit reimagining civic education through game-based community design. Battle of the Counties is our flagship program — a statewide competition where grades 3–12 students investigate real challenges in their own communities, build solutions in Minecraft Education, and present them to the leaders who can act on their ideas.
+        Level Up Civics is a California nonprofit reimagining civic education through game-based community design. Schools Reinventing Counties is our flagship learning experience, where grades 3–12 students investigate real challenges in their own communities and design solutions in Minecraft Education. Battle of the Counties is the optional statewide competition built around it, where teams present their ideas to the leaders who can act on them.
       </p>
       <div class="hero-cta-row" style="margin-top: 2rem;">
         <a href="/about/" class="btn-outline">Learn more about us →</a>

@@ -1,0 +1,159 @@
+---
+title: Downloads
+description: >-
+  Guides, Battle Prompts & Rubrics, field notebooks, and judging materials for Schools Reinventing Counties and Battle of the Counties, 2026–27 pilot.
+---
+{% extends "layouts/base.njk" %}
+
+{% macro fileRow(item) %}
+<div class="dl-row">
+  <div>
+    <h3 class="dl-title">{{ item.title }}</h3>
+    <p class="dl-body">{{ item.body }}</p>
+  </div>
+  <a href="{{ item.url }}" target="_blank" rel="noopener" class="dl-btn">Download PDF <span class="dl-size">{{ item.size }}</span></a>
+</div>
+{% endmacro %}
+
+{% macro bandRow(row) %}
+<div class="dl-row dl-row-bands">
+  <div>
+    <div class="dl-community">{{ row.community }}</div>
+    {% if row.title %}<h3 class="dl-title">{{ row.title }}</h3>{% endif %}
+  </div>
+  <div class="dl-bands">
+    {% for f in row.files %}
+    <a href="{{ f.url }}" target="_blank" rel="noopener" class="dl-btn dl-btn-sm" aria-label="{{ row.community }}{% if row.title %}, {{ row.title }}{% endif %}, {{ f.label }} (PDF, {{ f.size }})">{{ f.label }}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
+
+{% block head %}
+<style>
+  .dl-wrap { max-width: 960px; margin: 0 auto; }
+
+  /* Usage note + jump links */
+  .dl-note {
+    padding: 20px 24px; border-left: 4px solid var(--red);
+    background: rgba(255,255,255,0.55);
+    font-size: 15px; line-height: 1.65; color: var(--ink);
+  }
+  .dl-jump { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 28px; }
+  .dl-jump a {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--red); text-decoration: none;
+  }
+  .dl-jump a:hover { text-decoration: underline; }
+
+  /* Audience groups */
+  .dl-group { margin-top: 72px; scroll-margin-top: 96px; }
+  .dl-group-h2 {
+    font-family: 'Big Shoulders Display', sans-serif; font-weight: 900;
+    font-size: 40px; line-height: 1.05; color: var(--ink);
+    padding-bottom: 12px; border-bottom: 2px solid var(--ink);
+  }
+  .dl-sub {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 14px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray);
+    margin: 36px 0 4px;
+  }
+  .dl-sub-intro { font-size: 15px; line-height: 1.65; color: var(--gray); margin-bottom: 8px; }
+
+  /* File rows */
+  .dl-row {
+    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+    padding: 20px 0; border-bottom: 1px solid var(--soft);
+  }
+  .dl-title {
+    font-family: 'Big Shoulders Display', sans-serif; font-weight: 700;
+    font-size: 22px; line-height: 1.15; color: var(--ink);
+  }
+  .dl-body { font-size: 15px; line-height: 1.6; color: var(--gray); margin-top: 4px; max-width: 600px; }
+  .dl-community {
+    font-family: 'Pixelify Sans', sans-serif; font-size: 13px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 4px;
+  }
+  .dl-bands { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+
+  /* Buttons */
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
+    font: 600 14px/1 'Inter', sans-serif; color: var(--ink); text-decoration: none;
+    border: 1.5px solid var(--ink); padding: 12px 16px; transition: background 0.15s, color 0.15s;
+  }
+  .dl-btn:hover { background: var(--ink); color: var(--cream); }
+  .dl-size { font-weight: 400; font-size: 12px; opacity: 0.7; }
+  .dl-btn-sm { padding: 10px 12px; font-size: 13px; }
+
+  @media (max-width: 768px) {
+    .dl-row { grid-template-columns: 1fr; gap: 12px; }
+    .dl-bands { justify-content: flex-start; }
+    .dl-group-h2 { font-size: 32px; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-hero" style="min-height: auto;">
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Downloads</div>
+    <h1 class="page-hero-h1">Program materials.</h1>
+    <p class="page-hero-sub">
+      Guides, Battle Prompts &amp; Rubrics, field notebooks, and judging materials for the 2026–27 pilot, grouped by who uses them.
+    </p>
+  </div>
+</div>
+
+<section class="sec sec-cream">
+  <div class="dl-wrap">
+
+    <p class="dl-note">These materials are for participating County Offices of Education, schools, and educators. They may not be redistributed or sold.</p>
+
+    <div class="dl-jump" role="navigation" aria-label="Jump to a group">
+      <a href="#everyone">Everyone</a>
+      <a href="#educators">Educators</a>
+      <a href="#coes">County Offices of Education</a>
+      <a href="#judges">Judges</a>
+    </div>
+
+    <!-- EVERYONE -->
+    <div id="everyone" class="dl-group">
+      <h2 class="dl-group-h2">For everyone</h2>
+      {% for item in downloads.everyone %}{{ fileRow(item) }}{% endfor %}
+    </div>
+
+    <!-- EDUCATORS -->
+    <div id="educators" class="dl-group">
+      <h2 class="dl-group-h2">For educators</h2>
+
+      <div class="dl-sub">Battle Prompts &amp; Rubrics</div>
+      <p class="dl-sub-intro">Each challenge has its own prompt and rubric for each division. Teams use the one that matches their challenge and division.</p>
+      {% for row in downloads.prompts %}{{ bandRow(row) }}{% endfor %}
+
+      <div class="dl-sub">Field Notebooks</div>
+      <p class="dl-sub-intro">Student notebooks to take through the experience, one per division.</p>
+      {% for row in downloads.notebooks %}{{ bandRow(row) }}{% endfor %}
+
+      <div class="dl-sub">Educator Guides &amp; extension</div>
+      {% for item in downloads.educatorGuides %}{{ fileRow(item) }}{% endfor %}
+    </div>
+
+    <!-- COES -->
+    <div id="coes" class="dl-group">
+      <h2 class="dl-group-h2">For County Offices of Education</h2>
+      {% for item in downloads.coes %}{{ fileRow(item) }}{% endfor %}
+    </div>
+
+    <!-- JUDGES -->
+    <div id="judges" class="dl-group">
+      <h2 class="dl-group-h2">For judges</h2>
+      {% for item in downloads.judges %}{{ fileRow(item) }}{% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

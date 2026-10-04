@@ -321,7 +321,7 @@ footer {
 .footer-col a:hover { color: var(--cream); }
 .footer-notice {
   font-size: 11px; line-height: 1.65; color: rgba(139,163,194,0.4);
-  text-transform: uppercase; letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   border-top: 1px solid rgba(255,255,255,0.07);
   padding: 24px 0; margin-bottom: 24px;
 }

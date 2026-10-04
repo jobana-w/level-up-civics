@@ -1,7 +1,7 @@
 // Site-wide values used for metadata. Change `url` here if the domain differs.
 module.exports = {
   name: "Level Up Civics",
-  legalName: "Level Up Civics Foundation",
+  legalName: "The Level Up Civics Foundation",
   url: "https://levelupcivicsfoundation.org",
   // Fallback description, used when a page sets no `description` in its front matter.
   description:
